@@ -1,2 +1,22 @@
 c:\users\madolphe\documents\visual studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\hibernate.cfg.xml
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Antlr3.Runtime.dll
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Domain.exe
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Iesi.Collections.dll
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\NHibernate.dll
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.dll
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.EagerFetching.dll
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Domain.pdb
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Antlr3.Runtime.xml
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Iesi.Collections.xml
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\NHibernate.xml
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.xml
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.EagerFetching.xml
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csproj.GenerateResource.Cache
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+H:\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
