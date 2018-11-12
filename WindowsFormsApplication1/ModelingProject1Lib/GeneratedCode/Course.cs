@@ -41,7 +41,7 @@ public class Course
 		set;
 	}
 
-	public virtual List<Resultat> Resultat
+	public virtual IEnumerable<Resultat> lesResultats
 	{
 		get;
 		set;

@@ -47,13 +47,13 @@ public class Participant
 		set;
 	}
 
-	public virtual List<Sponsor> Sponsor
+	public virtual IEnumerable<Resultat> lesResultats
 	{
 		get;
 		set;
 	}
 
-	public virtual List<Resultat> Resultat
+	public virtual IEnumerable<Sponsor> lesSponsors
 	{
 		get;
 		set;

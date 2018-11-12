@@ -79,7 +79,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\ClasseMetier1.xml" />
+    <EmbeddedResource Include="Mapping\Participant.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mapping\Course.xml" />
+    <Content Include="Mapping\Resultat.xml" />
+    <Content Include="Mapping\Sponsor.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

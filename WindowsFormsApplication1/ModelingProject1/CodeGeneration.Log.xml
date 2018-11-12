@@ -6,37 +6,37 @@
   <MessageClass Name="Error" Label="Erreur" Option="Afficher les erreurs" />
   <MessageClass Name="Property" Label="Propriété" Option="Afficher les métadonnées" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Afficher les messages de diagnostic" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="High" Text="Génération du code ou transformation du texte démarrées." />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Diagnostic" Text="Nom = ClassTemplate" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Diagnostic" Text="Remplacer = True" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Medium" Text="La liaison de modèle de texte 'ClassTemplate' de ModelingProject1 appliquera ClassTemplate.t4 à 'ModelingProject1::Participant' -  (Class), 'ModelingProject1::Course' -  (Class), 'ModelingProject1::Resultat' -  (Class), 'ModelingProject1::Sponsor' -  (Class) " />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Medium" Text="'ModelingProject1::Participant' -  (Class) : réussite (fichier remplacé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Participant.cs" />
-  <Message Timestamp="2018-11-12T10:03:52" Importance="Medium" Text="'ModelingProject1::Course' -  (Class) : réussite (fichier remplacé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Course.cs" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Medium" Text="'ModelingProject1::Resultat' -  (Class) : réussite (fichier remplacé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Resultat.cs" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Medium" Text="'ModelingProject1::Sponsor' -  (Class) : réussite (fichier remplacé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Sponsor.cs" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="Nom = StructTemplate" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="Remplacer = True" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Medium" Text="La liaison de modèle de texte 'StructTemplate' de ModelingProject1 appliquera StructTemplate.t4 à 'ModelingProject1::Participant' -  (Class), 'ModelingProject1::Course' -  (Class), 'ModelingProject1::Resultat' -  (Class), 'ModelingProject1::Sponsor' -  (Class) " />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::Participant' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::Course' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::Resultat' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::Sponsor' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="La sélection comprenait 6 éléments qui n'étaient pas liés à un modèle." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
-  <Message Timestamp="2018-11-12T10:03:53" Importance="High" Text="Génération du code terminée. Erreurs : 0. Avertissements : 0." />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="High" Text="Génération du code ou transformation du texte démarrées." />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Diagnostic" Text="Nom = ClassTemplate" />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Diagnostic" Text="Remplacer = True" />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2018-11-12T10:48:14" Importance="Medium" Text="La liaison de modèle de texte 'ClassTemplate' de ModelingProject1 appliquera ClassTemplate.t4 à 'ModelingProject1::Participant' -  (Class), 'ModelingProject1::Course' -  (Class), 'ModelingProject1::Resultat' -  (Class), 'ModelingProject1::Sponsor' -  (Class) " />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Medium" Text="'ModelingProject1::Participant' -  (Class) : réussite (fichier créé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Participant.cs" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Medium" Text="'ModelingProject1::Course' -  (Class) : réussite (fichier créé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Course.cs" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Medium" Text="'ModelingProject1::Resultat' -  (Class) : réussite (fichier créé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Resultat.cs" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Medium" Text="'ModelingProject1::Sponsor' -  (Class) : réussite (fichier créé) - H:\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\GeneratedCode\Sponsor.cs" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="Nom = StructTemplate" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="Remplacer = True" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProject1Lib\ModelingProject1Lib.csproj" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Medium" Text="La liaison de modèle de texte 'StructTemplate' de ModelingProject1 appliquera StructTemplate.t4 à 'ModelingProject1::Participant' -  (Class), 'ModelingProject1::Course' -  (Class), 'ModelingProject1::Resultat' -  (Class), 'ModelingProject1::Sponsor' -  (Class) " />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::Participant' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::Course' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::Resultat' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::Sponsor' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="La sélection comprenait 6 éléments qui n'étaient pas liés à un modèle." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="Diagnostic" Text="'ModelingProject1::' -  (Association) : aucun modèle lié." />
+  <Message Timestamp="2018-11-12T10:48:15" Importance="High" Text="Génération du code terminée. Erreurs : 0. Avertissements : 0." />
 </Log>

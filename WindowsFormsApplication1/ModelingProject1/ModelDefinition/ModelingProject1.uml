@@ -164,62 +164,10 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="aa812498-af07-4d18-ba9c-1c934dec13c3"
+            Id="a8289a17-1ef9-4a73-8fb4-4b06024f89da"
             isDerived="false"
-            sourceEndRoleName="Participant"
-            targetEndRoleName="Sponsor"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="546981e0-1499-4a86-b44a-d82a69efbcc0"
-              LastKnownName="Sponsor"
-              LastKnownLocation="ModelingProject1.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="9caa74a4-df37-46d7-ac5e-9e5c2321241c"
-                  name="Participant"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="9622585b-8095-46ae-bd7e-87ec51db26d3"
-                  name="Sponsor"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="9f0a5f55-1f15-47e1-b61c-4a2a32ade8b9"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="d75d35fa-5d35-45ff-8441-fd4108440932"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="1d4fb434-dea9-4f76-b4c7-3a20c2b52c8a"
-            isDerived="false"
-            sourceEndRoleName="Participant"
-            targetEndRoleName="Resultat"
+            sourceEndRoleName=""
+            targetEndRoleName="lesResultats"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -229,8 +177,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="d11609e2-78ae-45fc-a585-3066e0313e17"
-                  name="Participant"
+                  Id="b99cc5a7-161d-44b1-be6f-15a2df87eb29"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -242,8 +189,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="4803b211-307b-4801-bbe0-48a4523603c5"
-                  name="Resultat"
+                  Id="4d30013a-b948-4c0c-adea-302ae250cca4"
+                  name="lesResultats"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -253,13 +200,77 @@
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="a083c050-6ae8-49b6-b0f4-8f0da6515717"
+                      Id="513712dd-33ce-410b-97fd-5989d8f319a4"
                       name="Lower"
                       value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="884c1a3f-37f5-4b19-91fa-634fa09cd8de"
+                      Id="a53d52f6-7f65-4317-9878-4a1f595a6297"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="91f13510-f614-4777-ae4b-e705c705bb91"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="lesSponsors"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="546981e0-1499-4a86-b44a-d82a69efbcc0"
+              LastKnownName="Sponsor"
+              LastKnownLocation="ModelingProject1.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="db6f0445-ace5-4cab-9661-b746c79d2dfb"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="8dac5b5d-8bdd-44eb-abda-622a79434055"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ad7f0aad-c678-4750-b753-4558ced613b8"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="38ed9521-c0b3-446f-a62d-8c3d2e1b77fb"
+                  name="lesSponsors"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f3c535eb-f0ea-4a94-90f4-29f820f3645d"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c0be69d0-26e5-4162-946f-5fc9de6507ef"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
@@ -780,10 +791,10 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="9b500f37-f8c8-425e-a9ef-d6fcff7ae961"
+            Id="e50bcd40-05a2-4592-a1b9-2ac01b07428f"
             isDerived="false"
-            sourceEndRoleName="Course"
-            targetEndRoleName="Resultat"
+            sourceEndRoleName=""
+            targetEndRoleName="lesResultats"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -793,8 +804,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="ef492248-73f6-4a4f-8a14-a4825bb38a2d"
-                  name="Course"
+                  Id="44dbd3c8-5b97-4afc-9668-7e083b9bb6a5"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -806,8 +816,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="12d09c00-2004-44bf-8961-cc02a588cfb2"
-                  name="Resultat"
+                  Id="bc4db28f-7b5c-4683-bcda-18eb7a340d90"
+                  name="lesResultats"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -817,13 +827,13 @@
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="b55c2016-6ee1-48de-b372-bbbddacec4d0"
+                      Id="574a8747-d024-4527-8104-fc93a7d3961c"
                       name="Lower"
                       value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="f1cbaca4-a7a3-41b4-a615-007cc819e2cf"
+                      Id="ae52558a-ce2a-44d2-80dd-8677c9a52f23"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
@@ -1268,10 +1278,10 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="6ae13bfd-45e8-4d48-9532-4b6fad84841f"
+            Id="896cc04e-162a-4dca-afa4-f87fa2a5daf8"
             isDerived="false"
-            sourceEndRoleName="Resultat"
-            targetEndRoleName="Course"
+            sourceEndRoleName=""
+            targetEndRoleName="laCourse"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -1281,8 +1291,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="d6999b98-7215-4452-8c9f-1d96719b41a6"
-                  name="Resultat"
+                  Id="9878e44b-757d-4aa2-a191-936652b8abee"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1290,40 +1299,40 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a8b37d87-2f46-46ac-add8-a92eba5ec589"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3da750cc-3b21-4b47-8de4-3dcdd87312d4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="e47d6024-406c-4ba0-a8ba-85c99d6dfdf7"
-                  name="Course"
+                  Id="85386416-bc0a-46c3-b33c-b31fe99c8917"
+                  name="laCourse"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="a79ce1f0-194c-4282-924d-f7bcc56664ed"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="e042c4c3-eb70-4652-b4ba-b38a5a7863c5"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="603a56e6-1791-4f11-85fe-9aeccacc61c0"
+            Id="4811a2ed-f4ab-4132-81d6-3b9b9ab7583d"
             isDerived="false"
-            sourceEndRoleName="Resultat"
-            targetEndRoleName="Participant"
+            sourceEndRoleName=""
+            targetEndRoleName="leParticipant"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -1333,8 +1342,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="e6e94fee-13bc-4d12-a7f7-14c2839ec791"
-                  name="Resultat"
+                  Id="81e790bb-6787-4a5b-96e5-c6f909929e79"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1342,189 +1350,37 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3b819af5-a016-4757-a003-3510beabfa5d"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3ffeade2-6a1a-4808-97ca-031e8ddae27c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="84ee5289-c32a-461e-baff-60ebebd16de2"
-                  name="Participant"
+                  Id="232c9333-9523-4d8a-9b9b-360766441875"
+                  name="leParticipant"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="7ea60780-27bd-467c-9070-5d093a5babfa"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="6c9402c2-983e-48be-9780-fa6faa00b2d2"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property
-            Id="df675832-f29d-4705-a266-7a3839ed34cc"
-            name="participant"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="50eddf3a-fad9-463b-9651-dc9fbec9ba7c"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c59a28f1-f63a-492e-b26a-79b46eb87f9a">
-                    <propertyInstance
-                      Id="45a51727-b69b-46b6-b12b-a3b4f83168fd"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="32ba0070-8389-4523-92f1-5cfc23cb034d">
-                    <propertyInstance
-                      Id="5fb53955-eaa8-4cb0-96b5-62f8ab77c885"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="968d2e98-ecc4-43de-afe7-c61e4cd6bff2">
-                    <propertyInstance
-                      Id="7ab582c1-60a2-4aac-b16b-167edac14818"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="4736ed12-df03-45f9-96cb-4e9aa6e300ef">
-                    <propertyInstance
-                      Id="b1dec1c2-72ac-4974-bca3-13c2211b2415"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e3df8bb6-a853-4ebc-a044-6ed943323627">
-                    <propertyInstance
-                      Id="0a7837f4-3db9-414c-84e9-132fb477de44"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="71fcba14-888d-483a-9be5-680f84c1f28b">
-                    <propertyInstance
-                      Id="954d105e-673e-4791-825e-503046c0b78f"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="cf3680ce-e33d-4388-b325-aef07018fbc6">
-                    <propertyInstance
-                      Id="de692661-130c-460d-9724-ad6231a32f8e"
-                      name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="66934b57-31a7-4051-94bc-ca08810616ba"
-                LastKnownName="Participant"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="9d07d67d-e1b3-4f61-a6aa-e811060d32f2"
-            name="course"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="460ebff1-33b5-4c7f-8da9-d3b61f4e7f09"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d920b558-e02b-428c-8eda-14dbf0165597">
-                    <propertyInstance
-                      Id="d52d3ab0-27ac-4caa-85b1-ff40b4328c13"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c6323063-e285-4f8c-8122-a2945ce38457">
-                    <propertyInstance
-                      Id="8cf785b4-26b6-46d8-86df-7d48264d812d"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="99a22637-41a5-4037-88cb-05c573dfe4a8">
-                    <propertyInstance
-                      Id="66ecfb93-0c9f-49eb-9040-f658cff69a8c"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="bef72149-960a-49db-86df-2d5c6a1e34d7">
-                    <propertyInstance
-                      Id="2fe3e9c6-8a6a-42cd-a0ac-a860b49994b3"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d9a558b9-7f0d-490e-8fb8-02d2d2638d87">
-                    <propertyInstance
-                      Id="0423209f-5312-422f-a014-cff6518924c6"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d51b8f15-53c7-492e-ac2d-586cbd08e15d">
-                    <propertyInstance
-                      Id="701893e3-82a1-4949-ac20-504a98e460d5"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d73cc269-39e6-4710-bf22-6a932b4a628b">
-                    <propertyInstance
-                      Id="75ab3c15-e112-4e9c-bf84-8edca051ee45"
-                      name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <classMoniker
-                Id="d1b61ebb-af3c-4122-bc85-119d26ff684c"
-                LastKnownName="Course"
-                LastKnownLocation="ModelingProject1.uml" />
-            </type_NamedElement>
-          </property>
           <property
             Id="e5e1f2ae-ae59-4eff-8d52-e043309a672e"
             name="temps"
@@ -1848,10 +1704,10 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="9cf2fcf0-31b3-4ecb-a5c0-fefbfbc78292"
+            Id="470d7fa5-959d-458a-b484-ed4c8d4351c8"
             isDerived="false"
-            sourceEndRoleName="Sponsor"
-            targetEndRoleName="Participant"
+            sourceEndRoleName=""
+            targetEndRoleName="lesParticipants"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -1861,8 +1717,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="05b9ed18-941f-4ff0-96c3-ebb7519aea3b"
-                  name="Sponsor"
+                  Id="05f08098-925f-4a4a-8b81-ec92e87e5d05"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1870,12 +1725,25 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="151285f4-9362-4156-a64a-d5c3f7c35d1c"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="dc257d28-1501-45cc-bb84-0fe8eff64c74"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="735a8322-6c83-4d79-b551-ab5aa8badf7a"
-                  name="Participant"
+                  Id="4fb8ed72-6099-4842-a5ac-941fcb98c711"
+                  name="lesParticipants"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1885,13 +1753,13 @@
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="e9e8d18c-8ef5-4777-aeb8-0849f558be7d"
+                      Id="41d10d2e-8dc5-484d-bd21-a59a95c1ba06"
                       name="Lower"
                       value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="3317d680-69cc-47fb-b78b-29fa6cbf205c"
+                      Id="57c6a234-771a-4d55-9f3f-8ea1e6e58383"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>

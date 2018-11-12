@@ -23,7 +23,7 @@ public class Sponsor
 		set;
 	}
 
-	public virtual List<Participant> Participant
+	public virtual IEnumerable<Participant> lesParticipants
 	{
 		get;
 		set;

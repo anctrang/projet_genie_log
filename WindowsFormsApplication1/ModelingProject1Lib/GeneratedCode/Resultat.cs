@@ -11,18 +11,6 @@ using System.Text;
 
 public class Resultat
 {
-	private Participant participant
-	{
-		get;
-		set;
-	}
-
-	private Course course
-	{
-		get;
-		set;
-	}
-
 	private TimeSpan temps
 	{
 		get;
@@ -41,13 +29,13 @@ public class Resultat
 		set;
 	}
 
-	public virtual List<Course> Course
+	public virtual Course laCourse
 	{
 		get;
 		set;
 	}
 
-	public virtual List<Participant> Participant
+	public virtual Participant leParticipant
 	{
 		get;
 		set;
