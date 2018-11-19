@@ -19,9 +19,8 @@ namespace Test
             NHibernate.Cfg.Configuration cfg = new NHibernate.Cfg.Configuration();
             cfg.Configure();
             new SchemaExport(cfg).Execute(true, true, false);
-
-
-
         }
     }
 }
+
+

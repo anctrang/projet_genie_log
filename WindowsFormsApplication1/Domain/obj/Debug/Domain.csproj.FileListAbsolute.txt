@@ -6,3 +6,11 @@ H:\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.Properties.
 H:\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache
 H:\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.exe
 H:\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.pdb
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\bin\Debug\Domain.exe.config
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\bin\Debug\Domain.exe
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\bin\Debug\Domain.pdb
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.Properties.Resources.resources
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.exe
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.pdb
+H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\Domain\bin\Debug\Mapping\Course.hbm.xml

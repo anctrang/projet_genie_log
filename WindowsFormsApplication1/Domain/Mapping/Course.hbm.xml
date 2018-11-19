@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+  <class name="Course" table="Course">
+    <id name="Id" column="course_id" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="Date" column="course_date" not-null="false"/>
+    <property name="Distance" column="course_distance" not-null="true"/>
+    <property name="Lieu" column="course_lieu" not-null="false"/>
+    <property name="Description" column="course_desc" not-null="false"/>
+  </class>
+</hibernate-mapping>
