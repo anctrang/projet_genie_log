@@ -2,3 +2,9 @@ H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib
 H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\bin\Debug\ModelingProject1Lib.pdb
 H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.dll
 H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.pdb
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\bin\Debug\ModelingProject1Lib.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\bin\Debug\ModelingProject1Lib.pdb
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.csproj.CoreCompileInputs.cache
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.pdb
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.csprojAssemblyReference.cache

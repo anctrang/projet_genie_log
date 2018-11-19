@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace App
 {
-    public partial class Form1 : Form
+    public partial class Accueil : Form
     {
-        public Form1()
+        public Accueil()
         {
             InitializeComponent();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Connexion connexion = new Connexion();
+            connexion.Show();
         }
     }
 }

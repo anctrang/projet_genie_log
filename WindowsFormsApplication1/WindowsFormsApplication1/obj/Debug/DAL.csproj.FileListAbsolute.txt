@@ -43,3 +43,29 @@ H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplica
 H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csproj.GenerateResource.Cache
 H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Mapping\Course.hbm.xml
 H:\Projet_genielog\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MySql.Data.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MySql.Data.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Mapping\Course.hbm.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\hibernate.cfg.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Antlr3.Runtime.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Domain.exe
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Iesi.Collections.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\NHibernate.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.EagerFetching.dll
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Domain.pdb
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Domain.exe.config
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Antlr3.Runtime.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Iesi.Collections.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\NHibernate.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Remotion.Linq.EagerFetching.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
