@@ -8,7 +8,9 @@ namespace Domain
 {
     public class Utilisateur
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         public Utilisateur() { }
 
         public Utilisateur(string pseudo, string mdp)
