@@ -10,6 +10,7 @@ namespace DAL
     public interface IUtilisateurRepository
     {
        IList<Utilisateur> GetAll();
+       void Save(Utilisateur utilisateur);
        
     }
 }

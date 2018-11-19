@@ -14,7 +14,8 @@ namespace App
 {
     public partial class Connexion : Form
     {
-        public Connexion()
+        
+        public Connexion(Button button)
         {
             InitializeComponent();
         }
@@ -43,18 +44,39 @@ namespace App
             bool utilisateurConnu = VerificationLogin(textBoxId.Text, textBoxMdp.Text, listeUtilisateurs);
             if (utilisateurConnu)
             {
+                Program.identifiantEnregistre = textBoxId.Text;                
                 MessageBox.Show("Connexion réussie !");
                 this.Close();
             }
 
             else
             {
-                System.Windows.Forms.MessageBox.Show("Identifiant incorrect");
+                MessageBox.Show("Identifiant incorrect");
             }
 
             
+
+
         }
 
+        private void labelPass_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void labelLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMdp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,5 +13,11 @@ namespace DAL
         {
             return Session.Query<Utilisateur>().ToList();
         }
+
+        public void Save (Utilisateur utilisateur)
+        {
+            Session.SaveOrUpdate(utilisateur);
+            Session.Flush();
+        }
     }
 }

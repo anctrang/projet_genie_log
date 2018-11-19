@@ -54,3 +54,4 @@ C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsAppli
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\bin\Debug\Antlr3.Runtime.xml
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\bin\Debug\Iesi.Collections.xml
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\obj\Debug\App.csproj.CopyComplete
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\obj\Debug\App.Inscription.resources

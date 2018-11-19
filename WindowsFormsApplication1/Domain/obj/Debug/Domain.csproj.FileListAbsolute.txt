@@ -23,3 +23,4 @@ C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsAppli
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.exe
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.pdb
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Domain\obj\Debug\Domain.csprojAssemblyReference.cache

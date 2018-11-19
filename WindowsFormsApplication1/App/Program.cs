@@ -8,6 +8,7 @@ namespace App
 {
     static class Program
     {
+        public static string identifiantEnregistre = "";
   
         /// <summary>
         /// Point d'entrée principal de l'application.
@@ -17,7 +18,10 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Accueil());
+            Accueil accueil = new Accueil();
+            Application.Run(accueil);
+                
+            
         }
     }
 }

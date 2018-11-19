@@ -50,15 +50,16 @@
             this.buttonSignUp.TabIndex = 1;
             this.buttonSignUp.Text = "S\'inscrire";
             this.buttonSignUp.UseVisualStyleBackColor = true;
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
-            // Form1
+            // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 435);
             this.Controls.Add(this.buttonSignUp);
             this.Controls.Add(this.buttonLogin);
-            this.Name = "Form1";
+            this.Name = "Accueil";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -66,8 +67,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Button buttonSignUp;
+        public System.Windows.Forms.Button buttonLogin;
+        public System.Windows.Forms.Button buttonSignUp;
     }
 }
 
