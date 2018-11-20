@@ -30,6 +30,7 @@
         {
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonSignUp = new System.Windows.Forms.Button();
+            this.buttonDeconnexion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -52,11 +53,23 @@
             this.buttonSignUp.UseVisualStyleBackColor = true;
             this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
+            // buttonDeconnexion
+            // 
+            this.buttonDeconnexion.Location = new System.Drawing.Point(609, 35);
+            this.buttonDeconnexion.Name = "buttonDeconnexion";
+            this.buttonDeconnexion.Size = new System.Drawing.Size(118, 23);
+            this.buttonDeconnexion.TabIndex = 2;
+            this.buttonDeconnexion.Text = "Se déconnecter";
+            this.buttonDeconnexion.UseVisualStyleBackColor = true;
+            this.buttonDeconnexion.Visible = false;
+            this.buttonDeconnexion.Click += new System.EventHandler(this.buttonDeconnexion_Click);
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 435);
+            this.Controls.Add(this.buttonDeconnexion);
             this.Controls.Add(this.buttonSignUp);
             this.Controls.Add(this.buttonLogin);
             this.Name = "Accueil";
@@ -69,6 +82,7 @@
 
         public System.Windows.Forms.Button buttonLogin;
         public System.Windows.Forms.Button buttonSignUp;
+        private System.Windows.Forms.Button buttonDeconnexion;
     }
 }
 

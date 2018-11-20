@@ -23,7 +23,7 @@ namespace App
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Connexion connexion = new Connexion(this.buttonLogin);
+            Connexion connexion = new Connexion(ref this.buttonLogin, ref this.buttonSignUp, ref this.buttonDeconnexion);
             connexion.Show();
             
             
@@ -33,6 +33,15 @@ namespace App
         {
             Inscription inscription = new Inscription();
             inscription.Show();
+        }
+
+        private void buttonDeconnexion_Click(object sender, EventArgs e)
+        {
+            Program.identifiantEnregistre = "";
+            MessageBox.Show("Deconnexion reussie !");
+            this.buttonSignUp.Visible = true;
+            this.buttonDeconnexion.Visible = false;
+            this.buttonLogin.Visible = true;
         }
     }
 }

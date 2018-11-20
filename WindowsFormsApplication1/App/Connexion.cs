@@ -14,10 +14,17 @@ namespace App
 {
     public partial class Connexion : Form
     {
+        private Button buttonConnexion;
+        private Button buttonInscription;
+        private Button buttonDeconnexion;
         
-        public Connexion(Button button)
+        public Connexion(ref Button buttonConnexion, ref Button buttonInscription, ref Button buttonDeconnexion)
         {
             InitializeComponent();
+            this.buttonConnexion = buttonConnexion;
+            this.buttonInscription = buttonInscription;
+            this.buttonDeconnexion = buttonDeconnexion;
+
         }
 
         public bool VerificationLogin(string identifiant, string mdp, IList<Utilisateur> ListeUtilisateurs)
@@ -46,6 +53,9 @@ namespace App
             {
                 Program.identifiantEnregistre = textBoxId.Text;                
                 MessageBox.Show("Connexion réussie !");
+                buttonConnexion.Visible = false;
+                buttonInscription.Visible = false;
+                buttonDeconnexion.Visible = true;
                 this.Close();
             }
 
