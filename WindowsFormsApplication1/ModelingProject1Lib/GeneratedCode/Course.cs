@@ -11,37 +11,37 @@ using System.Text;
 
 public class Course
 {
-	private string lieu
+	private string Lieu
 	{
 		get;
 		set;
 	}
 
-	private int id
+	private int Id
 	{
 		get;
 		set;
 	}
 
-	private DateTime date
+	private DateTime Date
 	{
 		get;
 		set;
 	}
 
-	private string description
+	private string Description
 	{
 		get;
 		set;
 	}
 
-	private double distance
+	private double Distance
 	{
 		get;
 		set;
 	}
 
-	public virtual IEnumerable<Resultat> lesResultats
+	public virtual List<Resultat> LesResultats
 	{
 		get;
 		set;

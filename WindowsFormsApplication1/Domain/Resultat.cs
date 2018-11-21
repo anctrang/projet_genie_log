@@ -6,48 +6,51 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Domain;
 
 namespace Domain
 {
 
-    public class Course
+    public class Resultat
     {
-        public virtual string Lieu
-        {
-            get;
-            set;
-        }
-
         public virtual int Id
         {
             get;
             set;
         }
 
-        public virtual DateTime Date
+        public virtual TimeSpan Temps
         {
             get;
             set;
         }
 
-        public virtual string Description
+        public virtual double VitesseMoyenne
         {
             get;
             set;
         }
 
-        public virtual double Distance
+        public virtual double AllureMoyenne
         {
             get;
             set;
         }
 
-        public virtual List<Resultat> LesResultats
+        public virtual Course LaCourse
+        {
+            get;
+            set;
+        }
+
+        public virtual Participant LeParticipant
         {
             get;
             set;
         }
 
     }
-
 }
+

@@ -69,3 +69,5 @@ C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsAppli
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Mapping\Utilisateur.hbm.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Mapping\Resultat.xml
