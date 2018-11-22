@@ -31,7 +31,18 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonSignUp = new System.Windows.Forms.Button();
             this.buttonDeconnexion = new System.Windows.Forms.Button();
-            this.listViewCourse = new System.Windows.Forms.ListView();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabCourses = new System.Windows.Forms.TabPage();
+            this.tabParticipants = new System.Windows.Forms.TabPage();
+            this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
+            this.Numéro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nb_Participants = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl.SuspendLayout();
+            this.tabCourses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -65,25 +76,93 @@
             this.buttonDeconnexion.Visible = false;
             this.buttonDeconnexion.Click += new System.EventHandler(this.buttonDeconnexion_Click);
             // 
-            // listViewCourse
+            // tabControl
             // 
-            this.listViewCourse.Location = new System.Drawing.Point(40, 56);
-            this.listViewCourse.Name = "listViewCourse";
-            this.listViewCourse.Size = new System.Drawing.Size(297, 158);
-            this.listViewCourse.TabIndex = 3;
-            this.listViewCourse.UseCompatibleStateImageBehavior = false;
+            this.tabControl.Controls.Add(this.tabCourses);
+            this.tabControl.Controls.Add(this.tabParticipants);
+            this.tabControl.Location = new System.Drawing.Point(12, 83);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(548, 359);
+            this.tabControl.TabIndex = 3;
+            // 
+            // tabCourses
+            // 
+            this.tabCourses.Controls.Add(this.dataGridViewCourses);
+            this.tabCourses.Location = new System.Drawing.Point(4, 22);
+            this.tabCourses.Name = "tabCourses";
+            this.tabCourses.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCourses.Size = new System.Drawing.Size(540, 333);
+            this.tabCourses.TabIndex = 0;
+            this.tabCourses.Text = "Courses";
+            this.tabCourses.UseVisualStyleBackColor = true;
+            // 
+            // tabParticipants
+            // 
+            this.tabParticipants.Location = new System.Drawing.Point(4, 22);
+            this.tabParticipants.Name = "tabParticipants";
+            this.tabParticipants.Padding = new System.Windows.Forms.Padding(3);
+            this.tabParticipants.Size = new System.Drawing.Size(615, 259);
+            this.tabParticipants.TabIndex = 1;
+            this.tabParticipants.Text = "Participants";
+            this.tabParticipants.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCourses
+            // 
+            this.dataGridViewCourses.AllowUserToOrderColumns = true;
+            this.dataGridViewCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Numéro,
+            this.Date,
+            this.Lieu,
+            this.Distance,
+            this.Nb_Participants});
+            this.dataGridViewCourses.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCourses.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewCourses.Name = "dataGridViewCourses";
+            this.dataGridViewCourses.Size = new System.Drawing.Size(534, 327);
+            this.dataGridViewCourses.TabIndex = 0;
+            this.dataGridViewCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Numéro
+            // 
+            this.Numéro.HeaderText = "Numéro";
+            this.Numéro.Name = "Numéro";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Lieu
+            // 
+            this.Lieu.HeaderText = "Lieu";
+            this.Lieu.Name = "Lieu";
+            // 
+            // Distance
+            // 
+            this.Distance.HeaderText = "Distance";
+            this.Distance.Name = "Distance";
+            // 
+            // Nb_Participants
+            // 
+            this.Nb_Participants.HeaderText = "Nombre de participants";
+            this.Nb_Participants.Name = "Nb_Participants";
             // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 435);
-            this.Controls.Add(this.listViewCourse);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.buttonDeconnexion);
             this.Controls.Add(this.buttonSignUp);
             this.Controls.Add(this.buttonLogin);
             this.Name = "Accueil";
             this.Text = "Form1";
+            this.tabControl.ResumeLayout(false);
+            this.tabCourses.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -93,7 +172,15 @@
         public System.Windows.Forms.Button buttonLogin;
         public System.Windows.Forms.Button buttonSignUp;
         private System.Windows.Forms.Button buttonDeconnexion;
-        private System.Windows.Forms.ListView listViewCourse;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabCourses;
+        private System.Windows.Forms.DataGridView dataGridViewCourses;
+        private System.Windows.Forms.TabPage tabParticipants;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numéro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Distance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nb_Participants;
     }
 }
 

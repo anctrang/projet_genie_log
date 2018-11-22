@@ -36,9 +36,11 @@ namespace App
 
         private void AfficherContenu()
         {
-            foreach(Utilisateur utilisateur in this.utilisateurRepository.GetAll())
+            
+            foreach(Course course in this.courseRepository.GetAll())
             {
-                listViewCourse.Items.Add(utilisateur.Pseudo);
+                string[] resultat = { course.Id.ToString(), course.Date.ToString(), course.Lieu, course.Distance.ToString(),"10" };
+                dataGridViewCourses.Rows.Add(resultat);
             }
         }
 
@@ -63,6 +65,11 @@ namespace App
             this.buttonSignUp.Visible = true;
             this.buttonDeconnexion.Visible = false;
             this.buttonLogin.Visible = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

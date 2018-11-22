@@ -20,7 +20,9 @@ namespace App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
-            Accueil accueil = new Accueil(utilisateurRepository);
+            CourseRepository courseRepository = new CourseRepository();
+            ResultatRepository resultatRepository = new ResultatRepository();
+            Accueil accueil = new Accueil(utilisateurRepository,courseRepository,resultatRepository);
             Application.Run(accueil);
                 
             
