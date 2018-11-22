@@ -17,12 +17,14 @@ namespace App
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
             CourseRepository courseRepository = new CourseRepository();
             ResultatRepository resultatRepository = new ResultatRepository();
-            Accueil accueil = new Accueil(utilisateurRepository,courseRepository,resultatRepository);
+            CoureurRepository coureurRepository = new CoureurRepository();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            
+            Accueil accueil = new Accueil(utilisateurRepository,courseRepository,resultatRepository, coureurRepository);
             Application.Run(accueil);
                 
             

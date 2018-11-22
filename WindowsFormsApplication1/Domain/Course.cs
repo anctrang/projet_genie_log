@@ -12,6 +12,21 @@ namespace Domain
 
     public class Course
     {
+
+
+        public Course()
+        {
+
+        }
+
+        public Course(string lieu, double distance, string description, DateTime date)
+        {
+            this.Lieu = lieu;
+            this.Distance = distance;
+            this.Description = description;
+            this.Date = date;
+        }
+
         public virtual string Lieu
         {
             get;

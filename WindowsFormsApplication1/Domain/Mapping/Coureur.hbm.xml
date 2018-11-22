@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Domain"
+                   namespace="Domain">
+  <class name="Coureur" table="Coureur">
+    <id name="NumLicence" column="Coureur_numLicence" type="int">
+      <generator class="native"></generator>
+    </id>
+    <property name="Prenom" column="Coureur_Nom" not-null="true"/>
+    <property name="Nom" column="Coureur_Prenom" not-null="true"/>
+    <property name="Sexe" column="Coureur_Sexe" not-null="false"/>
+    <property name="DateDeNaissance" column="Coureur_Date_Naissance" not-null="false"/>
+    <property name="Courriel" column="participant_Courriel" not-null="true"/>
+
+  </class>
+</hibernate-mapping>
+
+

@@ -31,18 +31,27 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonSignUp = new System.Windows.Forms.Button();
             this.buttonDeconnexion = new System.Windows.Forms.Button();
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.TabCoureurs = new System.Windows.Forms.TabControl();
             this.tabCourses = new System.Windows.Forms.TabPage();
-            this.tabParticipants = new System.Windows.Forms.TabPage();
             this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
             this.Numéro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nb_Participants = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl.SuspendLayout();
+            this.buttonAjouterCourse = new System.Windows.Forms.Button();
+            this.buttonNouveauCoureur = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridViewCoureurs = new System.Windows.Forms.DataGridView();
+            this.Numero_licence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_naissance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabCoureurs.SuspendLayout();
             this.tabCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoureurs)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -76,15 +85,15 @@
             this.buttonDeconnexion.Visible = false;
             this.buttonDeconnexion.Click += new System.EventHandler(this.buttonDeconnexion_Click);
             // 
-            // tabControl
+            // TabCoureurs
             // 
-            this.tabControl.Controls.Add(this.tabCourses);
-            this.tabControl.Controls.Add(this.tabParticipants);
-            this.tabControl.Location = new System.Drawing.Point(12, 83);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(548, 359);
-            this.tabControl.TabIndex = 3;
+            this.TabCoureurs.Controls.Add(this.tabCourses);
+            this.TabCoureurs.Controls.Add(this.tabPage1);
+            this.TabCoureurs.Location = new System.Drawing.Point(12, 83);
+            this.TabCoureurs.Name = "TabCoureurs";
+            this.TabCoureurs.SelectedIndex = 0;
+            this.TabCoureurs.Size = new System.Drawing.Size(548, 359);
+            this.TabCoureurs.TabIndex = 3;
             // 
             // tabCourses
             // 
@@ -96,16 +105,6 @@
             this.tabCourses.TabIndex = 0;
             this.tabCourses.Text = "Courses";
             this.tabCourses.UseVisualStyleBackColor = true;
-            // 
-            // tabParticipants
-            // 
-            this.tabParticipants.Location = new System.Drawing.Point(4, 22);
-            this.tabParticipants.Name = "tabParticipants";
-            this.tabParticipants.Padding = new System.Windows.Forms.Padding(3);
-            this.tabParticipants.Size = new System.Drawing.Size(615, 259);
-            this.tabParticipants.TabIndex = 1;
-            this.tabParticipants.Text = "Participants";
-            this.tabParticipants.UseVisualStyleBackColor = true;
             // 
             // dataGridViewCourses
             // 
@@ -149,20 +148,93 @@
             this.Nb_Participants.HeaderText = "Nombre de participants";
             this.Nb_Participants.Name = "Nb_Participants";
             // 
+            // buttonAjouterCourse
+            // 
+            this.buttonAjouterCourse.Location = new System.Drawing.Point(590, 126);
+            this.buttonAjouterCourse.Name = "buttonAjouterCourse";
+            this.buttonAjouterCourse.Size = new System.Drawing.Size(105, 23);
+            this.buttonAjouterCourse.TabIndex = 4;
+            this.buttonAjouterCourse.Text = "Nouvelle course";
+            this.buttonAjouterCourse.UseVisualStyleBackColor = true;
+            this.buttonAjouterCourse.Click += new System.EventHandler(this.buttonAjouterCourse_Click);
+            // 
+            // buttonNouveauCoureur
+            // 
+            this.buttonNouveauCoureur.Location = new System.Drawing.Point(590, 156);
+            this.buttonNouveauCoureur.Name = "buttonNouveauCoureur";
+            this.buttonNouveauCoureur.Size = new System.Drawing.Size(105, 23);
+            this.buttonNouveauCoureur.TabIndex = 5;
+            this.buttonNouveauCoureur.Text = "Nouveau coureur";
+            this.buttonNouveauCoureur.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridViewCoureurs);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(540, 333);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Coureurs";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCoureurs
+            // 
+            this.dataGridViewCoureurs.AllowUserToOrderColumns = true;
+            this.dataGridViewCoureurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCoureurs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Numero_licence,
+            this.Nom,
+            this.prenom,
+            this.date_naissance});
+            this.dataGridViewCoureurs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCoureurs.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewCoureurs.Name = "dataGridViewCoureurs";
+            this.dataGridViewCoureurs.Size = new System.Drawing.Size(534, 327);
+            this.dataGridViewCoureurs.TabIndex = 0;
+            // 
+            // Numero_licence
+            // 
+            this.Numero_licence.HeaderText = "N° Licence";
+            this.Numero_licence.Name = "Numero_licence";
+            this.Numero_licence.Width = 130;
+            // 
+            // Nom
+            // 
+            this.Nom.HeaderText = "Nom";
+            this.Nom.Name = "Nom";
+            this.Nom.Width = 130;
+            // 
+            // prenom
+            // 
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
+            this.prenom.Width = 130;
+            // 
+            // date_naissance
+            // 
+            this.date_naissance.HeaderText = "Date de naissance";
+            this.date_naissance.Name = "date_naissance";
+            this.date_naissance.Width = 130;
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 435);
-            this.Controls.Add(this.tabControl);
+            this.ClientSize = new System.Drawing.Size(758, 477);
+            this.Controls.Add(this.buttonNouveauCoureur);
+            this.Controls.Add(this.buttonAjouterCourse);
+            this.Controls.Add(this.TabCoureurs);
             this.Controls.Add(this.buttonDeconnexion);
             this.Controls.Add(this.buttonSignUp);
             this.Controls.Add(this.buttonLogin);
             this.Name = "Accueil";
             this.Text = "Form1";
-            this.tabControl.ResumeLayout(false);
+            this.TabCoureurs.ResumeLayout(false);
             this.tabCourses.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoureurs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,15 +244,22 @@
         public System.Windows.Forms.Button buttonLogin;
         public System.Windows.Forms.Button buttonSignUp;
         private System.Windows.Forms.Button buttonDeconnexion;
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl TabCoureurs;
         private System.Windows.Forms.TabPage tabCourses;
         private System.Windows.Forms.DataGridView dataGridViewCourses;
-        private System.Windows.Forms.TabPage tabParticipants;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numéro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distance;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nb_Participants;
+        private System.Windows.Forms.Button buttonAjouterCourse;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button buttonNouveauCoureur;
+        private System.Windows.Forms.DataGridView dataGridViewCoureurs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_licence;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_naissance;
     }
 }
 

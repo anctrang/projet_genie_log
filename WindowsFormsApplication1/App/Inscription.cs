@@ -14,9 +14,17 @@ namespace App
 {
     public partial class Inscription : Form
     {
-        public Inscription()
+
+        private Button buttonConnexion;
+        private Button buttonInscription;
+        private Button buttonDeconnexion;
+
+        public Inscription(ref Button buttonConnexion, ref Button buttonInscription, ref Button buttonDeconnexion)
         {
             InitializeComponent();
+            this.buttonConnexion = buttonConnexion;
+            this.buttonInscription = buttonInscription;
+            this.buttonDeconnexion = buttonDeconnexion;
         }
 
         private void buttonValider_Click(object sender, EventArgs e)
@@ -41,8 +49,14 @@ namespace App
             {
                 uR.Save(utilisateur);
                 Program.identifiantEnregistre = utilisateur.Pseudo;
+                MessageBox.Show("Inscription réussie !");
+                buttonConnexion.Visible = false;
+                buttonInscription.Visible = false;
+                buttonDeconnexion.Visible = true;
+                this.Close();
+
             }
-            //uR.Save(utilisateur);
+           
         }
     }
 }

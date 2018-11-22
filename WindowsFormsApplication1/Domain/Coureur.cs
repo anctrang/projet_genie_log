@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-   public class Participant
+   public class Coureur
     {
         public virtual int NumLicence
         {

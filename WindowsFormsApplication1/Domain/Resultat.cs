@@ -45,7 +45,7 @@ namespace Domain
             set;
         }
 
-        public virtual Participant LeParticipant
+        public virtual Coureur LeCoureur
         {
             get;
             set;
