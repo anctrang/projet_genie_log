@@ -15,18 +15,20 @@ namespace App
     public partial class Accueil : Form
     {
 
-        public UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
-        //Utilisateur uti = new Utilisateur("abc","abc");
-        
+        UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
+        CourseRepository courseRepository = new CourseRepository();
+        ResultatRepository resultatRepository = new ResultatRepository();       
 
 
 
-        public Accueil(UtilisateurRepository utilisateurRepository)
+        public Accueil(UtilisateurRepository utilisateurRepository, CourseRepository courseRepository, ResultatRepository resultatRepository)
         {
             InitializeComponent();
+            this.utilisateurRepository = utilisateurRepository;
+            this.courseRepository = courseRepository;
+            this.resultatRepository = resultatRepository;
             if (Program.identifiantEnregistre != "")
-            {
-                this.utilisateurRepository = utilisateurRepository;
+            {                
                 this.buttonLogin.Visible = false;
             }
             AfficherContenu();
