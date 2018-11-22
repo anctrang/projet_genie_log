@@ -11,7 +11,7 @@
     <property name="Sexe" column="participant_Sexe" not-null="false"/>
     <property name="DateDeNaissance" column="participant_Date_Naissance" not-null="false"/>
     <property name="Courriel" column="participant_Courriel" not-null="true"/>
-    <property name="LesResultats" column="participant_Resultats" not-null="false"/>
+
   </class>
 </hibernate-mapping>
 

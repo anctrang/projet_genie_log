@@ -9,7 +9,9 @@
     <property name="Temps" column="resultat_temps" not-null="true"/>
     <property name="VitesseMoyenne" column="resultat_vitMoy" not-null="true"/>
     <property name="AllureMoyenne" column="resultat_AllureMoy" not-null="true"/>
-    <property name="LaCourse" column="resultat_Course" not-null="true"/>
-    <property name="LeParticipant" column="resultat_Participant" not-null="true"/>
+    <many-to-one name="LaCourse" class="Course" column="resultat_course"/>
+    <many-to-one name="LeParticipant" column="resultat_Participant" not-null="true"/>
+    
+
   </class>
 </hibernate-mapping>

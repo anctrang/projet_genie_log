@@ -7,4 +7,3 @@ C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsAppli
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.csproj.CoreCompileInputs.cache
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.dll
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.pdb
-C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\ModelingProject1Lib\obj\Debug\ModelingProject1Lib.csprojAssemblyReference.cache

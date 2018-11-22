@@ -53,4 +53,4 @@ C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsAppli
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Test\obj\Debug\Test.exe
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Test\obj\Debug\Test.pdb
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Test\bin\Debug\Mapping\Utilisateur.hbm.xml
-C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Test\bin\Debug\Mapping\Resultat.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\Test\bin\Debug\Mapping\Resultat.hbm.xml

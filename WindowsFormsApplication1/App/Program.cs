@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 
 namespace App
 {
@@ -18,7 +19,8 @@ namespace App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Accueil accueil = new Accueil();
+            UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
+            Accueil accueil = new Accueil(utilisateurRepository);
             Application.Run(accueil);
                 
             

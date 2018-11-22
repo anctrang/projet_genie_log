@@ -56,4 +56,4 @@ C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsAppli
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\obj\Debug\App.csproj.CopyComplete
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\obj\Debug\App.Inscription.resources
 C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\bin\Debug\Mapping\Utilisateur.hbm.xml
-C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\bin\Debug\Mapping\Resultat.xml
+C:\Users\antho\OneDrive\Bureau\2A\Projet info\projet_genie_log\WindowsFormsApplication1\App\bin\Debug\Mapping\Resultat.hbm.xml

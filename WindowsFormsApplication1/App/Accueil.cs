@@ -7,17 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using DAL;
 
 namespace App
 {
     public partial class Accueil : Form
     {
-        public Accueil()
+
+        public UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
+        //Utilisateur uti = new Utilisateur("abc","abc");
+        
+
+
+
+        public Accueil(UtilisateurRepository utilisateurRepository)
         {
             InitializeComponent();
             if (Program.identifiantEnregistre != "")
             {
+                this.utilisateurRepository = utilisateurRepository;
                 this.buttonLogin.Visible = false;
+            }
+            AfficherContenu();
+        }
+
+        private void AfficherContenu()
+        {
+            foreach(Utilisateur utilisateur in this.utilisateurRepository.GetAll())
+            {
+                listViewCourse.Items.Add(utilisateur.Pseudo);
             }
         }
 

@@ -10,6 +10,6 @@
     <property name="Distance" column="course_distance" not-null="true"/>
     <property name="Lieu" column="course_lieu" not-null="true"/>
     <property name="Description" column="course_desc" not-null="false"/>
-    <property name="LesResultats" column="course_resultats" not-null="false"/>
+
   </class>
 </hibernate-mapping>
