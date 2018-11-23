@@ -15,6 +15,14 @@ namespace Domain
 
     public class Resultat
     {
+
+        public Resultat() { }
+
+        public Resultat(Course course, Coureur coureur)
+        {
+            this.LeCoureur = coureur;
+            this.LaCourse = course;
+        }
         public virtual int Id
         {
             get;

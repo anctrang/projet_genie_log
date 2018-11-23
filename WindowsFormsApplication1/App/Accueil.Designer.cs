@@ -39,14 +39,15 @@
             this.Lieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nb_Participants = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAjouterCourse = new System.Windows.Forms.Button();
-            this.buttonNouveauCoureur = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewCoureurs = new System.Windows.Forms.DataGridView();
             this.Numero_licence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_naissance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAjouterCourse = new System.Windows.Forms.Button();
+            this.buttonNouveauCoureur = new System.Windows.Forms.Button();
+            this.buttonModifierCourse = new System.Windows.Forms.Button();
             this.TabCoureurs.SuspendLayout();
             this.tabCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
@@ -148,25 +149,6 @@
             this.Nb_Participants.HeaderText = "Nombre de participants";
             this.Nb_Participants.Name = "Nb_Participants";
             // 
-            // buttonAjouterCourse
-            // 
-            this.buttonAjouterCourse.Location = new System.Drawing.Point(590, 126);
-            this.buttonAjouterCourse.Name = "buttonAjouterCourse";
-            this.buttonAjouterCourse.Size = new System.Drawing.Size(105, 23);
-            this.buttonAjouterCourse.TabIndex = 4;
-            this.buttonAjouterCourse.Text = "Nouvelle course";
-            this.buttonAjouterCourse.UseVisualStyleBackColor = true;
-            this.buttonAjouterCourse.Click += new System.EventHandler(this.buttonAjouterCourse_Click);
-            // 
-            // buttonNouveauCoureur
-            // 
-            this.buttonNouveauCoureur.Location = new System.Drawing.Point(590, 156);
-            this.buttonNouveauCoureur.Name = "buttonNouveauCoureur";
-            this.buttonNouveauCoureur.Size = new System.Drawing.Size(105, 23);
-            this.buttonNouveauCoureur.TabIndex = 5;
-            this.buttonNouveauCoureur.Text = "Nouveau coureur";
-            this.buttonNouveauCoureur.UseVisualStyleBackColor = true;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dataGridViewCoureurs);
@@ -217,11 +199,40 @@
             this.date_naissance.Name = "date_naissance";
             this.date_naissance.Width = 130;
             // 
+            // buttonAjouterCourse
+            // 
+            this.buttonAjouterCourse.Location = new System.Drawing.Point(590, 126);
+            this.buttonAjouterCourse.Name = "buttonAjouterCourse";
+            this.buttonAjouterCourse.Size = new System.Drawing.Size(105, 23);
+            this.buttonAjouterCourse.TabIndex = 4;
+            this.buttonAjouterCourse.Text = "Nouvelle course";
+            this.buttonAjouterCourse.UseVisualStyleBackColor = true;
+            this.buttonAjouterCourse.Click += new System.EventHandler(this.buttonAjouterCourse_Click);
+            // 
+            // buttonNouveauCoureur
+            // 
+            this.buttonNouveauCoureur.Location = new System.Drawing.Point(590, 156);
+            this.buttonNouveauCoureur.Name = "buttonNouveauCoureur";
+            this.buttonNouveauCoureur.Size = new System.Drawing.Size(105, 23);
+            this.buttonNouveauCoureur.TabIndex = 5;
+            this.buttonNouveauCoureur.Text = "Nouveau coureur";
+            this.buttonNouveauCoureur.UseVisualStyleBackColor = true;
+            // 
+            // buttonModifierCourse
+            // 
+            this.buttonModifierCourse.Location = new System.Drawing.Point(590, 185);
+            this.buttonModifierCourse.Name = "buttonModifierCourse";
+            this.buttonModifierCourse.Size = new System.Drawing.Size(105, 23);
+            this.buttonModifierCourse.TabIndex = 6;
+            this.buttonModifierCourse.Text = "Modifier course";
+            this.buttonModifierCourse.UseVisualStyleBackColor = true;
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 477);
+            this.Controls.Add(this.buttonModifierCourse);
             this.Controls.Add(this.buttonNouveauCoureur);
             this.Controls.Add(this.buttonAjouterCourse);
             this.Controls.Add(this.TabCoureurs);
@@ -260,6 +271,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_naissance;
+        private System.Windows.Forms.Button buttonModifierCourse;
     }
 }
 
