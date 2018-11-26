@@ -27,6 +27,15 @@ namespace Domain
             this.Date = date;
         }
 
+        public Course(int id,string lieu, double distance, string description, DateTime date)
+        {
+            this.Id = id;
+            this.Lieu = lieu;
+            this.Distance = distance;
+            this.Description = description;
+            this.Date = date;
+        }
+
         public virtual string Lieu
         {
             get;

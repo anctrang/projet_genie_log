@@ -20,5 +20,11 @@ namespace DAL
             Session.SaveOrUpdate(course);
             Session.Flush();
         }
+
+        public void Delete(Course course)
+        {
+            Session.Delete(course);
+            Session.Flush();
+        }
     }
 }

@@ -15,7 +15,9 @@ namespace App
     public partial class NouvelleCourse : Form
     {
         //private Accueil accueil;
-        private bool creation;
+        private bool modification=false;
+        private int idCourseSelectionnee;
+        private Course courseAModifier = new Course();
 
 
         private List<Coureur> listeCoureursParticipants = new List<Coureur>(); // pour la deuxième datagridview
@@ -25,14 +27,81 @@ namespace App
         private ResultatRepository resultatRep = new ResultatRepository();
         private DataGridView dataG = new DataGridView(); // mise à jour du datagridview affichant les courses de la page accueil
 
-        /*public NouvelleCourse(ref ,bool creation ) // Constructeur lors d'une modification de course
+        public NouvelleCourse(ref DataGridView d, DataGridViewSelectedRowCollection collectionLignesSelec)
+            // Constructeur lors d'une modification de course
         {
-            this.textBoxLieu.Text=d.
+            DataGridViewRow ligneSelectionnee = collectionLignesSelec[0];
+            this.idCourseSelectionnee = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
             this.dataG = d;
-            this.creation = true;
-            
+            this.modification = true;
+            InitializeComponent();
 
-        }*/
+            foreach(Course course in courseRep.GetAll())
+            {
+                if (course.Id == this.idCourseSelectionnee)
+                    courseAModifier = course;
+            }
+
+           /* foreach(Resultat resultat in resultatRep.GetAll())
+            {
+                if(resultat.LaCourse.Id == courseAModifier.Id)
+                {
+                    foreach(Coureur coureur in coureurRep.GetAll())
+                    {
+                        if(resultat.LeCoureur.NumLicence == coureur.NumLicence)
+                        {
+                            this.listeCoureursParticipants.Add(resultat.LeCoureur);
+                            this.listeCoureursNonParticipants.Remove(resultat.LeCoureur);
+                        }
+                    }
+
+                }
+                
+            }*/
+            bool trouve;
+            foreach (Coureur coureur in coureurRep.GetAll()) // Remplir les non participants (à modifier pour la modification d'une course)
+            {
+                trouve = false;
+                foreach(Resultat resultat in resultatRep.GetAll())
+                {
+                  
+                    
+                        MessageBox.Show("id de la course : "+resultat.LaCourse.Id.ToString());
+                       // MessageBox.Show("id du coureur : " + resultat.LaCourse.Id.ToString());
+                        if (resultat.LeCoureur == coureur && resultat.LaCourse == courseAModifier)
+                        {
+                        // listeCoureursParticipants.Add(coureur);
+                        // ajoute = true;
+                        trouve = true;
+
+
+                        }
+                        
+                        
+                    
+                 
+                }
+                if (trouve)
+                {
+                    listeCoureursParticipants.Add(coureur);
+                }
+
+                else
+                    listeCoureursNonParticipants.Add(coureur);
+            }
+            this.textBoxLieu.Text = courseAModifier.Lieu;
+            this.textBoxDist.Text = courseAModifier.Distance.ToString();
+            this.dateTimePicker.Value = courseAModifier.Date;
+
+            //this.richTextBoxDesc - Pour le moment on ne peut pas... manque un assembly
+
+            this.buttonAjouter.Text = "Modifier";
+
+            AfficherContenu();  
+
+        }
+
+       
 
         public NouvelleCourse(ref DataGridView d) // Constructeur lors d'une création de course
         {            
@@ -76,13 +145,36 @@ namespace App
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            Course course = new Course(this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
+            Course course;
+            if (modification)
+            {
+                
+                    foreach(Resultat resultat in resultatRep.GetAll())
+                    {
+                        if(resultat.LaCourse == courseAModifier)
+                        {
+                            resultatRep.Delete(resultat);
+                        }
+                    }
+                
+                int num = courseAModifier.Id;
+
+                //courseRep.Delete(courseAModifier);
+                 //course= new Course(num,this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
+
+            }
+
+            
+                course = new Course(this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
             courseRep.Save(course); // Création de la course
+            courseRep.Delete(courseAModifier);
+            
             foreach(Coureur coureur in listeCoureursParticipants) // Créations des liens entre coureur et courses avec resultats vides
             {
                 Resultat r = new Resultat(course, coureur);
                 resultatRep.Save(r);
             }
+
             MessageBox.Show("Nouvelle course ajoutée !");
             AfficherContenu();
             this.Close();

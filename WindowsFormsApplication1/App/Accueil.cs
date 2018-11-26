@@ -85,5 +85,16 @@ namespace App
             NouvelleCourse nouvelleCourse = new NouvelleCourse(ref this.dataGridViewCourses);
             nouvelleCourse.Show();
         }
+
+        private void buttonModifierCourse_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridViewCourses.SelectedRows.Count == 0)
+                MessageBox.Show("Course non sélectionnée");
+            else
+            {
+                NouvelleCourse nouvelleCourse = new NouvelleCourse(ref this.dataGridViewCourses, this.dataGridViewCourses.SelectedRows);
+                nouvelleCourse.Show();
+            }
+        }
     }
 }

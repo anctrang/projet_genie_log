@@ -226,6 +226,7 @@
             this.buttonModifierCourse.TabIndex = 6;
             this.buttonModifierCourse.Text = "Modifier course";
             this.buttonModifierCourse.UseVisualStyleBackColor = true;
+            this.buttonModifierCourse.Click += new System.EventHandler(this.buttonModifierCourse_Click);
             // 
             // Accueil
             // 

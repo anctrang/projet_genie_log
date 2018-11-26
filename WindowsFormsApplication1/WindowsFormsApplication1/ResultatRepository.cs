@@ -19,5 +19,11 @@ namespace DAL
             Session.SaveOrUpdate(resultat);
             Session.Flush();
         }
+
+        public void Delete(Resultat resultat)
+        {
+            Session.Delete(resultat);
+            Session.Flush();
+        }
     }
 }
