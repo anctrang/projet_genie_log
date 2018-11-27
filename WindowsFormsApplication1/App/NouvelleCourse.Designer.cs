@@ -38,13 +38,14 @@
             this.richTextBoxDesc = new System.Windows.Forms.RichTextBox();
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.dataGridViewLicencies = new System.Windows.Forms.DataGridView();
-            this.buttonAjouterParticipant = new System.Windows.Forms.Button();
             this.numLicence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAjouterParticipant = new System.Windows.Forms.Button();
             this.dataGridViewParticipants = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonRetirerParticipant = new System.Windows.Forms.Button();
+            this.buttonImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLicencies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParticipants)).BeginInit();
             this.SuspendLayout();
@@ -136,16 +137,6 @@
             this.dataGridViewLicencies.Size = new System.Drawing.Size(205, 224);
             this.dataGridViewLicencies.TabIndex = 10;
             // 
-            // buttonAjouterParticipant
-            // 
-            this.buttonAjouterParticipant.Location = new System.Drawing.Point(545, 215);
-            this.buttonAjouterParticipant.Name = "buttonAjouterParticipant";
-            this.buttonAjouterParticipant.Size = new System.Drawing.Size(28, 26);
-            this.buttonAjouterParticipant.TabIndex = 11;
-            this.buttonAjouterParticipant.Text = ">>";
-            this.buttonAjouterParticipant.UseVisualStyleBackColor = true;
-            this.buttonAjouterParticipant.Click += new System.EventHandler(this.buttonAjouterParticipant_Click);
-            // 
             // numLicence
             // 
             this.numLicence.HeaderText = "N° Licence";
@@ -157,6 +148,16 @@
             this.nom.HeaderText = "Nom";
             this.nom.Name = "nom";
             this.nom.Width = 80;
+            // 
+            // buttonAjouterParticipant
+            // 
+            this.buttonAjouterParticipant.Location = new System.Drawing.Point(545, 215);
+            this.buttonAjouterParticipant.Name = "buttonAjouterParticipant";
+            this.buttonAjouterParticipant.Size = new System.Drawing.Size(28, 26);
+            this.buttonAjouterParticipant.TabIndex = 11;
+            this.buttonAjouterParticipant.Text = ">>";
+            this.buttonAjouterParticipant.UseVisualStyleBackColor = true;
+            this.buttonAjouterParticipant.Click += new System.EventHandler(this.buttonAjouterParticipant_Click);
             // 
             // dataGridViewParticipants
             // 
@@ -192,11 +193,21 @@
             this.buttonRetirerParticipant.UseVisualStyleBackColor = true;
             this.buttonRetirerParticipant.Click += new System.EventHandler(this.buttonRetirerParticipant_Click);
             // 
+            // buttonImport
+            // 
+            this.buttonImport.Location = new System.Drawing.Point(644, 46);
+            this.buttonImport.Name = "buttonImport";
+            this.buttonImport.Size = new System.Drawing.Size(111, 23);
+            this.buttonImport.TabIndex = 14;
+            this.buttonImport.Text = "Importer";
+            this.buttonImport.UseVisualStyleBackColor = true;
+            // 
             // NouvelleCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonImport);
             this.Controls.Add(this.buttonRetirerParticipant);
             this.Controls.Add(this.dataGridViewParticipants);
             this.Controls.Add(this.buttonAjouterParticipant);
@@ -238,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button buttonRetirerParticipant;
+        private System.Windows.Forms.Button buttonImport;
     }
 }

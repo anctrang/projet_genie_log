@@ -96,5 +96,21 @@ namespace App
                 nouvelleCourse.Show();
             }
         }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+
+            if (this.dataGridViewCourses.SelectedRows.Count == 0)
+                MessageBox.Show("Course non sélectionnée");
+            else
+            {
+
+                DataGridViewRow ligneSelectionnee = this.dataGridViewCourses.SelectedRows[0];
+                int id = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
+                InformationsCourse informationsCourse = new InformationsCourse(id);
+                informationsCourse.Show();
+            }
+
+        }
     }
 }

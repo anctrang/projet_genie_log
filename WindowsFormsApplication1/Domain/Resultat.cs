@@ -23,6 +23,12 @@ namespace Domain
             this.LeCoureur = coureur;
             this.LaCourse = course;
         }
+
+        public virtual int NumDossard
+        {
+            get;
+            set;
+        }
         public virtual int Id
         {
             get;

@@ -14,12 +14,9 @@ namespace App
 {
     public partial class NouvelleCourse : Form
     {
-        //private Accueil accueil;
-        private bool modification=false;
+        private bool modification = false;
         private int idCourseSelectionnee;
         private Course courseAModifier = new Course();
-
-
         private List<Coureur> listeCoureursParticipants = new List<Coureur>(); // pour la deuxième datagridview
         private List<Coureur> listeCoureursNonParticipants = new List<Coureur>(); // pour la première datagridview
         private CourseRepository courseRep = new CourseRepository();
@@ -28,7 +25,7 @@ namespace App
         private DataGridView dataG = new DataGridView(); // mise à jour du datagridview affichant les courses de la page accueil
 
         public NouvelleCourse(ref DataGridView d, DataGridViewSelectedRowCollection collectionLignesSelec)
-            // Constructeur lors d'une modification de course
+        // Constructeur lors d'une modification de course
         {
             DataGridViewRow ligneSelectionnee = collectionLignesSelec[0];
             this.idCourseSelectionnee = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
@@ -36,50 +33,23 @@ namespace App
             this.modification = true;
             InitializeComponent();
 
-            foreach(Course course in courseRep.GetAll())
+            foreach (Course course in courseRep.GetAll())
             {
                 if (course.Id == this.idCourseSelectionnee)
                     courseAModifier = course;
             }
 
-           /* foreach(Resultat resultat in resultatRep.GetAll())
-            {
-                if(resultat.LaCourse.Id == courseAModifier.Id)
-                {
-                    foreach(Coureur coureur in coureurRep.GetAll())
-                    {
-                        if(resultat.LeCoureur.NumLicence == coureur.NumLicence)
-                        {
-                            this.listeCoureursParticipants.Add(resultat.LeCoureur);
-                            this.listeCoureursNonParticipants.Remove(resultat.LeCoureur);
-                        }
-                    }
-
-                }
-                
-            }*/
+  
             bool trouve;
             foreach (Coureur coureur in coureurRep.GetAll()) // Remplir les non participants (à modifier pour la modification d'une course)
             {
                 trouve = false;
-                foreach(Resultat resultat in resultatRep.GetAll())
+                foreach (Resultat resultat in resultatRep.GetAll())
                 {
-                  
-                    
-                        MessageBox.Show("id de la course : "+resultat.LaCourse.Id.ToString());
-                       // MessageBox.Show("id du coureur : " + resultat.LaCourse.Id.ToString());
-                        if (resultat.LeCoureur == coureur && resultat.LaCourse == courseAModifier)
-                        {
-                        // listeCoureursParticipants.Add(coureur);
-                        // ajoute = true;
+                    if (resultat.LeCoureur == coureur && resultat.LaCourse == courseAModifier)
+                    {
                         trouve = true;
-
-
-                        }
-                        
-                        
-                    
-                 
+                    }
                 }
                 if (trouve)
                 {
@@ -97,22 +67,22 @@ namespace App
 
             this.buttonAjouter.Text = "Modifier";
 
-            AfficherContenu();  
+            AfficherContenu();
 
         }
 
-       
+
 
         public NouvelleCourse(ref DataGridView d) // Constructeur lors d'une création de course
-        {            
-            dataG = d;        
-            InitializeComponent();   
-            
-            foreach(Coureur coureur in coureurRep.GetAll()) // Remplir les non participants (à modifier pour la modification d'une course)
+        {
+            dataG = d;
+            InitializeComponent();
+
+            foreach (Coureur coureur in coureurRep.GetAll()) // Remplir les non participants (à modifier pour la modification d'une course)
             {
                 listeCoureursNonParticipants.Add(coureur);
             }
-            AfficherContenu();
+            this.AfficherContenu();
         }
 
         public void AfficherContenu()
@@ -136,7 +106,7 @@ namespace App
                 this.dataGridViewLicencies.Rows.Add(resultat);
             }
 
-            foreach(Coureur coureur in this.listeCoureursParticipants)
+            foreach (Coureur coureur in this.listeCoureursParticipants)
             {
                 string[] resultat = { coureur.NumLicence.ToString(), coureur.Nom };
                 this.dataGridViewParticipants.Rows.Add(resultat);
@@ -148,28 +118,26 @@ namespace App
             Course course;
             if (modification)
             {
-                
-                    foreach(Resultat resultat in resultatRep.GetAll())
+
+                foreach (Resultat resultat in resultatRep.GetAll())
+                {
+                    if (resultat.LaCourse == courseAModifier)
                     {
-                        if(resultat.LaCourse == courseAModifier)
-                        {
-                            resultatRep.Delete(resultat);
-                        }
+                        resultatRep.Delete(resultat);
                     }
-                
+                }
+
                 int num = courseAModifier.Id;
 
-                //courseRep.Delete(courseAModifier);
-                 //course= new Course(num,this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
 
             }
 
-            
-                course = new Course(this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
+
+            course = new Course(this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
             courseRep.Save(course); // Création de la course
             courseRep.Delete(courseAModifier);
-            
-            foreach(Coureur coureur in listeCoureursParticipants) // Créations des liens entre coureur et courses avec resultats vides
+
+            foreach (Coureur coureur in listeCoureursParticipants) // Créations des liens entre coureur et courses avec resultats vides
             {
                 Resultat r = new Resultat(course, coureur);
                 resultatRep.Save(r);
@@ -178,7 +146,7 @@ namespace App
             MessageBox.Show("Nouvelle course ajoutée !");
             AfficherContenu();
             this.Close();
-           
+
         }
 
         private void buttonAjouterParticipant_Click(object sender, EventArgs e)
@@ -187,28 +155,28 @@ namespace App
             if (this.dataGridViewLicencies.SelectedRows.Count > 0)
             {
 
-                int selectedRowIndex = this.dataGridViewLicencies.SelectedCells[0].RowIndex;               
+                int selectedRowIndex = this.dataGridViewLicencies.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataGridViewLicencies.Rows[selectedRowIndex];
                 int numLicenceSelection = Convert.ToInt32(selectedRow.Cells[0].Value);
 
 
-                foreach(Coureur coureur in coureurRep.GetAll())
+                foreach (Coureur coureur in coureurRep.GetAll())
                 {
-                    if(numLicenceSelection == coureur.NumLicence)
+                    if (numLicenceSelection == coureur.NumLicence)
                     {
                         Coureur coureurSelectionne = new Coureur();
                         coureurSelectionne = coureur;
                         this.listeCoureursParticipants.Add(coureurSelectionne);
                         this.listeCoureursNonParticipants.Remove(coureur);
-                        
+
                     }
-                }             
+                }
 
             }
 
             AfficherContenu();
-          
-        
+
+
         }
 
         private void buttonRetirerParticipant_Click(object sender, EventArgs e)

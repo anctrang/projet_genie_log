@@ -48,6 +48,7 @@
             this.buttonAjouterCourse = new System.Windows.Forms.Button();
             this.buttonNouveauCoureur = new System.Windows.Forms.Button();
             this.buttonModifierCourse = new System.Windows.Forms.Button();
+            this.buttonInfo = new System.Windows.Forms.Button();
             this.TabCoureurs.SuspendLayout();
             this.tabCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
@@ -81,7 +82,7 @@
             this.buttonDeconnexion.Name = "buttonDeconnexion";
             this.buttonDeconnexion.Size = new System.Drawing.Size(118, 23);
             this.buttonDeconnexion.TabIndex = 2;
-            this.buttonDeconnexion.Text = "Se déconnecter";
+            this.buttonDeconnexion.Text = "a";
             this.buttonDeconnexion.UseVisualStyleBackColor = true;
             this.buttonDeconnexion.Visible = false;
             this.buttonDeconnexion.Click += new System.EventHandler(this.buttonDeconnexion_Click);
@@ -228,11 +229,22 @@
             this.buttonModifierCourse.UseVisualStyleBackColor = true;
             this.buttonModifierCourse.Click += new System.EventHandler(this.buttonModifierCourse_Click);
             // 
+            // buttonInfo
+            // 
+            this.buttonInfo.Location = new System.Drawing.Point(590, 214);
+            this.buttonInfo.Name = "buttonInfo";
+            this.buttonInfo.Size = new System.Drawing.Size(105, 22);
+            this.buttonInfo.TabIndex = 7;
+            this.buttonInfo.Text = "Informations";
+            this.buttonInfo.UseVisualStyleBackColor = true;
+            this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 477);
+            this.Controls.Add(this.buttonInfo);
             this.Controls.Add(this.buttonModifierCourse);
             this.Controls.Add(this.buttonNouveauCoureur);
             this.Controls.Add(this.buttonAjouterCourse);
@@ -273,6 +285,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_naissance;
         private System.Windows.Forms.Button buttonModifierCourse;
+        private System.Windows.Forms.Button buttonInfo;
     }
 }
 
