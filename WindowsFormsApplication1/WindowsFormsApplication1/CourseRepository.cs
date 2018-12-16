@@ -15,6 +15,13 @@ namespace DAL
             return Session.Query<Course>().ToList();
         }
 
+        public Course GetCourse(int idCourse)
+        {
+
+            List<Course> LCourse= Session.Query<Course>().Where(c => c.Id == idCourse).ToList();
+            return LCourse[0];
+        }
+
         public void Save(Course course)
         {
             Session.SaveOrUpdate(course);

@@ -47,15 +47,15 @@ namespace App
             
             foreach(Course course in this.courseRepository.GetAll())
             {
-                string[] resultat = { course.Id.ToString(), course.Date.ToString(), course.Lieu, course.Distance.ToString(),"A Calculer" };
+                string[] resultat = { course.Id.ToString(), course.Date.ToString(), course.Lieu, course.Distance.ToString(),Convert.ToString(resultatRepository.ListeResultatsCourse(course.Id).Count) };
                 dataGridViewCourses.Rows.Add(resultat);
             }
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Connexion connexion = new Connexion(ref this.buttonLogin, ref this.buttonSignUp, ref this.buttonDeconnexion);
-            connexion.Show();
+          
+           MessageBox.Show(Convert.ToString(Convert.ToString(resultatRepository.ListeResultatsCourse(1).Count)));
             
             
         }
@@ -89,7 +89,7 @@ namespace App
         private void buttonModifierCourse_Click(object sender, EventArgs e)
         {
             if (this.dataGridViewCourses.SelectedRows.Count == 0)
-                MessageBox.Show("Course non sélectionnée");
+                MessageBox.Show("Veuillez sélectionner une course");
             else
             {
                 NouvelleCourse nouvelleCourse = new NouvelleCourse(ref this.dataGridViewCourses, this.dataGridViewCourses.SelectedRows);
@@ -100,16 +100,40 @@ namespace App
         private void buttonInfo_Click(object sender, EventArgs e)
         {
 
-            if (this.dataGridViewCourses.SelectedRows.Count == 0)
-                MessageBox.Show("Course non sélectionnée");
+            if (this.dataGridViewCourses.SelectedRows.Count == 0 && this.dataGridViewCoureurs.SelectedRows.Count==0)
+                MessageBox.Show("Veuillez sélectionner une course ou un coureur");
             else
             {
+                if (this.TabCoureurs.SelectedIndex == 0)
+                {
+                    DataGridViewRow ligneSelectionnee = this.dataGridViewCourses.SelectedRows[0];
+                    int id = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
+               
+                    InformationsCourse informationsCourse = new InformationsCourse(id);
+                    informationsCourse.Show();
 
-                DataGridViewRow ligneSelectionnee = this.dataGridViewCourses.SelectedRows[0];
-                int id = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
-                InformationsCourse informationsCourse = new InformationsCourse(id);
-                informationsCourse.Show();
+                }
+                else
+                    
+                {
+                   
+                    DataGridViewRow ligneSelectionnee = this.dataGridViewCoureurs.SelectedRows[0];
+                    int id = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
+                    InformationsCoureurs informationsCoureur = new InformationsCoureurs(id);
+                    informationsCoureur.Show();
+                }
+                
             }
+
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonNouveauCoureur_Click(object sender, EventArgs e)
+        {
 
         }
     }

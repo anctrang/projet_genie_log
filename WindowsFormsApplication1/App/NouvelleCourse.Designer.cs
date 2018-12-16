@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NouvelleCourse));
             this.textBoxLieu = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.textBoxDist = new System.Windows.Forms.TextBox();
@@ -45,28 +49,38 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonRetirerParticipant = new System.Windows.Forms.Button();
-            this.buttonImport = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.labelNouvelleCourse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLicencies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParticipants)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxLieu
             // 
-            this.textBoxLieu.Location = new System.Drawing.Point(69, 107);
+            this.textBoxLieu.Location = new System.Drawing.Point(94, 107);
             this.textBoxLieu.Name = "textBoxLieu";
             this.textBoxLieu.Size = new System.Drawing.Size(200, 20);
             this.textBoxLieu.TabIndex = 0;
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(69, 159);
+            this.dateTimePicker.CalendarFont = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.Location = new System.Drawing.Point(94, 159);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 1;
             // 
             // textBoxDist
             // 
-            this.textBoxDist.Location = new System.Drawing.Point(69, 133);
+            this.textBoxDist.Location = new System.Drawing.Point(94, 133);
             this.textBoxDist.Name = "textBoxDist";
             this.textBoxDist.Size = new System.Drawing.Size(200, 20);
             this.textBoxDist.TabIndex = 3;
@@ -74,42 +88,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Lieu :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 136);
+            this.label2.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Distance :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 194);
+            this.label3.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Description";
+            this.label3.Text = "Description :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Date :";
             // 
             // richTextBoxDesc
             // 
-            this.richTextBoxDesc.Location = new System.Drawing.Point(69, 185);
+            this.richTextBoxDesc.Location = new System.Drawing.Point(94, 185);
             this.richTextBoxDesc.Name = "richTextBoxDesc";
             this.richTextBoxDesc.Size = new System.Drawing.Size(200, 104);
             this.richTextBoxDesc.TabIndex = 8;
@@ -117,17 +135,33 @@
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(343, 372);
+            this.buttonAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.buttonAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAjouter.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouter.ForeColor = System.Drawing.Color.White;
+            this.buttonAjouter.Location = new System.Drawing.Point(392, 368);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(75, 23);
+            this.buttonAjouter.Size = new System.Drawing.Size(100, 30);
             this.buttonAjouter.TabIndex = 9;
-            this.buttonAjouter.Text = "Ajouter";
-            this.buttonAjouter.UseVisualStyleBackColor = true;
+            this.buttonAjouter.Text = "Valider";
+            this.buttonAjouter.UseVisualStyleBackColor = false;
             this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
             // 
             // dataGridViewLicencies
             // 
             this.dataGridViewLicencies.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewLicencies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewLicencies.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGridViewLicencies.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLicencies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewLicencies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLicencies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numLicence,
@@ -162,10 +196,20 @@
             // dataGridViewParticipants
             // 
             this.dataGridViewParticipants.AllowUserToOrderColumns = true;
+            this.dataGridViewParticipants.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGridViewParticipants.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridViewParticipants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParticipants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewParticipants.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewParticipants.Location = new System.Drawing.Point(579, 107);
             this.dataGridViewParticipants.Name = "dataGridViewParticipants";
             this.dataGridViewParticipants.Size = new System.Drawing.Size(205, 224);
@@ -193,21 +237,81 @@
             this.buttonRetirerParticipant.UseVisualStyleBackColor = true;
             this.buttonRetirerParticipant.Click += new System.EventHandler(this.buttonRetirerParticipant_Click);
             // 
-            // buttonImport
+            // groupBox4
             // 
-            this.buttonImport.Location = new System.Drawing.Point(644, 46);
-            this.buttonImport.Name = "buttonImport";
-            this.buttonImport.Size = new System.Drawing.Size(111, 23);
-            this.buttonImport.TabIndex = 14;
-            this.buttonImport.Text = "Importer";
-            this.buttonImport.UseVisualStyleBackColor = true;
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.groupBox4.Controls.Add(this.pictureBox1);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox4.Location = new System.Drawing.Point(0, -5);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(164, 59);
+            this.groupBox4.TabIndex = 16;
+            this.groupBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(38, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "GestioCourse";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.labelNouvelleCourse);
+            this.groupBox1.Controls.Add(this.buttonClose);
+            this.groupBox1.Location = new System.Drawing.Point(160, -5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(641, 59);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonClose.Location = new System.Drawing.Point(603, 8);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(38, 35);
+            this.buttonClose.TabIndex = 11;
+            this.buttonClose.Text = "X";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            // 
+            // labelNouvelleCourse
+            // 
+            this.labelNouvelleCourse.AutoSize = true;
+            this.labelNouvelleCourse.Font = new System.Drawing.Font("Gill Sans MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNouvelleCourse.Location = new System.Drawing.Point(187, 16);
+            this.labelNouvelleCourse.Name = "labelNouvelleCourse";
+            this.labelNouvelleCourse.Size = new System.Drawing.Size(173, 30);
+            this.labelNouvelleCourse.TabIndex = 17;
+            this.labelNouvelleCourse.Text = "Nouvelle course";
             // 
             // NouvelleCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonImport);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonRetirerParticipant);
             this.Controls.Add(this.dataGridViewParticipants);
             this.Controls.Add(this.buttonAjouterParticipant);
@@ -221,10 +325,16 @@
             this.Controls.Add(this.textBoxDist);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.textBoxLieu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NouvelleCourse";
             this.Text = "NouvelleCourse";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLicencies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParticipants)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,6 +359,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button buttonRetirerParticipant;
-        private System.Windows.Forms.Button buttonImport;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label labelNouvelleCourse;
     }
 }

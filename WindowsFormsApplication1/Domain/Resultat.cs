@@ -22,6 +22,10 @@ namespace Domain
         {
             this.LeCoureur = coureur;
             this.LaCourse = course;
+            this.AllureMoyenne = 0;
+            this.NumDossard = 0;
+            this.VitesseMoyenne = 0;            
+            this.Temps= new TimeSpan(0, 0, 0);
         }
 
         public virtual int NumDossard
@@ -60,6 +64,12 @@ namespace Domain
         }
 
         public virtual Coureur LeCoureur
+        {
+            get;
+            set;
+        }
+
+        public virtual int Classement
         {
             get;
             set;

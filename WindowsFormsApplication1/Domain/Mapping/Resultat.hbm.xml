@@ -10,8 +10,10 @@
     <property name="VitesseMoyenne" column="resultat_vitMoy" not-null="true"/>
     <property name="AllureMoyenne" column="resultat_AllureMoy" not-null="true"/>
     <property name="NumDossard" column="resultat_NumDossard" not-null="true"/>
+    <property name="Classement" column="resultat_Classement" not-null="true"/>
     <many-to-one name="LaCourse" class="Course" column="resultat_course"/>
     <many-to-one name="LeCoureur" class="Coureur" column="resultat_Coureur"/>
+
     
 
   </class>

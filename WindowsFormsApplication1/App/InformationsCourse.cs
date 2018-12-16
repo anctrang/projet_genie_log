@@ -16,56 +16,64 @@ namespace App
     {
         private ResultatRepository resultatRep = new ResultatRepository();
         private CoureurRepository coureurRep = new CoureurRepository();
+        private CourseRepository courseRep = new CourseRepository();
         List<Coureur> listeCoureurs = new List<Coureur>();
         List<Resultat> listeResultats = new List<Resultat>();
+        Course course = new Course();
         private int idCourseSelectionnee;
 
         public InformationsCourse(int id)
         {
-            this.idCourseSelectionnee = id;
             InitializeComponent();
+            this.idCourseSelectionnee = id;           
+            course = courseRep.GetCourse(id);
+            this.labelDate.Text = course.Date.Day.ToString() + "-" + course.Date.Month.ToString() + "-" + course.Date.Year.ToString() ;
+            this.labelLieu.Text = course.Lieu;            
+            AfficherContenu();
         }
 
         public void AfficherContenu()
-        {
-            int age;
-            foreach (Resultat resultat in this.resultatRep.GetAll())
-            {
-                if (resultat.LaCourse.Id == idCourseSelectionnee) // Le resultat concerne la course sélectionnée
-                {
-                    foreach(Coureur coureur in coureurRep.GetAll())
-                    {
-                        if (resultat.LeCoureur.NumLicence == coureur.NumLicence) // on récupère le coureur concerné par le résultat
-                        {
-                            listeCoureurs.Add(coureur);
-                            listeResultats.Add(resultat);
-                        }
-                    }
-                }
-            }
+        {           
 
-            for (int i = 0; i < listeCoureurs.Count; i++)
+            foreach(Resultat resultat in this.resultatRep.ListeResultatsCourse(this.idCourseSelectionnee))
             {
-                //calcul age
-               /* int ageCoureur = Convert.ToInt32(listeCoureurs[i].DateDeNaissance.Year - DateTime.Now.Year);                
-                string[] resultat = { listeResultats[i].NumDossard.ToString(), listeCoureurs[i].Nom, listeCoureurs[i].Prenom };*/
-            }
-            /*foreach (Coureur coureur in this.coureurRepository.GetAll())
-            {
-                string[] resultat = { coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, coureur.DateDeNaissance.ToString() };
-                dataGridViewCoureurs.Rows.Add(resultat);
-            }
+                Coureur coureur = coureurRep.ListeCoureur(resultat.LeCoureur.NumLicence)[0];
+                int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
+                         (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
+                         (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
+                string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe,age.ToString() };
+                dataGridView1.Rows.Add(res);
 
-            foreach (Course course in this.courseRepository.GetAll())
-            {
-                string[] resultat = { course.Id.ToString(), course.Date.ToString(), course.Lieu, course.Distance.ToString(), "A Calculer" };
-                dataGridViewCourses.Rows.Add(resultat);
-            }*/
+            }           
+           
         }
 
         private void buttonFermer_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonNouveauResultat_Click(object sender, EventArgs e)
+        {
+            AjoutResultat a = new AjoutResultat(true, idCourseSelectionnee);
+            a.Show();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonModifierResultat_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 0)
+                MessageBox.Show("Veuillez sélectionner un résultat");
+            else
+            {
+                ModificationResultat m = new ModificationResultat(ref this.dataGridView1,this.dataGridView1.SelectedRows, true,idCourseSelectionnee);
+                m.Show();
+               
+            }
         }
     }
 }

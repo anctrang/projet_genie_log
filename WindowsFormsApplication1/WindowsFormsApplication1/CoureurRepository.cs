@@ -14,10 +14,19 @@ namespace DAL
             return Session.Query<Coureur>().ToList();
         }
 
+        public IList<Coureur> ListeCoureur(int numLicence)
+        {
+
+            return Session.Query<Coureur>().Where(c=> c.NumLicence == numLicence).ToList();
+
+        }
+
         public void Save(Coureur coureur)
         {
             Session.SaveOrUpdate(coureur);
             Session.Flush();
         }
+
+       
     }
 }

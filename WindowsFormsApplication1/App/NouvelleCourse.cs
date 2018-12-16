@@ -12,36 +12,60 @@ using DAL;
 
 namespace App
 {
+    /// <summary>
+    /// Classe permettant de gérer le formulaire de modification d'une course et la création d'une nouvelle course
+    /// </summary>
+    
     public partial class NouvelleCourse : Form
     {
+        //Booléen définissant si nous sommes en présence d'une modification de course ou d'une création de course
         private bool modification = false;
+        //Permet de récupérer l'id de la course sélectionnée au moment du clic sur le bouton "Modification course"
         private int idCourseSelectionnee;
+        // Stocke la course à modifier sélectionnée
         private Course courseAModifier = new Course();
-        private List<Coureur> listeCoureursParticipants = new List<Coureur>(); // pour la deuxième datagridview
-        private List<Coureur> listeCoureursNonParticipants = new List<Coureur>(); // pour la première datagridview
+        // pour la deuxième datagridview
+        private List<Coureur> listeCoureursParticipants = new List<Coureur>();
+        // pour la première datagridview
+        private List<Coureur> listeCoureursNonParticipants = new List<Coureur>(); 
+        // Contient la liste des courses en base de données
         private CourseRepository courseRep = new CourseRepository();
+        // Contient les coureurs en base de données
         private CoureurRepository coureurRep = new CoureurRepository();
+        // Contient les résultats en base de données
         private ResultatRepository resultatRep = new ResultatRepository();
-        private DataGridView dataG = new DataGridView(); // mise à jour du datagridview affichant les courses de la page accueil
+        // mise à jour du datagridview affichant les courses de la page accueil
+        private DataGridView dataG = new DataGridView();
 
+
+        /// <summary>
+        ///  Constructeur lors d'une modification de course
+        /// </summary>
+        /// <param name="d">Référence au DataGridView de la page d'accueil pour le modifier</param>
+        /// <param name="collectionLignesSelec"> Ligne sélectionnée dans le dataGridView </param>
         public NouvelleCourse(ref DataGridView d, DataGridViewSelectedRowCollection collectionLignesSelec)
-        // Constructeur lors d'une modification de course
+        
         {
+            // Récupère la ligne sélectionnée
             DataGridViewRow ligneSelectionnee = collectionLignesSelec[0];
             this.idCourseSelectionnee = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
             this.dataG = d;
             this.modification = true;
             InitializeComponent();
 
-            foreach (Course course in courseRep.GetAll())
+            //Récupère la course que l'on souhaite modifier
+            courseAModifier = courseRep.GetCourse(this.idCourseSelectionnee);
+
+            /*foreach (Course course in courseRep.GetAll()) // A MODIFIER AVEC DU SQL
             {
                 if (course.Id == this.idCourseSelectionnee)
                     courseAModifier = course;
-            }
+            }*/
 
   
             bool trouve;
-            foreach (Coureur coureur in coureurRep.GetAll()) // Remplir les non participants (à modifier pour la modification d'une course)
+            // Remplit les participants et non participants
+            foreach (Coureur coureur in coureurRep.GetAll())
             {
                 trouve = false;
                 foreach (Resultat resultat in resultatRep.GetAll())
@@ -59,6 +83,8 @@ namespace App
                 else
                     listeCoureursNonParticipants.Add(coureur);
             }
+
+
             this.textBoxLieu.Text = courseAModifier.Lieu;
             this.textBoxDist.Text = courseAModifier.Distance.ToString();
             this.dateTimePicker.Value = courseAModifier.Date;
@@ -72,19 +98,25 @@ namespace App
         }
 
 
-
-        public NouvelleCourse(ref DataGridView d) // Constructeur lors d'une création de course
+        /// <summary>
+        /// Constructeur création d'une course
+        /// </summary>
+        /// <param name="d"> Permet de mettre à jour la dataGridView de la page d'accueil après la création de la course </param>
+        public NouvelleCourse(ref DataGridView d) 
         {
             dataG = d;
             InitializeComponent();
 
-            foreach (Coureur coureur in coureurRep.GetAll()) // Remplir les non participants (à modifier pour la modification d'une course)
+            foreach (Coureur coureur in coureurRep.GetAll()) // Remplir les non participants 
             {
                 listeCoureursNonParticipants.Add(coureur);
             }
             this.AfficherContenu();
         }
 
+        /// <summary>
+        /// Fonction permettant de refresh l'ensemble des gridview selon les modifications faites.tyr
+        /// </summary>
         public void AfficherContenu()
         {
             dataG.Rows.Clear();
@@ -96,7 +128,7 @@ namespace App
 
             foreach (Course course in this.courseRep.GetAll())
             {
-                string[] resultat = { course.Id.ToString(), course.Date.ToString(), course.Lieu, course.Distance.ToString(), "10" };
+                string[] resultat = { course.Id.ToString(), course.Date.ToString(), course.Lieu, course.Distance.ToString(), Convert.ToString(resultatRep.ListeResultatsCourse(course.Id).Count) };
                 dataG.Rows.Add(resultat);
             }
 
@@ -115,36 +147,81 @@ namespace App
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
+            bool existe = false;
             Course course;
             if (modification)
             {
 
-                foreach (Resultat resultat in resultatRep.GetAll())
+                foreach (Coureur coureur in listeCoureursNonParticipants)
                 {
-                    if (resultat.LaCourse == courseAModifier)
+                    foreach (Resultat resultat in resultatRep.GetAll())
                     {
-                        resultatRep.Delete(resultat);
+                        if (resultat.LaCourse == courseAModifier && resultat.LeCoureur == coureur)
+                        {
+                            resultatRep.Delete(resultat);
+                        }
                     }
                 }
 
-                int num = courseAModifier.Id;
+                foreach (Coureur coureur in listeCoureursParticipants)
+                {
+                    existe = false;
+                    foreach (Resultat resultat in resultatRep.GetAll())
+                    {
+                        if (resultat.LeCoureur == coureur)
+                        {
+                            existe = true;
+                        }
+                    }
+                    if (!existe)
+                    {
+                        Resultat resultat = new Resultat(courseAModifier,coureur);                       
+                        resultatRep.Save(resultat);
+                    }
+                }
+
+                /* foreach (Resultat resultat in resultatRep.GetAll())
+                 {
+                     if (resultat.LaCourse == courseAModifier)
+                     {
+                         resultatRep.Delete(resultat);
+                     }
+                 }*/
+
+                //int num = courseAModifier.Id;
+
+                courseRep.Save(courseAModifier);
+                
 
 
             }
 
+            //Faire un update
 
-            course = new Course(this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
-            courseRep.Save(course); // Création de la course
-            courseRep.Delete(courseAModifier);
-
-            foreach (Coureur coureur in listeCoureursParticipants) // Créations des liens entre coureur et courses avec resultats vides
+            else
             {
-                Resultat r = new Resultat(course, coureur);
-                resultatRep.Save(r);
-            }
+                course = new Course(this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
+                courseRep.Save(course); // Création de la course
 
-            MessageBox.Show("Nouvelle course ajoutée !");
+                courseRep.Delete(courseAModifier);
+
+                foreach (Coureur coureur in listeCoureursParticipants) // Créations des liens entre coureur et courses avec resultats vides
+                {
+                    Resultat r = new Resultat(course, coureur);
+                    resultatRep.Save(r);
+                }
+
+                MessageBox.Show("Nouvelle course ajoutée !");
+            }
             AfficherContenu();
+
+            dataG.Rows.Clear();
+            dataG.Refresh();
+            foreach (Course course1 in this.courseRep.GetAll())
+            {
+                string[] resultat = { course1.Id.ToString(), course1.Date.ToString(), course1.Lieu, course1.Distance.ToString(), Convert.ToString(resultatRep.ListeResultatsCourse(course1.Id).Count) };
+                dataG.Rows.Add(resultat);
+            }
             this.Close();
 
         }

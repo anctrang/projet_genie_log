@@ -7,16 +7,81 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
+using DAL;
 
 namespace App
 {
     public partial class InformationsCoureurs : Form
     {
-        public InformationsCoureurs()
+
+        CourseRepository courseRep = new CourseRepository();
+        CoureurRepository coureurRep = new CoureurRepository();
+        ResultatRepository resultatRep = new ResultatRepository();
+        Coureur coureur = new Coureur();
+        
+
+
+       
+
+        public InformationsCoureurs(int numLicence)
         {
             InitializeComponent();
+            coureur = coureurRep.ListeCoureur(numLicence)[0];
+  
+            this.labelNomPrenom.Text = coureur.Nom + " " + coureur.Prenom;
+            this.labelNumLicence.Text = Convert.ToString(coureur.NumLicence);
+            this.labelSexe.Text = coureur.Sexe;
+            int age= DateTime.Now.Year - coureur.DateDeNaissance.Year -
+                         (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
+                         (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
+            this.labelAge.Text = Convert.ToString(age) + "ans";
+            AfficherContenu();
         }
 
+        public void AfficherContenu()
+        {
+           
 
+            foreach (Resultat resultat in this.resultatRep.ListeResultatsCoureur(coureur.NumLicence))
+            {
+                
+                Course course = courseRep.GetCourse(resultat.LaCourse.Id);               
+                string[] res = {course.Id.ToString(),course.Lieu, course.Date.Day.ToString()+"-"+course.Date.Month.ToString()+"-"+course.Date.Year.ToString(),
+                    course.Distance.ToString(), resultat.Classement.ToString(), resultat.NumDossard.ToString(), resultat.AllureMoyenne.ToString(),
+                    resultat.VitesseMoyenne.ToString()};
+                dataGridView1.Rows.Add(res);
+
+            }
+
+        }
+
+        private void buttonFermer_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonNouveauResultat_Click(object sender, EventArgs e)
+        {
+            AjoutResultat a = new AjoutResultat(false, coureur.NumLicence);
+            a.Show();
+        }
+
+        private void buttonModifierResultat_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 0)
+                MessageBox.Show("Veuillez sélectionner un résultat");
+            else
+            {
+                ModificationResultat m = new ModificationResultat(ref this.dataGridView1, this.dataGridView1.SelectedRows, false, coureur.NumLicence);
+                m.Show();
+
+            }
+        }
     }
 }

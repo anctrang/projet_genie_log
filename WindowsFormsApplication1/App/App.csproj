@@ -53,6 +53,12 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjoutResultat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutResultat.Designer.cs">
+      <DependentUpon>AjoutResultat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     <Compile Include="Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificationResultat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificationResultat.Designer.cs">
+      <DependentUpon>ModificationResultat.cs</DependentUpon>
+    </Compile>
     <Compile Include="NouvelleCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutResultat.resx">
+      <DependentUpon>AjoutResultat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
@@ -99,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificationResultat.resx">
+      <DependentUpon>ModificationResultat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NouvelleCourse.resx">
       <DependentUpon>NouvelleCourse.cs</DependentUpon>
