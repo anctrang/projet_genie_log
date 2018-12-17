@@ -56,6 +56,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNumLicence = new System.Windows.Forms.TextBox();
+            this.buttonValider = new System.Windows.Forms.Button();
+            this.buttonImportCoureurs = new System.Windows.Forms.Button();
+            this.buttonImportResultats = new System.Windows.Forms.Button();
             this.TabCoureurs.SuspendLayout();
             this.tabCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
@@ -85,7 +89,7 @@
             this.buttonSignUp.FlatAppearance.BorderSize = 0;
             this.buttonSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSignUp.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSignUp.Location = new System.Drawing.Point(92, 9);
+            this.buttonSignUp.Location = new System.Drawing.Point(99, 12);
             this.buttonSignUp.Name = "buttonSignUp";
             this.buttonSignUp.Size = new System.Drawing.Size(93, 44);
             this.buttonSignUp.TabIndex = 1;
@@ -112,7 +116,7 @@
             this.TabCoureurs.Controls.Add(this.tabCourses);
             this.TabCoureurs.Controls.Add(this.tabPage1);
             this.TabCoureurs.Font = new System.Drawing.Font("DejaVu Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabCoureurs.Location = new System.Drawing.Point(179, 77);
+            this.TabCoureurs.Location = new System.Drawing.Point(177, 106);
             this.TabCoureurs.Name = "TabCoureurs";
             this.TabCoureurs.SelectedIndex = 0;
             this.TabCoureurs.Size = new System.Drawing.Size(557, 359);
@@ -314,6 +318,8 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
+            this.groupBox3.Controls.Add(this.buttonImportResultats);
+            this.groupBox3.Controls.Add(this.buttonImportCoureurs);
             this.groupBox3.Controls.Add(this.buttonAjouterCourse);
             this.groupBox3.Controls.Add(this.buttonNouveauCoureur);
             this.groupBox3.Controls.Add(this.buttonModifierCourse);
@@ -357,12 +363,64 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "GestioCourse";
             // 
+            // textBoxNumLicence
+            // 
+            this.textBoxNumLicence.Location = new System.Drawing.Point(507, 75);
+            this.textBoxNumLicence.Name = "textBoxNumLicence";
+            this.textBoxNumLicence.Size = new System.Drawing.Size(119, 20);
+            this.textBoxNumLicence.TabIndex = 11;
+            this.textBoxNumLicence.Text = "N° Licence";
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.buttonValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonValider.Font = new System.Drawing.Font("DejaVu Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValider.ForeColor = System.Drawing.Color.White;
+            this.buttonValider.Location = new System.Drawing.Point(638, 73);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(108, 22);
+            this.buttonValider.TabIndex = 43;
+            this.buttonValider.Text = "Rechercher";
+            this.buttonValider.UseVisualStyleBackColor = false;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
+            // 
+            // buttonImportCoureurs
+            // 
+            this.buttonImportCoureurs.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImportCoureurs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImportCoureurs.BackgroundImage")));
+            this.buttonImportCoureurs.FlatAppearance.BorderSize = 0;
+            this.buttonImportCoureurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImportCoureurs.ForeColor = System.Drawing.Color.White;
+            this.buttonImportCoureurs.Location = new System.Drawing.Point(6, 265);
+            this.buttonImportCoureurs.Name = "buttonImportCoureurs";
+            this.buttonImportCoureurs.Size = new System.Drawing.Size(146, 57);
+            this.buttonImportCoureurs.TabIndex = 8;
+            this.buttonImportCoureurs.Text = "Importer coureurs";
+            this.buttonImportCoureurs.UseVisualStyleBackColor = false;
+            // 
+            // buttonImportResultats
+            // 
+            this.buttonImportResultats.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImportResultats.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImportResultats.BackgroundImage")));
+            this.buttonImportResultats.FlatAppearance.BorderSize = 0;
+            this.buttonImportResultats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImportResultats.ForeColor = System.Drawing.Color.White;
+            this.buttonImportResultats.Location = new System.Drawing.Point(6, 328);
+            this.buttonImportResultats.Name = "buttonImportResultats";
+            this.buttonImportResultats.Size = new System.Drawing.Size(146, 57);
+            this.buttonImportResultats.TabIndex = 9;
+            this.buttonImportResultats.Text = "Importer résultats";
+            this.buttonImportResultats.UseVisualStyleBackColor = false;
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(758, 477);
+            this.Controls.Add(this.buttonValider);
+            this.Controls.Add(this.textBoxNumLicence);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -381,6 +439,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -413,6 +472,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.TextBox textBoxNumLicence;
+        private System.Windows.Forms.Button buttonValider;
+        private System.Windows.Forms.Button buttonImportCoureurs;
+        private System.Windows.Forms.Button buttonImportResultats;
     }
 }
 

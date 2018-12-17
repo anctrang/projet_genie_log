@@ -24,12 +24,14 @@ namespace App
         Course course = new Course();
         Coureur coureur = new Coureur();
         bool courseConnue;
+        DataGridView d = new DataGridView();
 
         
-        public AjoutResultat(bool aPartirDeCourse,int id)
+        public AjoutResultat(ref DataGridView dataGridView, bool aPartirDeCourse,int id)
         {
 
             courseConnue = aPartirDeCourse;
+            d=dataGridView;
             InitializeComponent();
             if (aPartirDeCourse)
             {
@@ -127,7 +129,15 @@ namespace App
                 resultat.LaCourse = listeCoursesNonParticipees[choix];
                 resultat.LeCoureur = coureur;
             }
-            MessageBox.Show(coureur.NumLicence.ToString());
+            if (this.textBoxDossard.Text != "")
+                resultat.NumDossard = Int32.Parse(this.textBoxDossard.Text);
+
+            int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
+                     (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
+                     (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
+            string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe, age.ToString() };
+            dataGridView1.Rows.Add(res);
+
             resultatRep.Save(resultat);
             this.Close();
         }

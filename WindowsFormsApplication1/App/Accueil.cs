@@ -134,7 +134,28 @@ namespace App
 
         private void buttonNouveauCoureur_Click(object sender, EventArgs e)
         {
+            NouveauCoureur n = new NouveauCoureur(ref this.dataGridViewCoureurs);
+            n.Show();
+        }
 
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+            bool existe = false;
+            foreach(Coureur coureur in coureurRepository.GetAll())
+            {
+                if (coureur.NumLicence == int.Parse(this.textBoxNumLicence.Text))
+                {
+                    existe = true;
+                }
+            }
+            
+            if (existe)
+            {
+                InformationsCoureurs i = new InformationsCoureurs(Convert.ToInt32(this.textBoxNumLicence.Text));
+                i.Show();
+                this.Close();
+            }
+            
         }
     }
 }

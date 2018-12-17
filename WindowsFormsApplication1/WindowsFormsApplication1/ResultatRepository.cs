@@ -32,6 +32,13 @@ namespace DAL
             return Session.Query<Resultat>().Where(p => p.LaCourse.Id == idCourse && p.LeCoureur.NumLicence==numLicence).ToList();
         }
 
+        public IList<Resultat> ListeResultatAvecDossard(int numDossard, int idCourse)
+        {
+
+            return Session.Query<Resultat>().Where(p => p.NumDossard == numDossard && p.LaCourse.Id==idCourse).ToList();
+
+        }
+
         public IList<Resultat> ListeResultatsCourse(int idCourse)
         {
            

@@ -19,20 +19,20 @@ namespace App
         CoureurRepository coureurRep = new CoureurRepository();
         ResultatRepository resultatRep = new ResultatRepository();
         Coureur coureur = new Coureur();
-        
 
 
-       
+
+
 
         public InformationsCoureurs(int numLicence)
         {
             InitializeComponent();
             coureur = coureurRep.ListeCoureur(numLicence)[0];
-  
+
             this.labelNomPrenom.Text = coureur.Nom + " " + coureur.Prenom;
             this.labelNumLicence.Text = Convert.ToString(coureur.NumLicence);
             this.labelSexe.Text = coureur.Sexe;
-            int age= DateTime.Now.Year - coureur.DateDeNaissance.Year -
+            int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
                          (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
                          (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
             this.labelAge.Text = Convert.ToString(age) + "ans";
@@ -41,12 +41,12 @@ namespace App
 
         public void AfficherContenu()
         {
-           
+
 
             foreach (Resultat resultat in this.resultatRep.ListeResultatsCoureur(coureur.NumLicence))
             {
-                
-                Course course = courseRep.GetCourse(resultat.LaCourse.Id);               
+
+                Course course = courseRep.GetCourse(resultat.LaCourse.Id);
                 string[] res = {course.Id.ToString(),course.Lieu, course.Date.Day.ToString()+"-"+course.Date.Month.ToString()+"-"+course.Date.Year.ToString(),
                     course.Distance.ToString(), resultat.Classement.ToString(), resultat.NumDossard.ToString(), resultat.AllureMoyenne.ToString(),
                     resultat.VitesseMoyenne.ToString()};
@@ -68,7 +68,7 @@ namespace App
 
         private void buttonNouveauResultat_Click(object sender, EventArgs e)
         {
-            AjoutResultat a = new AjoutResultat(false, coureur.NumLicence);
+            AjoutResultat a = new AjoutResultat(ref this.dataGridView1,false, coureur.NumLicence);
             a.Show();
         }
 
@@ -80,6 +80,27 @@ namespace App
             {
                 ModificationResultat m = new ModificationResultat(ref this.dataGridView1, this.dataGridView1.SelectedRows, false, coureur.NumLicence);
                 m.Show();
+
+            }
+        }
+
+        private void groupBoxInfosCoureur_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+
+            foreach (Resultat resultat in this.resultatRep.ListeResultatsCoureur(coureur.NumLicence))
+            {
+
+                Course course = courseRep.GetCourse(resultat.LaCourse.Id);
+                string[] res = {course.Id.ToString(),course.Lieu, course.Date.Day.ToString()+"-"+course.Date.Month.ToString()+"-"+course.Date.Year.ToString(),
+                    course.Distance.ToString(), resultat.Classement.ToString(), resultat.NumDossard.ToString(), resultat.AllureMoyenne.ToString(),
+                    resultat.VitesseMoyenne.ToString()};
+                dataGridView1.Rows.Add(res);
+
 
             }
         }

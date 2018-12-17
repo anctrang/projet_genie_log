@@ -21,6 +21,13 @@ namespace DAL
 
         }
 
+        public IList<Coureur> ListeCoureurAvecNom(string nom)
+        {
+
+            return Session.Query<Coureur>().Where(c => c.Nom == nom).ToList();
+
+        }
+
         public void Save(Coureur coureur)
         {
             Session.SaveOrUpdate(coureur);
