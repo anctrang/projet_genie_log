@@ -37,6 +37,13 @@ namespace App
                          (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
             this.labelAge.Text = Convert.ToString(age) + "ans";
             AfficherContenu();
+            if (Accueil.identifiantEnregistre == "")
+            {
+                this.buttonModifierResultat.Visible = false;
+                this.buttonModifierResultat.Enabled = false;
+                this.buttonNouveauResultat.Visible = false;
+                this.buttonNouveauResultat.Enabled = false;
+            }
         }
 
         public void AfficherContenu()
@@ -103,6 +110,11 @@ namespace App
 
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -116,7 +116,7 @@
             this.TabCoureurs.Controls.Add(this.tabCourses);
             this.TabCoureurs.Controls.Add(this.tabPage1);
             this.TabCoureurs.Font = new System.Drawing.Font("DejaVu Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabCoureurs.Location = new System.Drawing.Point(177, 106);
+            this.TabCoureurs.Location = new System.Drawing.Point(237, 106);
             this.TabCoureurs.Name = "TabCoureurs";
             this.TabCoureurs.SelectedIndex = 0;
             this.TabCoureurs.Size = new System.Drawing.Size(557, 359);
@@ -183,7 +183,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(549, 332);
+            this.tabPage1.Size = new System.Drawing.Size(552, 332);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Coureurs";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -200,7 +200,7 @@
             this.dataGridViewCoureurs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCoureurs.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewCoureurs.Name = "dataGridViewCoureurs";
-            this.dataGridViewCoureurs.Size = new System.Drawing.Size(543, 326);
+            this.dataGridViewCoureurs.Size = new System.Drawing.Size(546, 326);
             this.dataGridViewCoureurs.TabIndex = 0;
             // 
             // Numero_licence
@@ -296,7 +296,7 @@
             this.groupBox1.Controls.Add(this.buttonSignUp);
             this.groupBox1.Location = new System.Drawing.Point(158, -6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(602, 59);
+            this.groupBox1.Size = new System.Drawing.Size(689, 59);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -306,7 +306,7 @@
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClose.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonClose.Location = new System.Drawing.Point(558, 9);
+            this.buttonClose.Location = new System.Drawing.Point(645, 8);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(38, 35);
             this.buttonClose.TabIndex = 11;
@@ -395,7 +395,7 @@
             // 
             // textBoxNumLicence
             // 
-            this.textBoxNumLicence.Location = new System.Drawing.Point(507, 75);
+            this.textBoxNumLicence.Location = new System.Drawing.Point(595, 76);
             this.textBoxNumLicence.Name = "textBoxNumLicence";
             this.textBoxNumLicence.Size = new System.Drawing.Size(119, 20);
             this.textBoxNumLicence.TabIndex = 11;
@@ -407,7 +407,7 @@
             this.buttonValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonValider.Font = new System.Drawing.Font("DejaVu Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValider.ForeColor = System.Drawing.Color.White;
-            this.buttonValider.Location = new System.Drawing.Point(638, 73);
+            this.buttonValider.Location = new System.Drawing.Point(726, 74);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(108, 22);
             this.buttonValider.TabIndex = 43;
@@ -420,7 +420,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(758, 477);
+            this.ClientSize = new System.Drawing.Size(846, 477);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.textBoxNumLicence);
             this.Controls.Add(this.groupBox4);

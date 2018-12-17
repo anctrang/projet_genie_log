@@ -144,13 +144,13 @@ namespace App
                          (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
                          (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
 
-                MessageBox.Show(resultat.Id.ToString() + "-" + resultat.LeCoureur.Nom + "-");
+               
                 resultat.TempsEnSecondes = resultat.CalculTempsEnSeconde(resultat.Temps);
                 resultat.AllureMoyenne = resultat.CalculAllureMoyenne(course.Distance);
-               // resultat.VitesseMoyenne = resultat.CalculVitesseMoyenne(course.Distance);*/
+                resultat.VitesseMoyenne = resultat.CalculVitesseMoyenne(course.Distance);
                 if (courseConnue)
                 {
-                    string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), resultat.LeCoureur.Nom, resultat.LeCoureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), resultat.LeCoureur.Sexe, age.ToString() };
+                    string[] res = { resultat.Classement.ToString(), resultat.Temps.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), resultat.LeCoureur.Nom, resultat.LeCoureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), resultat.LeCoureur.Sexe, age.ToString() };
                     d.Rows.Add(res);
                 }
                 else
@@ -160,6 +160,19 @@ namespace App
                      resultat.Classement.ToString(), resultat.NumDossard.ToString(),course.Distance.ToString(), resultat.AllureMoyenne.ToString(),
                     resultat.VitesseMoyenne.ToString(), resultat.Temps.ToString() };
                     d.Rows.Add(res);
+                }
+                List<Resultat> listeResultats = new List<Resultat>();
+                int classement = 1;
+                foreach (Resultat resultat1 in resultatRep.ListeResultatsCourse(resultat.LaCourse.Id))
+                {
+                    listeResultats.Add(resultat);
+                }
+                List<Resultat> SortedList = listeResultats.OrderBy(o => o.TempsEnSecondes).ToList();
+                foreach (Resultat resultat1 in SortedList)
+                {
+                    resultat1.Classement = classement;
+                    classement++;
+                    resultatRep.Save(resultat1);
                 }
                 resultatRep.Save(resultat);
                 

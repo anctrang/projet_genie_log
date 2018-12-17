@@ -33,8 +33,11 @@ namespace App
           
             if (aPartirDeInfoCourse)
             {
-                int id = Convert.ToInt32(ligneSelectionnee.Cells[2].Value);
+                int id = Convert.ToInt32(ligneSelectionnee.Cells[3].Value);
+                MessageBox.Show(idDonne.ToString() + "-" + id.ToString());
                 resultat = resultatRep.listeResultat(idDonne, id)[0];
+                //resultat=resultatRep.listeResultat()
+                //1-10
                 
             }
             else
@@ -77,7 +80,7 @@ namespace App
                     int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
                              (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
                              (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
-                    string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe, age.ToString() };
+                    string[] res = { resultat.Classement.ToString(),resultat.Temps.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe, age.ToString() };
                     d.Rows.Add(res);
 
                 }

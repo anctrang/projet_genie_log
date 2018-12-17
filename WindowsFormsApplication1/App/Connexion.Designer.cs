@@ -38,8 +38,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -57,6 +57,7 @@
             // 
             this.textBoxMdp.Location = new System.Drawing.Point(254, 134);
             this.textBoxMdp.Name = "textBoxMdp";
+            this.textBoxMdp.PasswordChar = '*';
             this.textBoxMdp.Size = new System.Drawing.Size(135, 20);
             this.textBoxMdp.TabIndex = 1;
             this.textBoxMdp.TextChanged += new System.EventHandler(this.textBoxMdp_TextChanged);
@@ -141,6 +142,16 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(111, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 30);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Connexion";
+            // 
             // buttonClose
             // 
             this.buttonClose.FlatAppearance.BorderSize = 0;
@@ -154,16 +165,6 @@
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(111, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 30);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Connexion";
             // 
             // Connexion
             // 

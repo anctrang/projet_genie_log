@@ -30,6 +30,13 @@ namespace App
             this.labelDate.Text = course.Date.Day.ToString() + "-" + course.Date.Month.ToString() + "-" + course.Date.Year.ToString() ;
             this.labelLieu.Text = course.Lieu;            
             AfficherContenu();
+            if (Accueil.identifiantEnregistre == "")
+            {
+                this.buttonModifierResultat.Visible = false;
+                this.buttonModifierResultat.Enabled = false;
+                this.buttonNouveauResultat.Visible = false;
+                this.buttonNouveauResultat.Enabled = false;
+            }
         }
 
         public void AfficherContenu()
@@ -41,7 +48,7 @@ namespace App
                 int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
                          (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
                          (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
-                string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe,age.ToString() };
+                string[] res = { resultat.Classement.ToString(), resultat.Temps.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe,age.ToString() };
                 dataGridView1.Rows.Add(res);
 
             }           
@@ -102,7 +109,7 @@ namespace App
                     if (age>=ageMin && age<ageMax)
                     {
                         
-                        string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe, age.ToString() };
+                        string[] res = { resultat.Classement.ToString(), resultat.Temps.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe, age.ToString() };
                         dataGridView1.Rows.Add(res);
                     }
 

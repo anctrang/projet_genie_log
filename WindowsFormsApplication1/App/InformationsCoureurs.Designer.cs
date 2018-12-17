@@ -33,6 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationsCoureurs));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Classement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NDossard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DistanceCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AllureMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VitesseMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temps = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxInfosCoureur = new System.Windows.Forms.GroupBox();
             this.labelAge = new System.Windows.Forms.Label();
             this.labelSexe = new System.Windows.Forms.Label();
@@ -50,15 +59,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Classement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NDossard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DistanceCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AllureMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VitesseMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Temps = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBoxInfosCoureur.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -108,8 +108,57 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(798, 200);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Num
+            // 
+            this.Num.HeaderText = "Num";
+            this.Num.Name = "Num";
+            this.Num.Width = 40;
+            // 
+            // IDCourse
+            // 
+            this.IDCourse.HeaderText = "Lieu";
+            this.IDCourse.Name = "IDCourse";
+            // 
+            // DateCourse
+            // 
+            this.DateCourse.HeaderText = "Date";
+            this.DateCourse.Name = "DateCourse";
+            // 
+            // Classement
+            // 
+            this.Classement.HeaderText = "Classement";
+            this.Classement.Name = "Classement";
+            // 
+            // NDossard
+            // 
+            this.NDossard.HeaderText = "N° Dossard";
+            this.NDossard.Name = "NDossard";
+            // 
+            // DistanceCourse
+            // 
+            this.DistanceCourse.HeaderText = "Distance";
+            this.DistanceCourse.Name = "DistanceCourse";
+            // 
+            // AllureMoyenne
+            // 
+            this.AllureMoyenne.HeaderText = "Allure Moyenne (m/km)";
+            this.AllureMoyenne.Name = "AllureMoyenne";
+            this.AllureMoyenne.Width = 70;
+            // 
+            // VitesseMoyenne
+            // 
+            this.VitesseMoyenne.HeaderText = "Vitesse Moyenne(km/h)";
+            this.VitesseMoyenne.Name = "VitesseMoyenne";
+            this.VitesseMoyenne.Width = 70;
+            // 
+            // Temps
+            // 
+            this.Temps.HeaderText = "Temps";
+            this.Temps.Name = "Temps";
+            this.Temps.Width = 70;
             // 
             // groupBoxInfosCoureur
             // 
@@ -203,7 +252,7 @@
             this.groupBox1.Controls.Add(this.buttonClose);
             this.groupBox1.Location = new System.Drawing.Point(158, -6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(819, 63);
+            this.groupBox1.Size = new System.Drawing.Size(832, 63);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
@@ -223,7 +272,7 @@
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClose.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonClose.Location = new System.Drawing.Point(775, 9);
+            this.buttonClose.Location = new System.Drawing.Point(788, 15);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(38, 35);
             this.buttonClose.TabIndex = 11;
@@ -307,61 +356,12 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "GestioCourse";
             // 
-            // Num
-            // 
-            this.Num.HeaderText = "Num";
-            this.Num.Name = "Num";
-            this.Num.Width = 40;
-            // 
-            // IDCourse
-            // 
-            this.IDCourse.HeaderText = "Lieu";
-            this.IDCourse.Name = "IDCourse";
-            // 
-            // DateCourse
-            // 
-            this.DateCourse.HeaderText = "Date";
-            this.DateCourse.Name = "DateCourse";
-            // 
-            // Classement
-            // 
-            this.Classement.HeaderText = "Classement";
-            this.Classement.Name = "Classement";
-            // 
-            // NDossard
-            // 
-            this.NDossard.HeaderText = "N° Dossard";
-            this.NDossard.Name = "NDossard";
-            // 
-            // DistanceCourse
-            // 
-            this.DistanceCourse.HeaderText = "Distance";
-            this.DistanceCourse.Name = "DistanceCourse";
-            // 
-            // AllureMoyenne
-            // 
-            this.AllureMoyenne.HeaderText = "Allure Moyenne (m/km)";
-            this.AllureMoyenne.Name = "AllureMoyenne";
-            this.AllureMoyenne.Width = 70;
-            // 
-            // VitesseMoyenne
-            // 
-            this.VitesseMoyenne.HeaderText = "Vitesse Moyenne(km/h)";
-            this.VitesseMoyenne.Name = "VitesseMoyenne";
-            this.VitesseMoyenne.Width = 70;
-            // 
-            // Temps
-            // 
-            this.Temps.HeaderText = "Temps";
-            this.Temps.Name = "Temps";
-            this.Temps.Width = 70;
-            // 
             // InformationsCoureurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(977, 450);
+            this.ClientSize = new System.Drawing.Size(989, 450);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

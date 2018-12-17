@@ -17,13 +17,24 @@ namespace App
         private Button buttonConnexion;
         private Button buttonInscription;
         private Button buttonDeconnexion;
-        
-        public Connexion(ref Button buttonConnexion, ref Button buttonInscription, ref Button buttonDeconnexion)
+        private Button buttonAjouterCourse;
+        private Button buttonAjouterCoureur;
+        private Button buttonImporterCoureur;
+        private Button buttonImporterResultats;
+        private Button buttonModifierCourse;
+
+        public Connexion(ref Button buttonConnexion, ref Button buttonInscription, ref Button buttonDeconnexion, ref Button buttonAjouterCourse, ref Button buttonAjouterCoureur,
+            ref Button buttonImporterCoureur, ref Button buttonImporterResultats, ref Button buttonModifierCourse)
         {
             InitializeComponent();
             this.buttonConnexion = buttonConnexion;
             this.buttonInscription = buttonInscription;
             this.buttonDeconnexion = buttonDeconnexion;
+            this.buttonAjouterCourse = buttonAjouterCourse;
+            this.buttonAjouterCoureur = buttonAjouterCoureur;
+            this.buttonImporterCoureur = buttonImporterCoureur;
+            this.buttonImporterResultats = buttonImporterResultats;
+            this.buttonModifierCourse = buttonModifierCourse;
 
         }
 
@@ -51,11 +62,24 @@ namespace App
             bool utilisateurConnu = VerificationLogin(textBoxId.Text, textBoxMdp.Text, listeUtilisateurs);
             if (utilisateurConnu)
             {
-                Program.identifiantEnregistre = textBoxId.Text;                
+                Accueil.identifiantEnregistre = textBoxId.Text;                
                 MessageBox.Show("Connexion réussie !");
                 buttonConnexion.Visible = false;
+                buttonConnexion.Enabled = false;
                 buttonInscription.Visible = false;
+                buttonInscription.Enabled = false;
                 buttonDeconnexion.Visible = true;
+                buttonDeconnexion.Enabled = true;
+                this.buttonAjouterCourse.Visible = true;
+                this.buttonAjouterCourse.Enabled = true;
+                this.buttonImporterCoureur.Visible = true;
+                this.buttonImporterCoureur.Enabled = true;
+                this.buttonAjouterCoureur.Visible = true;
+                this.buttonAjouterCoureur.Enabled = true;
+                this.buttonModifierCourse.Visible = true;
+                this.buttonModifierCourse.Enabled = true;
+                this.buttonImporterResultats.Visible = true;
+                this.buttonImporterResultats.Enabled = true;
                 this.Close();
             }
 
