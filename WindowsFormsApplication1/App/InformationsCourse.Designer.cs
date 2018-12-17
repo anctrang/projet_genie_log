@@ -372,7 +372,6 @@
             this.label7.Size = new System.Drawing.Size(46, 15);
             this.label7.TabIndex = 46;
             this.label7.Text = "Nom :";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textBoxNom
             // 
@@ -380,7 +379,7 @@
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(116, 20);
             this.textBoxNom.TabIndex = 47;
-            this.textBoxNom.TextChanged += new System.EventHandler(this.textBoxNom_TextChanged);
+ 
             // 
             // button1
             // 

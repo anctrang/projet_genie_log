@@ -173,7 +173,7 @@
             this.groupBoxInfosCoureur.Size = new System.Drawing.Size(200, 100);
             this.groupBoxInfosCoureur.TabIndex = 1;
             this.groupBoxInfosCoureur.TabStop = false;
-            this.groupBoxInfosCoureur.Enter += new System.EventHandler(this.groupBoxInfosCoureur_Enter);
+
             // 
             // labelAge
             // 

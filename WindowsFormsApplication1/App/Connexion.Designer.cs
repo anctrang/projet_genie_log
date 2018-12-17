@@ -51,7 +51,7 @@
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(135, 20);
             this.textBoxId.TabIndex = 0;
-            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
+
             // 
             // textBoxMdp
             // 
@@ -60,7 +60,7 @@
             this.textBoxMdp.PasswordChar = '*';
             this.textBoxMdp.Size = new System.Drawing.Size(135, 20);
             this.textBoxMdp.TabIndex = 1;
-            this.textBoxMdp.TextChanged += new System.EventHandler(this.textBoxMdp_TextChanged);
+
             // 
             // labelLogin
             // 
@@ -71,7 +71,7 @@
             this.labelLogin.Size = new System.Drawing.Size(71, 13);
             this.labelLogin.TabIndex = 2;
             this.labelLogin.Text = "Identifiant :";
-            this.labelLogin.Click += new System.EventHandler(this.labelLogin_Click);
+
             // 
             // labelPass
             // 
@@ -82,7 +82,7 @@
             this.labelPass.Size = new System.Drawing.Size(92, 13);
             this.labelPass.TabIndex = 3;
             this.labelPass.Text = "Mot de passe :";
-            this.labelPass.Click += new System.EventHandler(this.labelPass_Click);
+
             // 
             // buttonValider
             // 

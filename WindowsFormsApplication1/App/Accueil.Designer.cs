@@ -150,7 +150,7 @@
             this.dataGridViewCourses.Name = "dataGridViewCourses";
             this.dataGridViewCourses.Size = new System.Drawing.Size(543, 326);
             this.dataGridViewCourses.TabIndex = 0;
-            this.dataGridViewCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            
             // 
             // Numéro
             // 

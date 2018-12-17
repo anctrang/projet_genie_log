@@ -1,17 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "WindowsFormsApplication1\DAL.csproj", "{8B8D6E2F-A365-489B-94BD-AFF28249154E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{E97506AE-AA86-4F0D-B50F-FF2244D06C0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{37777E22-3787-41D6-AE6A-5D80341BBDAF}"
-EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{FCCE36C3-5E81-4CFF-9CA1-22AE8F02CD00}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingProject1Lib", "ModelingProject1Lib\ModelingProject1Lib.csproj", "{5A0D1A45-3386-4C28-B995-1F739403E4F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{BEB2E922-79D1-424C-9DA5-88816651CFE6}"
 EndProject
@@ -33,14 +29,6 @@ Global
 		{37777E22-3787-41D6-AE6A-5D80341BBDAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37777E22-3787-41D6-AE6A-5D80341BBDAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37777E22-3787-41D6-AE6A-5D80341BBDAF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCCE36C3-5E81-4CFF-9CA1-22AE8F02CD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCCE36C3-5E81-4CFF-9CA1-22AE8F02CD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCCE36C3-5E81-4CFF-9CA1-22AE8F02CD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCCE36C3-5E81-4CFF-9CA1-22AE8F02CD00}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A0D1A45-3386-4C28-B995-1F739403E4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A0D1A45-3386-4C28-B995-1F739403E4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A0D1A45-3386-4C28-B995-1F739403E4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A0D1A45-3386-4C28-B995-1F739403E4F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BEB2E922-79D1-424C-9DA5-88816651CFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BEB2E922-79D1-424C-9DA5-88816651CFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEB2E922-79D1-424C-9DA5-88816651CFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDB91410-096A-40F5-89F3-BA327CDAB51F}
 	EndGlobalSection
 EndGlobal

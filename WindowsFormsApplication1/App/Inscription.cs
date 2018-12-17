@@ -12,9 +12,12 @@ using Domain;
 
 namespace App
 {
+    /// <summary>
+    ///  Classe gérant la page d'inscription
+    /// </summary>
     public partial class Inscription : Form
     {
-
+        // Gestion des boutons en référence
         private Button buttonConnexion;
         private Button buttonInscription;
         private Button buttonDeconnexion;
@@ -24,10 +27,22 @@ namespace App
         private Button buttonImporterResultats;
         private Button buttonModifierCourse;
 
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="buttonConnexion"></param>
+        /// <param name="buttonInscription"></param>
+        /// <param name="buttonDeconnexion"></param>
+        /// <param name="buttonAjouterCourse"></param>
+        /// <param name="buttonAjouterCoureur"></param>
+        /// <param name="buttonImporterCoureur"></param>
+        /// <param name="buttonImporterResultats"></param>
+        /// <param name="buttonModifierCourse"></param>
         public Inscription(ref Button buttonConnexion, ref Button buttonInscription, ref Button buttonDeconnexion, ref Button buttonAjouterCourse, ref Button buttonAjouterCoureur,
             ref Button buttonImporterCoureur, ref Button buttonImporterResultats, ref Button buttonModifierCourse)
         {
             InitializeComponent();
+            //Gestion des boutons en référence
             this.buttonConnexion = buttonConnexion;
             this.buttonInscription = buttonInscription;
             this.buttonDeconnexion = buttonDeconnexion;
@@ -36,17 +51,23 @@ namespace App
             this.buttonImporterCoureur = buttonImporterCoureur;
             this.buttonImporterResultats = buttonImporterResultats;
             this.buttonModifierCourse = buttonModifierCourse;
-
         }
 
+        /// <summary>
+        /// Gère la création d'un utilisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonValider_Click(object sender, EventArgs e)
         {
             bool existe = false;
+            // Création d'un utilisateur selon les données rentrées dans les 2 textBox
             Utilisateur utilisateur = new Utilisateur(textBoxId.Text, textBoxMdp.Text);
             UtilisateurRepository uR = new UtilisateurRepository();
             foreach (Utilisateur u in uR.GetAll())
             {
-                if(u.Pseudo==utilisateur.Pseudo && u.MotDePasse==utilisateur.MotDePasse)
+                //On vérifie que l'utilisateur existe déjà ou non
+                if(u.Pseudo==utilisateur.Pseudo)
                 {
                     existe = true;
                 }
@@ -59,6 +80,7 @@ namespace App
 
             else
             {
+                //S'il n'existe pas, on le créé, on connecte l'utilisateur et on change l'état des boutons de la page d'accueil
                 uR.Save(utilisateur);
                 Program.identifiantEnregistre = utilisateur.Pseudo;
                 MessageBox.Show("Inscription réussie !");
@@ -79,9 +101,7 @@ namespace App
                 this.buttonImporterResultats.Visible = true;
                 this.buttonImporterResultats.Enabled = true;
                 this.Close();
-
-            }
-           
+            }           
         }
     }
 }

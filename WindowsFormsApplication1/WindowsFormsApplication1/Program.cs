@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NHibernate.Tool.hbm2ddl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,9 @@ namespace WindowsFormsApplication1
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            NHibernate.Cfg.Configuration cfg = new NHibernate.Cfg.Configuration();
+            cfg.Configure();
+            new SchemaExport(cfg).Execute(true, true, false);
         }
     }
 }

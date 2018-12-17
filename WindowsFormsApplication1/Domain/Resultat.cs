@@ -12,12 +12,21 @@ using Domain;
 
 namespace Domain
 {
-
+    /// <summary>
+    /// Classe Resultat
+    /// </summary>
     public class Resultat
     {
-
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
         public Resultat() { }
 
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="course"></param>
+        /// <param name="coureur"></param>
         public Resultat(Course course, Coureur coureur)
         {
             this.LeCoureur = coureur;
@@ -29,75 +38,117 @@ namespace Domain
             this.TempsEnSecondes = CalculTempsEnSeconde(this.Temps);
         }
 
+        /// <summary>
+        /// Attribut NumDossard d'un résultat
+        /// </summary>
         public virtual int NumDossard
         {
             get;
             set;
         }
+
+        /// <summary>
+        /// Attribut id d'un résultat
+        /// </summary>
         public virtual int Id
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Attribut Temps d'un résultat
+        /// </summary>
         public virtual TimeSpan Temps
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Attribut VitesseMoyenne d'un résultat
+        /// </summary>
         public virtual double VitesseMoyenne
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Attribut AllureMoyenne d'un résultat
+        /// </summary>
         public virtual double AllureMoyenne
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Attribut LaCourse d'un résultat
+        /// </summary>
         public virtual Course LaCourse
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Attribut LeCoureur d'un résultat
+        /// </summary>
         public virtual Coureur LeCoureur
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Attribut Classement d'un résultat
+        /// </summary>
         public virtual int Classement
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Attribut TempsEnSecondes d'un résultat
+        /// </summary>
         public virtual int TempsEnSecondes
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Fonction permettant de retourner l'attribut Temps en secondes
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
         public virtual int CalculTempsEnSeconde(TimeSpan t)
         {
             int temps = t.Seconds + t.Minutes * 60 + t.Hours * 60 * 60;
             return temps;
         }
 
+        /// <summary>
+        /// Fonction permettant de retourner l'allure moyenne d'un coureur pour un résultat
+        /// </summary>
+        /// <param name="distance"></param>
+        /// <returns></returns>
         public virtual double CalculAllureMoyenne(double distance)
         {
             return this.TempsEnSecondes / 60 / distance / 1000;
         }
 
+        /// <summary>
+        /// Fonction permettant de renvoyer la vitesse moyenne d'un coureur pour un résultat
+        /// </summary>
+        /// <param name="distance"></param>
+        /// <returns></returns>
         public virtual double CalculVitesseMoyenne(double distance)
         {
             return distance / 1000 / this.TempsEnSecondes / 60 / 60;
         }
-
     }
 }
 

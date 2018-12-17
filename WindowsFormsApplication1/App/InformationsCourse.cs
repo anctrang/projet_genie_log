@@ -12,24 +12,37 @@ using DAL;
 
 namespace App
 {
+    /// <summary>
+    /// Classe gérant la page d'information des courses
+    /// </summary>
     public partial class InformationsCourse : Form
     {
+        // Contient les résultats en bdd
         private ResultatRepository resultatRep = new ResultatRepository();
+        // Contient les coureurs en bdd
         private CoureurRepository coureurRep = new CoureurRepository();
-        private CourseRepository courseRep = new CourseRepository();
+        // Contient les courses en bdd
+        private CourseRepository courseRep = new CourseRepository();        
         List<Coureur> listeCoureurs = new List<Coureur>();
         List<Resultat> listeResultats = new List<Resultat>();
         Course course = new Course();
         private int idCourseSelectionnee;
 
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="id"></param>
         public InformationsCourse(int id)
         {
             InitializeComponent();
+            // Récupération de l'id de la course séléctionnée sur la page d'accueil
             this.idCourseSelectionnee = id;           
             course = courseRep.GetCourse(id);
+            // Mise à jour des labels selon le contenu de la course sélectionnée
             this.labelDate.Text = course.Date.Day.ToString() + "-" + course.Date.Month.ToString() + "-" + course.Date.Year.ToString() ;
             this.labelLieu.Text = course.Lieu;            
             AfficherContenu();
+            //Mise à jour des status des boutons selon le statut de connexion
             if (Accueil.identifiantEnregistre == "")
             {
                 this.buttonModifierResultat.Visible = false;
@@ -39,38 +52,46 @@ namespace App
             }
         }
 
+        /// <summary>
+        ///  Fonction gérant les affichages dans la page
+        /// </summary>
         public void AfficherContenu()
-        {           
-
+        {    
             foreach(Resultat resultat in this.resultatRep.ListeResultatsCourse(this.idCourseSelectionnee))
             {
                 Coureur coureur = coureurRep.ListeCoureur(resultat.LeCoureur.NumLicence)[0];
-                int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
-                         (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
-                         (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
+                int age = coureur.CalculAge(coureur);
                 string[] res = { resultat.Classement.ToString(), resultat.Temps.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe,age.ToString() };
                 dataGridView1.Rows.Add(res);
-
-            }           
-           
+            }                      
         }
 
-        private void buttonFermer_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Fonction permettant d'ouvrir la page d'ajout de résultats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonNouveauResultat_Click(object sender, EventArgs e)
         {
             AjoutResultat a = new AjoutResultat(ref this.dataGridView1,true, idCourseSelectionnee);
             a.Show();
         }
 
+        /// <summary>
+        /// Fonction gérant la fermeture de la page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Fonction permettant d'ouvrir la page de modification de résultats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonModifierResultat_Click(object sender, EventArgs e)
         {
             if (this.dataGridView1.SelectedRows.Count == 0)
@@ -78,25 +99,29 @@ namespace App
             else
             {
                 ModificationResultat m = new ModificationResultat(ref this.dataGridView1,this.dataGridView1.SelectedRows, true,idCourseSelectionnee);
-                m.Show();
-               
+                m.Show();               
             }
         }
 
+        /// <summary>
+        /// Fonction permettant d'afficher les résultats en fonction de l'âge des coureurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonValider_Click(object sender, EventArgs e)
         {
             this.dataGridView1.Rows.Clear();
             this.dataGridView1.Refresh();
             int ageMin = 0;
             int ageMax = 0;
+            // Si les deux textBox sont bien remplis
             if (this.comboBox1.Text!="" && this.comboBox2.Text != "")
             {
+                //Pour chaque résultat
                 foreach (Resultat resultat in this.resultatRep.ListeResultatsCourse(this.idCourseSelectionnee))
                 {
                     Coureur coureur = coureurRep.ListeCoureur(resultat.LeCoureur.NumLicence)[0];
-                    int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
-                             (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
-                             (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
+                    int age = coureur.CalculAge(coureur);
                     if (this.comboBox1.SelectedIndex == 0)
                         ageMin = 10;
                     else
@@ -118,17 +143,12 @@ namespace App
                 }
             }
         }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        /// <summary>
+        /// Fonction permettant l'affichage de résultats détaillés en fonction d'un numéro de dossard ou du nom de famille d'un participant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             int numDossard;
@@ -137,9 +157,10 @@ namespace App
                 numDossard = -1;
             else
             {
-               
+                // Si le numéro de dossard à été donné, on le sauvegarde dans une variable
                 numDossard = Int32.Parse(this.textBoxDossard.Text);
             }
+            // sauvegarde du nom de famille spécifié dans le textbox dans une variable
             nomFamille = this.textBoxNom.Text;
             if (numDossard == -1 && nomFamille == "")
             {
@@ -147,6 +168,7 @@ namespace App
             }
             else
             {
+                // On donne les résultats détaillés
                 ResultatsDetaillesCoureur r = new ResultatsDetaillesCoureur(nomFamille, numDossard, course.Id);
                 r.Show();
             }

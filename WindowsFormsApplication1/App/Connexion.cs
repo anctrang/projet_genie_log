@@ -12,8 +12,12 @@ using Domain;
 
 namespace App
 {
+    /// <summary>
+    /// Classe gérant la page de connexion
+    /// </summary>
     public partial class Connexion : Form
     {
+        //Stockage des références des boutons
         private Button buttonConnexion;
         private Button buttonInscription;
         private Button buttonDeconnexion;
@@ -23,10 +27,22 @@ namespace App
         private Button buttonImporterResultats;
         private Button buttonModifierCourse;
 
+        /// <summary>
+        /// Constructeur de la classe Connexion
+        /// </summary>
+        /// <param name="buttonConnexion"></param>
+        /// <param name="buttonInscription"></param>
+        /// <param name="buttonDeconnexion"></param>
+        /// <param name="buttonAjouterCourse"></param>
+        /// <param name="buttonAjouterCoureur"></param>
+        /// <param name="buttonImporterCoureur"></param>
+        /// <param name="buttonImporterResultats"></param>
+        /// <param name="buttonModifierCourse"></param>
         public Connexion(ref Button buttonConnexion, ref Button buttonInscription, ref Button buttonDeconnexion, ref Button buttonAjouterCourse, ref Button buttonAjouterCoureur,
             ref Button buttonImporterCoureur, ref Button buttonImporterResultats, ref Button buttonModifierCourse)
         {
             InitializeComponent();
+            //Stockage des références des boutons
             this.buttonConnexion = buttonConnexion;
             this.buttonInscription = buttonInscription;
             this.buttonDeconnexion = buttonDeconnexion;
@@ -35,25 +51,33 @@ namespace App
             this.buttonImporterCoureur = buttonImporterCoureur;
             this.buttonImporterResultats = buttonImporterResultats;
             this.buttonModifierCourse = buttonModifierCourse;
-
         }
 
+        /// <summary>
+        /// Fonction permettant de vérifier si la combinaison Pseudonyme/mot de passe existe
+        /// </summary>
+        /// <param name="identifiant"></param>
+        /// <param name="mdp"></param>
+        /// <param name="ListeUtilisateurs"></param>
+        /// <returns></returns>
         public bool VerificationLogin(string identifiant, string mdp, IList<Utilisateur> ListeUtilisateurs)
         {
-
             bool existe = false;
-
             foreach (Utilisateur u in ListeUtilisateurs)
             {
-
+                // Si la combinaison existe
                 if (u.Pseudo == identifiant && u.MotDePasse == mdp)
                     existe = true;
-
             }
             
             return existe;
         }
 
+        /// <summary>
+        ///  Fonction permettant de gérer la connexion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonValider_Click(object sender, EventArgs e)
         {
             UtilisateurRepository Ur = new UtilisateurRepository();
@@ -62,6 +86,7 @@ namespace App
             bool utilisateurConnu = VerificationLogin(textBoxId.Text, textBoxMdp.Text, listeUtilisateurs);
             if (utilisateurConnu)
             {
+                // Mise à jour de la variable global identifiantEnregistre et des visibiltés des boutons
                 Accueil.identifiantEnregistre = textBoxId.Text;                
                 MessageBox.Show("Connexion réussie !");
                 buttonConnexion.Visible = false;
@@ -82,37 +107,17 @@ namespace App
                 this.buttonImporterResultats.Enabled = true;
                 this.Close();
             }
-
             else
             {
                 MessageBox.Show("Identifiant incorrect");
             }
-
-            
-
-
         }
 
-        private void labelPass_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxMdp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       /// <summary>
+       /// Fonction gérant la fermeture de la page
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();

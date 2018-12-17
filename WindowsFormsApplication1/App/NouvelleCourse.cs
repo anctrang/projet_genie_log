@@ -56,11 +56,6 @@ namespace App
             //Récupère la course que l'on souhaite modifier
             courseAModifier = courseRep.GetCourse(this.idCourseSelectionnee);
 
-            /*foreach (Course course in courseRep.GetAll()) // A MODIFIER AVEC DU SQL
-            {
-                if (course.Id == this.idCourseSelectionnee)
-                    courseAModifier = course;
-            }*/
 
   
             bool trouve;
@@ -119,6 +114,7 @@ namespace App
         /// </summary>
         public void AfficherContenu()
         {
+            // On nettoie les 2 dataGridView
             dataG.Rows.Clear();
             dataG.Refresh();
             dataGridViewParticipants.Rows.Clear();
@@ -126,18 +122,21 @@ namespace App
             dataGridViewLicencies.Rows.Clear();
             dataGridViewLicencies.Refresh();
 
+            // On remplit le datagridView de la page d'accueil avec toutes les courses en bdd
             foreach (Course course in this.courseRep.GetAll())
             {
                 string[] resultat = { course.Id.ToString(), course.Date.ToString(), course.Lieu, course.Distance.ToString(), Convert.ToString(resultatRep.ListeResultatsCourse(course.Id).Count) };
                 dataG.Rows.Add(resultat);
             }
 
+            // On remplit le dataGridView des coureurs non participnts à la course sélectionnée
             foreach (Coureur coureur in listeCoureursNonParticipants)
             {
                 string[] resultat = { coureur.NumLicence.ToString(), coureur.Nom };
                 this.dataGridViewLicencies.Rows.Add(resultat);
             }
 
+            // Idem avec les coureurs participants à la course sélectionnée
             foreach (Coureur coureur in this.listeCoureursParticipants)
             {
                 string[] resultat = { coureur.NumLicence.ToString(), coureur.Nom };
@@ -145,17 +144,25 @@ namespace App
             }
         }
 
+        /// <summary>
+        /// Fonction permettant de gérer la création de la nouvelle course ou la modification de la course sélectionnée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
             bool existe = false;
             Course course;
+            // Si nous sommes dans le cadre d'une modification de course
             if (modification)
             {
-
+                // On récupère tous les coureurs qui sont dans le datagridview des non participants
                 foreach (Coureur coureur in listeCoureursNonParticipants)
                 {
+                    // On rcupère tous les coureurs qui participaient à la course avant modifictation
                     foreach (Resultat resultat in resultatRep.GetAll())
                     {
+                        // S'ils ne participent plus (et qu'ils sont donc dans le gridview non participants, on supprime l'objet résultat associé
                         if (resultat.LaCourse == courseAModifier && resultat.LeCoureur == coureur)
                         {
                             resultatRep.Delete(resultat);
@@ -163,6 +170,7 @@ namespace App
                     }
                 }
 
+                // On vérifie si pour chaque coureur participant à la course (présent dans le datagridview des participants), un résultat est déjà existant
                 foreach (Coureur coureur in listeCoureursParticipants)
                 {
                     existe = false;
@@ -173,49 +181,46 @@ namespace App
                             existe = true;
                         }
                     }
+                    // Si pas, on créé le résultat
                     if (!existe)
                     {
                         Resultat resultat = new Resultat(courseAModifier,coureur);                       
                         resultatRep.Save(resultat);
                     }
                 }
-
+                // On change les données de la course à modifier en fonction de ce qui est indiqué dans le formulaire
                 courseAModifier.Date = this.dateTimePicker.Value;
                 courseAModifier.Distance = Convert.ToInt32(this.textBoxDist.Text);
                 courseAModifier.Lieu = this.textBoxLieu.Text;
                 courseRep.Save(courseAModifier);
 
+                // On ajoute/met à jour les différents résultats en fonction des modifications sur les coureurs effectués
                 foreach(Resultat resultat in resultatRep.ListeResultatsCourse(courseAModifier.Id))
                 {
                     resultat.AllureMoyenne = resultat.CalculAllureMoyenne(courseAModifier.Distance);
                     resultatRep.Save(resultat);
-                }
-                
-
-
-            }
-
-           
-
+                }   
+            }          
+            // Si création de course
             else
             {
                 course = new Course(this.textBoxLieu.Text, Convert.ToDouble(this.textBoxDist.Text), this.richTextBoxDesc.Text, this.dateTimePicker.Value);
-                courseRep.Save(course); // Création de la course
-
+                // Création de la course
+                courseRep.Save(course); 
                 courseRep.Delete(courseAModifier);
-
-                foreach (Coureur coureur in listeCoureursParticipants) // Créations des liens entre coureur et courses avec resultats vides
+                // Créations des liens entre coureur et courses avec resultats vides
+                foreach (Coureur coureur in listeCoureursParticipants) 
                 {
                     Resultat r = new Resultat(course, coureur);
                     resultatRep.Save(r);
                 }
-
                 MessageBox.Show("Nouvelle course ajoutée !");
             }
+            //Mise à jour de l'affichage
             AfficherContenu();
-
             dataG.Rows.Clear();
             dataG.Refresh();
+            //Mise à jour du datagridview de la page d'accueil concernant les courses
             foreach (Course course1 in this.courseRep.GetAll())
             {
                 string[] resultat = { course1.Id.ToString(), course1.Date.ToString(), course1.Lieu, course1.Distance.ToString(), Convert.ToString(resultatRep.ListeResultatsCourse(course1.Id).Count) };
@@ -225,17 +230,22 @@ namespace App
 
         }
 
+        /// <summary>
+        /// Fonction permettant de gérer l'ajout d'un participant (passage du gridview non participant à participant)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAjouterParticipant_Click(object sender, EventArgs e)
         {
-
+            // Si un coureur à été sélectionné
             if (this.dataGridViewLicencies.SelectedRows.Count > 0)
             {
-
+                // On récupère le coureur sélectionné
                 int selectedRowIndex = this.dataGridViewLicencies.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataGridViewLicencies.Rows[selectedRowIndex];
                 int numLicenceSelection = Convert.ToInt32(selectedRow.Cells[0].Value);
 
-
+                // On retire le coureur de la liste des participants et on l'ajoute à la liste des non participants
                 foreach (Coureur coureur in coureurRep.GetAll())
                 {
                     if (numLicenceSelection == coureur.NumLicence)
@@ -244,27 +254,27 @@ namespace App
                         coureurSelectionne = coureur;
                         this.listeCoureursParticipants.Add(coureurSelectionne);
                         this.listeCoureursNonParticipants.Remove(coureur);
-
                     }
                 }
-
             }
-
+            // On met à jour l'affichage des datagridview
             AfficherContenu();
-
-
         }
 
+        /// <summary>
+        /// Fonction permettant de gérer le retrait d'un coureur à la course
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonRetirerParticipant_Click(object sender, EventArgs e)
         {
             if (this.dataGridViewParticipants.SelectedRows.Count > 0)
             {
-
+                //Récupération du coureur sélectionné
                 int selectedRowIndex = this.dataGridViewParticipants.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataGridViewParticipants.Rows[selectedRowIndex];
                 int numLicenceSelection = Convert.ToInt32(selectedRow.Cells[0].Value);
-
-
+                //On retire le coureur de la liste des participants et on l'ajoute aux coureurs non participants
                 foreach (Coureur coureur in coureurRep.GetAll())
                 {
                     if (numLicenceSelection == coureur.NumLicence)
@@ -273,35 +283,18 @@ namespace App
                         coureurSelectionne = coureur;
                         this.listeCoureursParticipants.Remove(coureurSelectionne);
                         this.listeCoureursNonParticipants.Add(coureur);
-
                     }
                 }
-
             }
-
+            //Mise à jour de l'affichage des gridview
             AfficherContenu();
-        }
+        } 
 
-        private void textBoxDist_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxLieu_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBoxDesc_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Fonction gérant la fermeture de la page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();

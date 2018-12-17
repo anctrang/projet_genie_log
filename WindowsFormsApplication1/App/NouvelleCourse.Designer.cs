@@ -70,7 +70,6 @@
             this.textBoxLieu.Name = "textBoxLieu";
             this.textBoxLieu.Size = new System.Drawing.Size(200, 20);
             this.textBoxLieu.TabIndex = 0;
-            this.textBoxLieu.TextChanged += new System.EventHandler(this.textBoxLieu_TextChanged);
             // 
             // dateTimePicker
             // 
@@ -80,7 +79,6 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 1;
-            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // textBoxDist
             // 
@@ -88,7 +86,6 @@
             this.textBoxDist.Name = "textBoxDist";
             this.textBoxDist.Size = new System.Drawing.Size(200, 20);
             this.textBoxDist.TabIndex = 3;
-            this.textBoxDist.TextChanged += new System.EventHandler(this.textBoxDist_TextChanged);
             // 
             // label1
             // 
@@ -137,7 +134,7 @@
             this.richTextBoxDesc.Size = new System.Drawing.Size(200, 104);
             this.richTextBoxDesc.TabIndex = 8;
             this.richTextBoxDesc.Text = "";
-            this.richTextBoxDesc.TextChanged += new System.EventHandler(this.richTextBoxDesc_TextChanged);
+
             // 
             // buttonAjouter
             // 
