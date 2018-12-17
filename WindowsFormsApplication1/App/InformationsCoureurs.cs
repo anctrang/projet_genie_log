@@ -48,8 +48,8 @@ namespace App
 
                 Course course = courseRep.GetCourse(resultat.LaCourse.Id);
                 string[] res = {course.Id.ToString(),course.Lieu, course.Date.Day.ToString()+"-"+course.Date.Month.ToString()+"-"+course.Date.Year.ToString(),
-                    course.Distance.ToString(), resultat.Classement.ToString(), resultat.NumDossard.ToString(), resultat.AllureMoyenne.ToString(),
-                    resultat.VitesseMoyenne.ToString()};
+                     resultat.Classement.ToString(), resultat.NumDossard.ToString(),course.Distance.ToString(), resultat.AllureMoyenne.ToString(),
+                    resultat.VitesseMoyenne.ToString(), resultat.Temps.ToString() };
                 dataGridView1.Rows.Add(res);
 
             }
@@ -97,7 +97,7 @@ namespace App
 
                 Course course = courseRep.GetCourse(resultat.LaCourse.Id);
                 string[] res = {course.Id.ToString(),course.Lieu, course.Date.Day.ToString()+"-"+course.Date.Month.ToString()+"-"+course.Date.Year.ToString(),
-                    course.Distance.ToString(), resultat.Classement.ToString(), resultat.NumDossard.ToString(), resultat.AllureMoyenne.ToString(),
+                     resultat.Classement.ToString(), resultat.NumDossard.ToString(),course.Distance.ToString(), resultat.AllureMoyenne.ToString(),
                     resultat.VitesseMoyenne.ToString()};
                 dataGridView1.Rows.Add(res);
 

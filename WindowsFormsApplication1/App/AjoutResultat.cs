@@ -114,32 +114,57 @@ namespace App
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            int choix = this.comboBox1.SelectedIndex;
-            Resultat resultat = new Resultat();
-            if (courseConnue)
+           
+            if ((this.comboBox1.Text == "") || this.textBoxDossard.Text == "")
             {
-                
-                
-                resultat.LaCourse = course;
-                resultat.LeCoureur = listeCoureursNonParticipants[choix];
-                //resultat.Temps = this.textBoxTemps.Text;
+                MessageBox.Show("Veuillez remplir les champs !");
             }
             else
             {
-                resultat.LaCourse = listeCoursesNonParticipees[choix];
-                resultat.LeCoureur = coureur;
+                int choix = this.comboBox1.SelectedIndex;
+                Resultat resultat = new Resultat();
+                if (courseConnue)
+                {
+
+
+                    resultat.LaCourse = course;
+                    resultat.LeCoureur = listeCoureursNonParticipants[choix];
+                    
+                    
+                }
+                else
+                {
+                    resultat.LaCourse = listeCoursesNonParticipees[choix];                    
+                    resultat.LeCoureur = coureur;
+                }
+                if (this.textBoxDossard.Text != "")
+                    resultat.NumDossard = Int32.Parse(this.textBoxDossard.Text);
+                resultat.Temps = TimeSpan.Parse(this.textBox1.Text);
+                int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
+                         (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
+                         (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
+
+                MessageBox.Show(resultat.Id.ToString() + "-" + resultat.LeCoureur.Nom + "-");
+                resultat.TempsEnSecondes = resultat.CalculTempsEnSeconde(resultat.Temps);
+                resultat.AllureMoyenne = resultat.CalculAllureMoyenne(course.Distance);
+               // resultat.VitesseMoyenne = resultat.CalculVitesseMoyenne(course.Distance);*/
+                if (courseConnue)
+                {
+                    string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), resultat.LeCoureur.Nom, resultat.LeCoureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), resultat.LeCoureur.Sexe, age.ToString() };
+                    d.Rows.Add(res);
+                }
+                else
+                {
+                    Course course = courseRep.GetCourse(resultat.LaCourse.Id);
+                    string[] res = {course.Id.ToString(),course.Lieu, course.Date.Day.ToString()+"-"+course.Date.Month.ToString()+"-"+course.Date.Year.ToString(),
+                     resultat.Classement.ToString(), resultat.NumDossard.ToString(),course.Distance.ToString(), resultat.AllureMoyenne.ToString(),
+                    resultat.VitesseMoyenne.ToString(), resultat.Temps.ToString() };
+                    d.Rows.Add(res);
+                }
+                resultatRep.Save(resultat);
+                
+                this.Close();
             }
-            if (this.textBoxDossard.Text != "")
-                resultat.NumDossard = Int32.Parse(this.textBoxDossard.Text);
-
-            int age = DateTime.Now.Year - coureur.DateDeNaissance.Year -
-                     (DateTime.Now.Month < coureur.DateDeNaissance.Month ? 1 :
-                     (DateTime.Now.Month == coureur.DateDeNaissance.Month && DateTime.Now.Day < coureur.DateDeNaissance.Day) ? 1 : 0);
-            string[] res = { resultat.Classement.ToString(), resultat.NumDossard.ToString(), coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, resultat.VitesseMoyenne.ToString(), resultat.AllureMoyenne.ToString(), coureur.Sexe, age.ToString() };
-            dataGridView1.Rows.Add(res);
-
-            resultatRep.Save(resultat);
-            this.Close();
         }
     }
 }

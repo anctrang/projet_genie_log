@@ -53,8 +53,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.labelNouvelleCourse = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLicencies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParticipants)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -64,26 +66,29 @@
             // 
             // textBoxLieu
             // 
-            this.textBoxLieu.Location = new System.Drawing.Point(94, 107);
+            this.textBoxLieu.Location = new System.Drawing.Point(116, 107);
             this.textBoxLieu.Name = "textBoxLieu";
             this.textBoxLieu.Size = new System.Drawing.Size(200, 20);
             this.textBoxLieu.TabIndex = 0;
+            this.textBoxLieu.TextChanged += new System.EventHandler(this.textBoxLieu_TextChanged);
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.CalendarFont = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(94, 159);
+            this.dateTimePicker.Location = new System.Drawing.Point(116, 159);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 1;
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // textBoxDist
             // 
-            this.textBoxDist.Location = new System.Drawing.Point(94, 133);
+            this.textBoxDist.Location = new System.Drawing.Point(116, 133);
             this.textBoxDist.Name = "textBoxDist";
             this.textBoxDist.Size = new System.Drawing.Size(200, 20);
             this.textBoxDist.TabIndex = 3;
+            this.textBoxDist.TextChanged += new System.EventHandler(this.textBoxDist_TextChanged);
             // 
             // label1
             // 
@@ -101,9 +106,9 @@
             this.label2.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(9, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Distance :";
+            this.label2.Text = "Distance (en m) :";
             // 
             // label3
             // 
@@ -127,11 +132,12 @@
             // 
             // richTextBoxDesc
             // 
-            this.richTextBoxDesc.Location = new System.Drawing.Point(94, 185);
+            this.richTextBoxDesc.Location = new System.Drawing.Point(116, 185);
             this.richTextBoxDesc.Name = "richTextBoxDesc";
             this.richTextBoxDesc.Size = new System.Drawing.Size(200, 104);
             this.richTextBoxDesc.TabIndex = 8;
             this.richTextBoxDesc.Text = "";
+            this.richTextBoxDesc.TextChanged += new System.EventHandler(this.richTextBoxDesc_TextChanged);
             // 
             // buttonAjouter
             // 
@@ -281,6 +287,16 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
+            // labelNouvelleCourse
+            // 
+            this.labelNouvelleCourse.AutoSize = true;
+            this.labelNouvelleCourse.Font = new System.Drawing.Font("Gill Sans MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNouvelleCourse.Location = new System.Drawing.Point(187, 16);
+            this.labelNouvelleCourse.Name = "labelNouvelleCourse";
+            this.labelNouvelleCourse.Size = new System.Drawing.Size(173, 30);
+            this.labelNouvelleCourse.TabIndex = 17;
+            this.labelNouvelleCourse.Text = "Nouvelle course";
+            // 
             // buttonClose
             // 
             this.buttonClose.FlatAppearance.BorderSize = 0;
@@ -294,15 +310,25 @@
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
             // 
-            // labelNouvelleCourse
+            // label7
             // 
-            this.labelNouvelleCourse.AutoSize = true;
-            this.labelNouvelleCourse.Font = new System.Drawing.Font("Gill Sans MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNouvelleCourse.Location = new System.Drawing.Point(187, 16);
-            this.labelNouvelleCourse.Name = "labelNouvelleCourse";
-            this.labelNouvelleCourse.Size = new System.Drawing.Size(173, 30);
-            this.labelNouvelleCourse.TabIndex = 17;
-            this.labelNouvelleCourse.Text = "Nouvelle course";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("DejaVu Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(331, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(219, 18);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Coureurs non participants";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("DejaVu Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(590, 86);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(184, 18);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Coureurs participants";
             // 
             // NouvelleCourse
             // 
@@ -310,6 +336,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonRetirerParticipant);
@@ -365,5 +393,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label labelNouvelleCourse;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

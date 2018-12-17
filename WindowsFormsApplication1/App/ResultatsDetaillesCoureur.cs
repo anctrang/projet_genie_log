@@ -41,7 +41,9 @@ namespace App
             this.labelNom.Text = coureur.Nom;
             this.labelPrenom.Text = coureur.Prenom;
             this.labelSexe.Text = coureur.Sexe;
-            this.labelTemps.Text = "A FAIRE";
+            this.labelAllure.Text = resultat.AllureMoyenne.ToString();
+            this.labelVitesse.Text = resultat.VitesseMoyenne.ToString();
+            this.labelTemps.Text = resultat.Temps.ToString();
             
         }
 

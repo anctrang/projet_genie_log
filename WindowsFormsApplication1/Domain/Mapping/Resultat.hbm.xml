@@ -6,11 +6,12 @@
     <id name="Id" column="resultat_Id" type="int">
       <generator class="native"></generator>
     </id>
-    <property name="Temps" column="resultat_temps" not-null="true"/>
+    <property name="Temps" column="resultat_temps" not-null="true" type="TimeAsTimeSpan"/>
     <property name="VitesseMoyenne" column="resultat_vitMoy" not-null="true"/>
     <property name="AllureMoyenne" column="resultat_AllureMoy" not-null="true"/>
     <property name="NumDossard" column="resultat_NumDossard" not-null="true"/>
     <property name="Classement" column="resultat_Classement" not-null="true"/>
+    <property name="TempsEnSecondes" column="resultat_TempsEnSeconde" not-null="true"/>
     <many-to-one name="LaCourse" class="Course" column="resultat_course"/>
     <many-to-one name="LeCoureur" class="Coureur" column="resultat_Coureur"/>
 

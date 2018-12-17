@@ -26,6 +26,7 @@ namespace Domain
             this.NumDossard = 0;
             this.VitesseMoyenne = 0;            
             this.Temps= new TimeSpan(0, 0, 0);
+            this.TempsEnSecondes = CalculTempsEnSeconde(this.Temps);
         }
 
         public virtual int NumDossard
@@ -73,6 +74,28 @@ namespace Domain
         {
             get;
             set;
+        }
+
+        public virtual int TempsEnSecondes
+        {
+            get;
+            set;
+        }
+
+        public virtual int CalculTempsEnSeconde(TimeSpan t)
+        {
+            int temps = t.Seconds + t.Minutes * 60 + t.Hours * 60 * 60;
+            return temps;
+        }
+
+        public virtual double CalculAllureMoyenne(double distance)
+        {
+            return this.TempsEnSecondes / 60 / distance / 1000;
+        }
+
+        public virtual double CalculVitesseMoyenne(double distance)
+        {
+            return distance / 1000 / this.TempsEnSecondes / 60 / 60;
         }
 
     }

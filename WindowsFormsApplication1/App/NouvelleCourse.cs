@@ -180,23 +180,22 @@ namespace App
                     }
                 }
 
-                /* foreach (Resultat resultat in resultatRep.GetAll())
-                 {
-                     if (resultat.LaCourse == courseAModifier)
-                     {
-                         resultatRep.Delete(resultat);
-                     }
-                 }*/
-
-                //int num = courseAModifier.Id;
-
+                courseAModifier.Date = this.dateTimePicker.Value;
+                courseAModifier.Distance = Convert.ToInt32(this.textBoxDist.Text);
+                courseAModifier.Lieu = this.textBoxLieu.Text;
                 courseRep.Save(courseAModifier);
+
+                foreach(Resultat resultat in resultatRep.ListeResultatsCourse(courseAModifier.Id))
+                {
+                    resultat.AllureMoyenne = resultat.CalculAllureMoyenne(courseAModifier.Distance);
+                    resultatRep.Save(resultat);
+                }
                 
 
 
             }
 
-            //Faire un update
+           
 
             else
             {
@@ -281,6 +280,26 @@ namespace App
             }
 
             AfficherContenu();
+        }
+
+        private void textBoxDist_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxLieu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBoxDesc_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

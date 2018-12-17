@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationsCoureurs));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBoxInfosCoureur = new System.Windows.Forms.GroupBox();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.labelSexe = new System.Windows.Forms.Label();
+            this.labelNumLicence = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelNomPrenom = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.labelNumLicence = new System.Windows.Forms.Label();
-            this.labelSexe = new System.Windows.Forms.Label();
-            this.labelAge = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonNouveauResultat = new System.Windows.Forms.Button();
             this.buttonModifierResultat = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +58,7 @@
             this.DistanceCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AllureMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VitesseMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temps = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBoxInfosCoureur.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -69,14 +70,14 @@
             // dataGridView1
             // 
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num,
@@ -86,26 +87,27 @@
             this.NDossard,
             this.DistanceCourse,
             this.AllureMoyenne,
-            this.VitesseMoyenne});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            this.VitesseMoyenne,
+            this.Temps});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(179, 200);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(786, 200);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -123,6 +125,36 @@
             this.groupBoxInfosCoureur.TabIndex = 1;
             this.groupBoxInfosCoureur.TabStop = false;
             this.groupBoxInfosCoureur.Enter += new System.EventHandler(this.groupBoxInfosCoureur_Enter);
+            // 
+            // labelAge
+            // 
+            this.labelAge.AutoSize = true;
+            this.labelAge.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAge.Location = new System.Drawing.Point(65, 81);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(45, 15);
+            this.labelAge.TabIndex = 8;
+            this.labelAge.Text = "label3";
+            // 
+            // labelSexe
+            // 
+            this.labelSexe.AutoSize = true;
+            this.labelSexe.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSexe.Location = new System.Drawing.Point(69, 50);
+            this.labelSexe.Name = "labelSexe";
+            this.labelSexe.Size = new System.Drawing.Size(45, 15);
+            this.labelSexe.TabIndex = 7;
+            this.labelSexe.Text = "label2";
+            // 
+            // labelNumLicence
+            // 
+            this.labelNumLicence.AutoSize = true;
+            this.labelNumLicence.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumLicence.Location = new System.Drawing.Point(102, 19);
+            this.labelNumLicence.Name = "labelNumLicence";
+            this.labelNumLicence.Size = new System.Drawing.Size(45, 15);
+            this.labelNumLicence.TabIndex = 6;
+            this.labelNumLicence.Text = "label1";
             // 
             // label7
             // 
@@ -175,6 +207,16 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(187, 30);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Résultats coureur";
+            // 
             // buttonClose
             // 
             this.buttonClose.FlatAppearance.BorderSize = 0;
@@ -188,36 +230,6 @@
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // labelNumLicence
-            // 
-            this.labelNumLicence.AutoSize = true;
-            this.labelNumLicence.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumLicence.Location = new System.Drawing.Point(102, 19);
-            this.labelNumLicence.Name = "labelNumLicence";
-            this.labelNumLicence.Size = new System.Drawing.Size(45, 15);
-            this.labelNumLicence.TabIndex = 6;
-            this.labelNumLicence.Text = "label1";
-            // 
-            // labelSexe
-            // 
-            this.labelSexe.AutoSize = true;
-            this.labelSexe.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSexe.Location = new System.Drawing.Point(69, 50);
-            this.labelSexe.Name = "labelSexe";
-            this.labelSexe.Size = new System.Drawing.Size(45, 15);
-            this.labelSexe.TabIndex = 7;
-            this.labelSexe.Text = "label2";
-            // 
-            // labelAge
-            // 
-            this.labelAge.AutoSize = true;
-            this.labelAge.Font = new System.Drawing.Font("DejaVu Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAge.Location = new System.Drawing.Point(65, 81);
-            this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(45, 15);
-            this.labelAge.TabIndex = 8;
-            this.labelAge.Text = "label3";
             // 
             // groupBox3
             // 
@@ -295,16 +307,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "GestioCourse";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 30);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Résultats coureur";
-            // 
             // Num
             // 
             this.Num.HeaderText = "Num";
@@ -338,13 +340,21 @@
             // 
             // AllureMoyenne
             // 
-            this.AllureMoyenne.HeaderText = "Allure Moyenne";
+            this.AllureMoyenne.HeaderText = "Allure Moyenne (m/km)";
             this.AllureMoyenne.Name = "AllureMoyenne";
+            this.AllureMoyenne.Width = 70;
             // 
             // VitesseMoyenne
             // 
-            this.VitesseMoyenne.HeaderText = "Vitesse Moyenne";
+            this.VitesseMoyenne.HeaderText = "Vitesse Moyenne(km/h)";
             this.VitesseMoyenne.Name = "VitesseMoyenne";
+            this.VitesseMoyenne.Width = 70;
+            // 
+            // Temps
+            // 
+            this.Temps.HeaderText = "Temps";
+            this.Temps.Name = "Temps";
+            this.Temps.Width = 70;
             // 
             // InformationsCoureurs
             // 
@@ -403,5 +413,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DistanceCourse;
         private System.Windows.Forms.DataGridViewTextBoxColumn AllureMoyenne;
         private System.Windows.Forms.DataGridViewTextBoxColumn VitesseMoyenne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Temps;
     }
 }

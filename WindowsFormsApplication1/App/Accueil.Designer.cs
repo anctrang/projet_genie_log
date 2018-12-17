@@ -53,13 +53,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonImportResultats = new System.Windows.Forms.Button();
+            this.buttonImportCoureurs = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNumLicence = new System.Windows.Forms.TextBox();
             this.buttonValider = new System.Windows.Forms.Button();
-            this.buttonImportCoureurs = new System.Windows.Forms.Button();
-            this.buttonImportResultats = new System.Windows.Forms.Button();
             this.TabCoureurs.SuspendLayout();
             this.tabCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
@@ -330,6 +330,36 @@
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
+            // buttonImportResultats
+            // 
+            this.buttonImportResultats.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImportResultats.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImportResultats.BackgroundImage")));
+            this.buttonImportResultats.FlatAppearance.BorderSize = 0;
+            this.buttonImportResultats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImportResultats.ForeColor = System.Drawing.Color.White;
+            this.buttonImportResultats.Location = new System.Drawing.Point(6, 328);
+            this.buttonImportResultats.Name = "buttonImportResultats";
+            this.buttonImportResultats.Size = new System.Drawing.Size(146, 57);
+            this.buttonImportResultats.TabIndex = 9;
+            this.buttonImportResultats.Text = "Importer résultats";
+            this.buttonImportResultats.UseVisualStyleBackColor = false;
+            this.buttonImportResultats.Click += new System.EventHandler(this.buttonImportResultats_Click);
+            // 
+            // buttonImportCoureurs
+            // 
+            this.buttonImportCoureurs.BackColor = System.Drawing.Color.Transparent;
+            this.buttonImportCoureurs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImportCoureurs.BackgroundImage")));
+            this.buttonImportCoureurs.FlatAppearance.BorderSize = 0;
+            this.buttonImportCoureurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImportCoureurs.ForeColor = System.Drawing.Color.White;
+            this.buttonImportCoureurs.Location = new System.Drawing.Point(6, 265);
+            this.buttonImportCoureurs.Name = "buttonImportCoureurs";
+            this.buttonImportCoureurs.Size = new System.Drawing.Size(146, 57);
+            this.buttonImportCoureurs.TabIndex = 8;
+            this.buttonImportCoureurs.Text = "Importer coureurs";
+            this.buttonImportCoureurs.UseVisualStyleBackColor = false;
+            this.buttonImportCoureurs.Click += new System.EventHandler(this.buttonImportCoureurs_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
@@ -384,34 +414,6 @@
             this.buttonValider.Text = "Rechercher";
             this.buttonValider.UseVisualStyleBackColor = false;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
-            // 
-            // buttonImportCoureurs
-            // 
-            this.buttonImportCoureurs.BackColor = System.Drawing.Color.Transparent;
-            this.buttonImportCoureurs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImportCoureurs.BackgroundImage")));
-            this.buttonImportCoureurs.FlatAppearance.BorderSize = 0;
-            this.buttonImportCoureurs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImportCoureurs.ForeColor = System.Drawing.Color.White;
-            this.buttonImportCoureurs.Location = new System.Drawing.Point(6, 265);
-            this.buttonImportCoureurs.Name = "buttonImportCoureurs";
-            this.buttonImportCoureurs.Size = new System.Drawing.Size(146, 57);
-            this.buttonImportCoureurs.TabIndex = 8;
-            this.buttonImportCoureurs.Text = "Importer coureurs";
-            this.buttonImportCoureurs.UseVisualStyleBackColor = false;
-            // 
-            // buttonImportResultats
-            // 
-            this.buttonImportResultats.BackColor = System.Drawing.Color.Transparent;
-            this.buttonImportResultats.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImportResultats.BackgroundImage")));
-            this.buttonImportResultats.FlatAppearance.BorderSize = 0;
-            this.buttonImportResultats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImportResultats.ForeColor = System.Drawing.Color.White;
-            this.buttonImportResultats.Location = new System.Drawing.Point(6, 328);
-            this.buttonImportResultats.Name = "buttonImportResultats";
-            this.buttonImportResultats.Size = new System.Drawing.Size(146, 57);
-            this.buttonImportResultats.TabIndex = 9;
-            this.buttonImportResultats.Text = "Importer résultats";
-            this.buttonImportResultats.UseVisualStyleBackColor = false;
             // 
             // Accueil
             // 

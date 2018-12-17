@@ -35,13 +35,14 @@
             this.labelTitre = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxTemps = new System.Windows.Forms.TextBox();
             this.textBoxDossard = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelCoureurOuCourse = new System.Windows.Forms.Label();
             this.buttonValider = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -115,18 +116,11 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
-            // textBoxTemps
-            // 
-            this.textBoxTemps.Location = new System.Drawing.Point(336, 188);
-            this.textBoxTemps.Name = "textBoxTemps";
-            this.textBoxTemps.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTemps.TabIndex = 27;
-            // 
             // textBoxDossard
             // 
             this.textBoxDossard.Location = new System.Drawing.Point(336, 162);
             this.textBoxDossard.Name = "textBoxDossard";
-            this.textBoxDossard.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDossard.Size = new System.Drawing.Size(121, 20);
             this.textBoxDossard.TabIndex = 28;
             // 
             // label1
@@ -181,19 +175,37 @@
             this.buttonValider.UseVisualStyleBackColor = false;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(336, 189);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(463, 191);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "(HH:MM:SS)";
+            // 
             // AjoutResultat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(736, 300);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.labelCoureurOuCourse);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDossard);
-            this.Controls.Add(this.textBoxTemps);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -216,12 +228,13 @@
         private System.Windows.Forms.Label labelTitre;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxTemps;
         private System.Windows.Forms.TextBox textBoxDossard;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label labelCoureurOuCourse;
         private System.Windows.Forms.Button buttonValider;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -48,7 +48,24 @@ namespace App
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
+            List<Resultat> listeResultats = new List<Resultat>();
+            int classement = 1;
             resultat.NumDossard =Convert.ToInt32(this.textBoxDossard.Text);
+            resultat.Temps = TimeSpan.Parse(this.textBoxTemps.Text);
+            resultat.TempsEnSecondes = resultat.CalculTempsEnSeconde(resultat.Temps);
+            resultat.AllureMoyenne = resultat.CalculAllureMoyenne(resultat.LaCourse.Distance);
+            resultat.VitesseMoyenne = resultat.CalculVitesseMoyenne(resultat.LaCourse.Distance);
+            foreach(Resultat resultat in resultatRep.ListeResultatsCourse(resultat.LaCourse.Id))
+            {
+                listeResultats.Add(resultat);
+            }
+            List<Resultat> SortedList = listeResultats.OrderBy(o => o.TempsEnSecondes).ToList();
+            foreach(Resultat resultat in SortedList)
+            {
+                resultat.Classement = classement;
+                classement++;
+            }
+
             resultatRep.Save(resultat);
             d.Rows.Clear();
             d.Refresh();

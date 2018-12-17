@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
 using DAL;
+using System.Diagnostics;
+using System.IO;
 
 namespace App
 {
@@ -156,6 +158,78 @@ namespace App
                 this.Close();
             }
             
+        }
+        public static Coureur CoureursFromCsv(string csvLine)
+        {
+            string[] values = csvLine.Split(';');
+            Coureur coureur = new Coureur();
+            coureur.Nom = values[0];
+            coureur.Prenom = values[1];
+            coureur.DateDeNaissance = DateTime.Parse(values[2]);
+            coureur.Courriel = values[3];
+            
+            return coureur;
+        }
+
+        public  Resultat ResultatFromCsv(string csvLine)
+        {
+            string[] values = csvLine.Split(';');
+            Resultat resultat = new Resultat();
+            resultat.Temps = TimeSpan.Parse(values[0]);
+            resultat.NumDossard = Convert.ToInt32(values[1]);
+            resultat.LaCourse = courseRepository.GetCourse(Convert.ToInt32(values[2]));
+            resultat.LeCoureur = coureurRepository.ListeCoureur(Convert.ToInt32(values[3]))[0];
+
+            return resultat;
+        }
+
+
+        private void buttonImportCoureurs_Click(object sender, EventArgs e)
+        {
+            List<Coureur> values = File.ReadAllLines("C:\\Users\\antho\\OneDrive\\Documents\\Classeur1.csv")
+                                           .Skip(1)
+                                           .Select(v => CoureursFromCsv(v))
+                                           .ToList();
+            foreach(Coureur coureur in values)
+            {
+                coureurRepository.Save(coureur);
+            }
+        }
+
+        private void buttonImportResultats_Click(object sender, EventArgs e)
+        {
+            bool existant = false;
+            List<Resultat> values = File.ReadAllLines("C:\\Users\\antho\\OneDrive\\Documents\\resultat.csv")
+                                           .Skip(1)
+                                           .Select(v => ResultatFromCsv(v))
+                                           .ToList();
+           
+
+                foreach (Resultat resultat in values)
+            {
+                if (courseRepository.GetListCourse(resultat.LaCourse.Id).Count != 0 && coureurRepository.ListeCoureur(resultat.LeCoureur.NumLicence).Count != 0)
+                {
+                    if (resultatRepository.listeResultat(resultat.LaCourse.Id, resultat.LeCoureur.NumLicence).Count == 0)
+                    {
+                        resultat.TempsEnSecondes = resultat.CalculTempsEnSeconde(resultat.Temps);
+                        resultat.AllureMoyenne = resultat.CalculAllureMoyenne(resultat.LaCourse.Distance);
+                        resultat.VitesseMoyenne = resultat.CalculVitesseMoyenne(resultat.LaCourse.Distance);
+                        resultatRepository.Save(resultat);
+                    }
+                    else
+                        existant = true;
+                }
+                else
+                    existant = true;
+
+                if (!existant)
+                {
+                    MessageBox.Show("Résultat(s) ajouté(s) avec succès !");
+                }
+                else
+                    MessageBox.Show("Un ou plusieurs résultats n'ont pas pu être ajoutés, vérifiez vos fichier CSV");
+                
+            }
         }
     }
 }
