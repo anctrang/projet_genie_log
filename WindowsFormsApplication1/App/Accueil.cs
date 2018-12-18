@@ -57,6 +57,8 @@ namespace App
             this.buttonModifierCourse.Enabled = false;
             this.buttonImportResultats.Visible = false;
             this.buttonImportResultats.Enabled = false;
+            this.buttonSuppression.Visible = false;
+            this.buttonSuppression.Enabled = false;
 
             // Remplit les dataGridViews
             AfficherContenu();
@@ -94,7 +96,7 @@ namespace App
         {
 
             Connexion connexion = new Connexion(ref this.buttonLogin, ref this.buttonSignUp, ref buttonDeconnexion, ref buttonAjouterCourse, ref buttonNouveauCoureur,
-                ref buttonImportCoureurs, ref buttonImportResultats, ref buttonModifierCourse);
+                ref buttonImportCoureurs, ref buttonImportResultats, ref buttonModifierCourse, ref buttonSuppression);
             connexion.Show();
 
 
@@ -108,7 +110,7 @@ namespace App
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
             Inscription inscription = new Inscription(ref this.buttonLogin, ref this.buttonSignUp, ref buttonDeconnexion, ref buttonAjouterCourse, ref buttonNouveauCoureur,
-                ref buttonImportCoureurs, ref buttonImportResultats, ref buttonModifierCourse);
+                ref buttonImportCoureurs, ref buttonImportResultats, ref buttonModifierCourse, ref buttonSuppression);
             inscription.Show();
         }
 
@@ -134,6 +136,8 @@ namespace App
             this.buttonModifierCourse.Enabled = false;
             this.buttonImportResultats.Visible = false;
             this.buttonImportResultats.Enabled = false;
+            this.buttonSuppression.Visible = false;
+            this.buttonSuppression.Enabled = false;
             this.buttonSignUp.Visible = true;
             this.buttonSignUp.Visible = true;
             this.buttonDeconnexion.Visible = false;
@@ -142,11 +146,11 @@ namespace App
             this.buttonLogin.Enabled = true;
         }
 
-      /// <summary>
-      /// Fonction permettant de lancer la page d'ajout de course
-      /// </summary>
-      /// <param name="sender"></param>
-      /// <param name="e"></param>
+        /// <summary>
+        /// Fonction permettant de lancer la page d'ajout de course
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAjouterCourse_Click(object sender, EventArgs e)
         {
             NouvelleCourse nouvelleCourse = new NouvelleCourse(ref this.dataGridViewCourses);
@@ -206,7 +210,7 @@ namespace App
                 }
             }
         }
-        
+
         /// <summary>
         /// Gestion du bouton de fermeture de la page
         /// </summary>
@@ -293,7 +297,7 @@ namespace App
 
             return resultat;
         }
-                     
+
         /// <summary>
         /// Fonction permettant de gérer l'import CSV de coureurs
         /// </summary>
@@ -340,7 +344,7 @@ namespace App
             //Pareil que pour l'importation des coureurs
 
             string sourceFolder = "";
-            OpenFileDialog ofd = new OpenFileDialog();    
+            OpenFileDialog ofd = new OpenFileDialog();
             string strfilename = "";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -371,7 +375,7 @@ namespace App
                 else
                     existant = true;
 
-                
+
                 int classement = 1;
                 List<Resultat> listeResultats = new List<Resultat>();
                 foreach (Course course in courseRepository.GetAll())
@@ -385,12 +389,12 @@ namespace App
                     foreach (Resultat resultat1 in SortedList)
                     {
                         resultat.Classement = classement;
-                        
+
                         resultatRepository.Save(resultat1);
                         classement++;
                     }
                 }
-                
+
 
             }
             if (!existant)
@@ -401,5 +405,76 @@ namespace App
                 MessageBox.Show("Un ou plusieurs résultats n'ont pas pu être ajoutés, vérifiez vos fichier CSV");
 
         }
+
+        private void buttonSuppression_Click(object sender, EventArgs e)
+        {
+            // Si aucune course et aucun coureur n'ont été séléctionnés
+            if (this.dataGridViewCourses.SelectedRows.Count == 0 && this.dataGridViewCoureurs.SelectedRows.Count == 0)
+                MessageBox.Show("Veuillez sélectionner une course ou un coureur");
+            else
+            {
+                // Si on est dans l'onglet Courses
+                if (this.TabCoureurs.SelectedIndex == 0)
+                {
+                    //Stockage de la ligne sélectionnée
+                    DataGridViewRow ligneSelectionnee = this.dataGridViewCourses.SelectedRows[0];
+                    //Récupération de l'id de la course sélectionnée
+                    Course course = courseRepository.GetListCourse(Convert.ToInt32(ligneSelectionnee.Cells[0].Value))[0];
+                    //Suppression de tous les résultats liés à la course
+                    foreach (Resultat resultat in resultatRepository.ListeResultatsCourse(course.Id))
+                    {
+                        resultatRepository.Delete(resultat);
+                    }
+                    // Suppression de la course
+                    courseRepository.Delete(course);
+                }
+                else
+                {
+                    // Récupération de la ligne sélectionnée
+                    DataGridViewRow ligneSelectionnee = this.dataGridViewCoureurs.SelectedRows[0];
+                    // Récupération ddu coureur
+                    Coureur coureur = coureurRepository.ListeCoureur(Convert.ToInt32(ligneSelectionnee.Cells[0].Value))[0];
+                   
+                    // Lancement de la page de résultat
+                    //Suppression de tous les résultats liés au coureur
+                    foreach (Resultat resultat1 in resultatRepository.ListeResultatsCoureur(coureur.NumLicence))
+                    {
+                        resultatRepository.Delete(resultat1);
+                        
+                    }
+                    // Suppression de la course
+                    coureurRepository.Delete(coureur);
+
+
+
+                }
+            }
+
+            // Gestion des classements après la suppression
+            List<Resultat> listeResultatsATrier = new List<Resultat>();
+            
+            foreach (Course course1 in courseRepository.GetAll())
+            {
+                int classement = 1;
+                listeResultatsATrier.Clear();
+                foreach(Resultat resultat1 in resultatRepository.ListeResultatsCourse(course1.Id))
+                {
+                    listeResultatsATrier.Add(resultat1);
+                }
+                List<Resultat> SortedList = listeResultatsATrier.OrderBy(o => o.TempsEnSecondes).ToList();
+
+                foreach(Resultat resultat1 in SortedList)
+                {
+                    resultat1.Classement = classement;
+                    classement++;
+                }
+            }
+            this.dataGridViewCoureurs.Rows.Clear();
+            this.dataGridViewCoureurs.Refresh();
+            this.dataGridViewCourses.Rows.Clear();
+            this.dataGridViewCourses.Refresh();
+            AfficherContenu();
+        }
     }
 }
+

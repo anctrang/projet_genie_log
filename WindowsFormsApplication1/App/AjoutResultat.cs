@@ -216,7 +216,7 @@ namespace App
                     foreach (Resultat resultat1 in this.resultatRep.ListeResultatsCourse(course.Id))
                     {
                         // On ajoute la ligne au DataGridView
-                        Coureur coureur = coureurRep.ListeCoureur(resultat.LeCoureur.NumLicence)[0];
+                        Coureur coureur = coureurRep.ListeCoureur(resultat1.LeCoureur.NumLicence)[0];
                         age = coureur.CalculAge(coureur);
                         string[] res1 = { resultat1.Classement.ToString(), resultat1.Temps.ToString(), resultat1.NumDossard.ToString(), coureur.NumLicence.ToString(),
                             coureur.Nom, coureur.Prenom, resultat1.VitesseMoyenne.ToString(), resultat1.AllureMoyenne.ToString(), coureur.Sexe, age.ToString() };
@@ -228,12 +228,12 @@ namespace App
                     //Mise à jour de l'affichage du GridView des resultats par coureur pour le coureur sélectionné sur la page d'accueil
                     d.Rows.Clear();
                     d.Refresh();
-                    foreach (Resultat resulta1t in this.resultatRep.ListeResultatsCoureur(coureur.NumLicence))
+                    foreach (Resultat resultat1 in this.resultatRep.ListeResultatsCoureur(coureur.NumLicence))
                     {
-                        Course course = courseRep.GetCourse(resultat.LaCourse.Id);
+                        Course course = courseRep.GetCourse(resultat1.LaCourse.Id);
                         string[] res = {course.Id.ToString(),course.Lieu, course.Date.Day.ToString()+"-"+course.Date.Month.ToString()+"-"+course.Date.Year.ToString(),
-                     resultat.Classement.ToString(), resultat.NumDossard.ToString(),course.Distance.ToString(),resultat.AllureMoyenne.ToString(),
-                    resultat.VitesseMoyenne.ToString(), resultat.Temps.ToString() };
+                     resultat1.Classement.ToString(), resultat.NumDossard.ToString(),course.Distance.ToString(),resultat1.AllureMoyenne.ToString(),
+                    resultat1.VitesseMoyenne.ToString(), resultat1.Temps.ToString() };
                         d.Rows.Add(res);
 
                     }

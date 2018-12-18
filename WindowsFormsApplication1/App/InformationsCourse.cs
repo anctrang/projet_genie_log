@@ -175,5 +175,42 @@ namespace App
 
 
         }
+
+        private void buttonSupprimer_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 0)
+                MessageBox.Show("Veuillez sélectionner un résultat");
+            else
+            {
+
+                DataGridViewRow ligneSelectionnee = this.dataGridView1.SelectedRows[0];
+                // Si la page à été lancée à partir de la page d'informations de courses et donc que l'on a l'id de la course dont on veut modifier le resultat
+
+                int idCoureur = Convert.ToInt32(ligneSelectionnee.Cells[3].Value);
+                int idCourse = course.Id;
+                //Supression du résultat
+                resultatRep.Delete(resultatRep.listeResultat(idCourse, idCoureur)[0]);
+                List<Resultat> resultatATrier = new List<Resultat>();
+                foreach (Resultat resultat1 in resultatRep.ListeResultatsCourse(idCourse))
+                {
+                    resultatATrier.Add(resultat1);
+                }
+                int classement = 1;
+                List<Resultat> SortedList = resultatATrier.OrderBy(o => o.TempsEnSecondes).ToList();
+                foreach (Resultat resultat1 in SortedList)
+                {
+                    resultat1.Classement = classement;
+                    resultatRep.Save(resultat1);
+                    classement++;
+                }
+
+                this.dataGridView1.Rows.Clear();
+                this.dataGridView1.Refresh();
+                AfficherContenu();
+
+
+
+            }
+        }
     }
 }

@@ -127,6 +127,7 @@
             this.buttonClose.TabIndex = 13;
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // groupBox4
             // 

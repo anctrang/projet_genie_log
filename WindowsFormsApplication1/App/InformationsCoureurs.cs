@@ -48,6 +48,8 @@ namespace App
                 this.buttonModifierResultat.Enabled = false;
                 this.buttonNouveauResultat.Visible = false;
                 this.buttonNouveauResultat.Enabled = false;
+                this.buttonSuppression.Visible = false;
+                this.buttonSuppression.Enabled = false;
             }
         }
 
@@ -69,7 +71,7 @@ namespace App
 
         }
 
- 
+
         /// <summary>
         /// Fonction de fermeture de page
         /// </summary>
@@ -87,7 +89,7 @@ namespace App
         /// <param name="e"></param>
         private void buttonNouveauResultat_Click(object sender, EventArgs e)
         {
-            AjoutResultat a = new AjoutResultat(ref this.dataGridView1,false, coureur.NumLicence);
+            AjoutResultat a = new AjoutResultat(ref this.dataGridView1, false, coureur.NumLicence);
             a.Show();
         }
 
@@ -124,6 +126,44 @@ namespace App
                     resultat.VitesseMoyenne.ToString()};
                 dataGridView1.Rows.Add(res);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 0)
+                MessageBox.Show("Veuillez sélectionner un résultat");
+            else
+            {
+
+                DataGridViewRow ligneSelectionnee = this.dataGridView1.SelectedRows[0];
+                // Si la page à été lancée à partir de la page d'informations de courses et donc que l'on a l'id de la course dont on veut modifier le resultat
+
+                int idCourse = Convert.ToInt32(ligneSelectionnee.Cells[0].Value);
+                int idCoureur = coureur.NumLicence;
+                //Supression du résultat
+                resultatRep.Delete(resultatRep.listeResultat(idCourse, idCoureur)[0]);
+                List<Resultat> resultatATrier = new List<Resultat>();
+                foreach(Resultat resultat1 in resultatRep.ListeResultatsCourse(idCourse))
+                {
+                    resultatATrier.Add(resultat1);
+                }
+                int classement = 1;
+                List<Resultat> SortedList = resultatATrier.OrderBy(o => o.TempsEnSecondes).ToList();
+                foreach (Resultat resultat1 in SortedList)
+                {
+                    resultat1.Classement = classement;
+                    resultatRep.Save(resultat1);
+                    classement++;
+                }
+
+                this.dataGridView1.Rows.Clear();
+                this.dataGridView1.Refresh();
+                AfficherContenu();
+
+
+
+            }
+
         }
     }
 }

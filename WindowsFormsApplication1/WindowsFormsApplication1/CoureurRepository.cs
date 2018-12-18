@@ -53,6 +53,13 @@ namespace DAL
         {
             Session.SaveOrUpdate(coureur);
             Session.Flush();
-        }       
+        }   
+        
+        public void Delete(Coureur coureur)
+        {
+
+            Session.Delete(coureur);
+            Session.Flush();
+        }
     }
 }

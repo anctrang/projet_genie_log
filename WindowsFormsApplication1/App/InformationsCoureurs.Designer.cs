@@ -59,6 +59,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonSuppression = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBoxInfosCoureur.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -173,7 +174,6 @@
             this.groupBoxInfosCoureur.Size = new System.Drawing.Size(200, 100);
             this.groupBoxInfosCoureur.TabIndex = 1;
             this.groupBoxInfosCoureur.TabStop = false;
-
             // 
             // labelAge
             // 
@@ -284,6 +284,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
+            this.groupBox3.Controls.Add(this.buttonSuppression);
             this.groupBox3.Controls.Add(this.buttonNouveauResultat);
             this.groupBox3.Controls.Add(this.buttonModifierResultat);
             this.groupBox3.Location = new System.Drawing.Point(-2, 41);
@@ -356,6 +357,21 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "GestioCourse";
             // 
+            // buttonSuppression
+            // 
+            this.buttonSuppression.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSuppression.BackgroundImage")));
+            this.buttonSuppression.FlatAppearance.BorderSize = 0;
+            this.buttonSuppression.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSuppression.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSuppression.ForeColor = System.Drawing.Color.White;
+            this.buttonSuppression.Location = new System.Drawing.Point(12, 147);
+            this.buttonSuppression.Name = "buttonSuppression";
+            this.buttonSuppression.Size = new System.Drawing.Size(146, 55);
+            this.buttonSuppression.TabIndex = 7;
+            this.buttonSuppression.Text = "Supprimer";
+            this.buttonSuppression.UseVisualStyleBackColor = true;
+            this.buttonSuppression.Click += new System.EventHandler(this.button1_Click);
+            // 
             // InformationsCoureurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,5 +430,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AllureMoyenne;
         private System.Windows.Forms.DataGridViewTextBoxColumn VitesseMoyenne;
         private System.Windows.Forms.DataGridViewTextBoxColumn Temps;
+        private System.Windows.Forms.Button buttonSuppression;
     }
 }

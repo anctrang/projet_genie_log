@@ -33,6 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationsCourse));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Classement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temps = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numDossard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numLicence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vitesseMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allureMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelNouvelleCourse = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
@@ -58,16 +68,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxDossard = new System.Windows.Forms.TextBox();
-            this.Classement = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Temps = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numDossard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numLicence = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vitesseMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allureMoyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSupprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBoxInfosCoureur.SuspendLayout();
@@ -119,6 +120,75 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(694, 214);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Classement
+            // 
+            this.Classement.FillWeight = 60F;
+            this.Classement.HeaderText = "Classement";
+            this.Classement.Name = "Classement";
+            this.Classement.Width = 60;
+            // 
+            // Temps
+            // 
+            this.Temps.HeaderText = "Temps";
+            this.Temps.Name = "Temps";
+            this.Temps.Width = 70;
+            // 
+            // numDossard
+            // 
+            this.numDossard.FillWeight = 30F;
+            this.numDossard.HeaderText = "N° Dossard";
+            this.numDossard.Name = "numDossard";
+            this.numDossard.Width = 60;
+            // 
+            // numLicence
+            // 
+            this.numLicence.FillWeight = 30F;
+            this.numLicence.HeaderText = "N° Licence";
+            this.numLicence.Name = "numLicence";
+            this.numLicence.Width = 60;
+            // 
+            // nom
+            // 
+            this.nom.FillWeight = 80F;
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            this.nom.Width = 80;
+            // 
+            // prenom
+            // 
+            this.prenom.FillWeight = 80F;
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
+            this.prenom.Width = 80;
+            // 
+            // vitesseMoyenne
+            // 
+            this.vitesseMoyenne.FillWeight = 30F;
+            this.vitesseMoyenne.HeaderText = "Vitesse moyenne";
+            this.vitesseMoyenne.Name = "vitesseMoyenne";
+            this.vitesseMoyenne.Width = 60;
+            // 
+            // allureMoyenne
+            // 
+            this.allureMoyenne.FillWeight = 30F;
+            this.allureMoyenne.HeaderText = "Allure Moyenne";
+            this.allureMoyenne.Name = "allureMoyenne";
+            this.allureMoyenne.Width = 60;
+            // 
+            // sexe
+            // 
+            this.sexe.FillWeight = 30F;
+            this.sexe.HeaderText = "Sexe";
+            this.sexe.Name = "sexe";
+            this.sexe.Width = 60;
+            // 
+            // age
+            // 
+            this.age.FillWeight = 30F;
+            this.age.HeaderText = "Âge";
+            this.age.Name = "age";
+            this.age.Width = 60;
             // 
             // groupBox1
             // 
@@ -211,6 +281,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
+            this.groupBox3.Controls.Add(this.buttonSupprimer);
             this.groupBox3.Controls.Add(this.buttonNouveauResultat);
             this.groupBox3.Controls.Add(this.buttonModifierResultat);
             this.groupBox3.Location = new System.Drawing.Point(3, 43);
@@ -379,7 +450,6 @@
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.Size = new System.Drawing.Size(116, 20);
             this.textBoxNom.TabIndex = 47;
- 
             // 
             // button1
             // 
@@ -412,74 +482,20 @@
             this.textBoxDossard.Size = new System.Drawing.Size(115, 20);
             this.textBoxDossard.TabIndex = 51;
             // 
-            // Classement
+            // buttonSupprimer
             // 
-            this.Classement.FillWeight = 60F;
-            this.Classement.HeaderText = "Classement";
-            this.Classement.Name = "Classement";
-            this.Classement.Width = 60;
-            // 
-            // Temps
-            // 
-            this.Temps.HeaderText = "Temps";
-            this.Temps.Name = "Temps";
-            this.Temps.Width = 70;
-            // 
-            // numDossard
-            // 
-            this.numDossard.FillWeight = 30F;
-            this.numDossard.HeaderText = "N° Dossard";
-            this.numDossard.Name = "numDossard";
-            this.numDossard.Width = 60;
-            // 
-            // numLicence
-            // 
-            this.numLicence.FillWeight = 30F;
-            this.numLicence.HeaderText = "N° Licence";
-            this.numLicence.Name = "numLicence";
-            this.numLicence.Width = 60;
-            // 
-            // nom
-            // 
-            this.nom.FillWeight = 80F;
-            this.nom.HeaderText = "Nom";
-            this.nom.Name = "nom";
-            this.nom.Width = 80;
-            // 
-            // prenom
-            // 
-            this.prenom.FillWeight = 80F;
-            this.prenom.HeaderText = "Prénom";
-            this.prenom.Name = "prenom";
-            this.prenom.Width = 80;
-            // 
-            // vitesseMoyenne
-            // 
-            this.vitesseMoyenne.FillWeight = 30F;
-            this.vitesseMoyenne.HeaderText = "Vitesse moyenne";
-            this.vitesseMoyenne.Name = "vitesseMoyenne";
-            this.vitesseMoyenne.Width = 60;
-            // 
-            // allureMoyenne
-            // 
-            this.allureMoyenne.FillWeight = 30F;
-            this.allureMoyenne.HeaderText = "Allure Moyenne";
-            this.allureMoyenne.Name = "allureMoyenne";
-            this.allureMoyenne.Width = 60;
-            // 
-            // sexe
-            // 
-            this.sexe.FillWeight = 30F;
-            this.sexe.HeaderText = "Sexe";
-            this.sexe.Name = "sexe";
-            this.sexe.Width = 60;
-            // 
-            // age
-            // 
-            this.age.FillWeight = 30F;
-            this.age.HeaderText = "Âge";
-            this.age.Name = "age";
-            this.age.Width = 60;
+            this.buttonSupprimer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSupprimer.BackgroundImage")));
+            this.buttonSupprimer.FlatAppearance.BorderSize = 0;
+            this.buttonSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSupprimer.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSupprimer.ForeColor = System.Drawing.Color.White;
+            this.buttonSupprimer.Location = new System.Drawing.Point(9, 145);
+            this.buttonSupprimer.Name = "buttonSupprimer";
+            this.buttonSupprimer.Size = new System.Drawing.Size(146, 55);
+            this.buttonSupprimer.TabIndex = 7;
+            this.buttonSupprimer.Text = "Supprimer";
+            this.buttonSupprimer.UseVisualStyleBackColor = true;
+            this.buttonSupprimer.Click += new System.EventHandler(this.buttonSupprimer_Click);
             // 
             // InformationsCourse
             // 
@@ -558,5 +574,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn allureMoyenne;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexe;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.Button buttonSupprimer;
     }
 }

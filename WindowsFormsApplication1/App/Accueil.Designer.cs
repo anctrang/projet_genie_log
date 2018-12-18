@@ -53,6 +53,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonClose = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonSuppression = new System.Windows.Forms.Button();
             this.buttonImportResultats = new System.Windows.Forms.Button();
             this.buttonImportCoureurs = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -150,7 +151,6 @@
             this.dataGridViewCourses.Name = "dataGridViewCourses";
             this.dataGridViewCourses.Size = new System.Drawing.Size(543, 326);
             this.dataGridViewCourses.TabIndex = 0;
-            
             // 
             // Numéro
             // 
@@ -183,7 +183,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(552, 332);
+            this.tabPage1.Size = new System.Drawing.Size(549, 332);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Coureurs";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -200,7 +200,7 @@
             this.dataGridViewCoureurs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCoureurs.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewCoureurs.Name = "dataGridViewCoureurs";
-            this.dataGridViewCoureurs.Size = new System.Drawing.Size(546, 326);
+            this.dataGridViewCoureurs.Size = new System.Drawing.Size(543, 326);
             this.dataGridViewCoureurs.TabIndex = 0;
             // 
             // Numero_licence
@@ -233,7 +233,7 @@
             this.buttonAjouterCourse.FlatAppearance.BorderSize = 0;
             this.buttonAjouterCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAjouterCourse.ForeColor = System.Drawing.Color.White;
-            this.buttonAjouterCourse.Location = new System.Drawing.Point(6, 78);
+            this.buttonAjouterCourse.Location = new System.Drawing.Point(6, 132);
             this.buttonAjouterCourse.Name = "buttonAjouterCourse";
             this.buttonAjouterCourse.Size = new System.Drawing.Size(146, 57);
             this.buttonAjouterCourse.TabIndex = 4;
@@ -249,7 +249,7 @@
             this.buttonNouveauCoureur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNouveauCoureur.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNouveauCoureur.ForeColor = System.Drawing.Color.White;
-            this.buttonNouveauCoureur.Location = new System.Drawing.Point(6, 17);
+            this.buttonNouveauCoureur.Location = new System.Drawing.Point(6, 71);
             this.buttonNouveauCoureur.Name = "buttonNouveauCoureur";
             this.buttonNouveauCoureur.Size = new System.Drawing.Size(146, 55);
             this.buttonNouveauCoureur.TabIndex = 5;
@@ -264,7 +264,7 @@
             this.buttonModifierCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModifierCourse.Font = new System.Drawing.Font("DejaVu Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModifierCourse.ForeColor = System.Drawing.Color.White;
-            this.buttonModifierCourse.Location = new System.Drawing.Point(6, 141);
+            this.buttonModifierCourse.Location = new System.Drawing.Point(6, 204);
             this.buttonModifierCourse.Name = "buttonModifierCourse";
             this.buttonModifierCourse.Size = new System.Drawing.Size(146, 55);
             this.buttonModifierCourse.TabIndex = 6;
@@ -279,7 +279,7 @@
             this.buttonInfo.FlatAppearance.BorderSize = 0;
             this.buttonInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInfo.ForeColor = System.Drawing.Color.White;
-            this.buttonInfo.Location = new System.Drawing.Point(6, 202);
+            this.buttonInfo.Location = new System.Drawing.Point(6, 15);
             this.buttonInfo.Name = "buttonInfo";
             this.buttonInfo.Size = new System.Drawing.Size(146, 57);
             this.buttonInfo.TabIndex = 7;
@@ -318,17 +318,33 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
+            this.groupBox3.Controls.Add(this.buttonSuppression);
+            this.groupBox3.Controls.Add(this.buttonInfo);
             this.groupBox3.Controls.Add(this.buttonImportResultats);
             this.groupBox3.Controls.Add(this.buttonImportCoureurs);
             this.groupBox3.Controls.Add(this.buttonAjouterCourse);
             this.groupBox3.Controls.Add(this.buttonNouveauCoureur);
             this.groupBox3.Controls.Add(this.buttonModifierCourse);
-            this.groupBox3.Controls.Add(this.buttonInfo);
             this.groupBox3.Location = new System.Drawing.Point(0, 41);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(158, 437);
+            this.groupBox3.Size = new System.Drawing.Size(158, 464);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
+            // 
+            // buttonSuppression
+            // 
+            this.buttonSuppression.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSuppression.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSuppression.BackgroundImage")));
+            this.buttonSuppression.FlatAppearance.BorderSize = 0;
+            this.buttonSuppression.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSuppression.ForeColor = System.Drawing.Color.White;
+            this.buttonSuppression.Location = new System.Drawing.Point(6, 394);
+            this.buttonSuppression.Name = "buttonSuppression";
+            this.buttonSuppression.Size = new System.Drawing.Size(146, 57);
+            this.buttonSuppression.TabIndex = 10;
+            this.buttonSuppression.Text = "Supprimer";
+            this.buttonSuppression.UseVisualStyleBackColor = false;
+            this.buttonSuppression.Click += new System.EventHandler(this.buttonSuppression_Click);
             // 
             // buttonImportResultats
             // 
@@ -420,7 +436,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(846, 477);
+            this.ClientSize = new System.Drawing.Size(846, 504);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.textBoxNumLicence);
             this.Controls.Add(this.groupBox4);
@@ -478,6 +494,7 @@
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.Button buttonImportCoureurs;
         private System.Windows.Forms.Button buttonImportResultats;
+        private System.Windows.Forms.Button buttonSuppression;
     }
 }
 

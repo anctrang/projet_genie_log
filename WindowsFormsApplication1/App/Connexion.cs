@@ -26,6 +26,7 @@ namespace App
         private Button buttonImporterCoureur;
         private Button buttonImporterResultats;
         private Button buttonModifierCourse;
+        private Button buttonSuppression;
 
         /// <summary>
         /// Constructeur de la classe Connexion
@@ -39,7 +40,7 @@ namespace App
         /// <param name="buttonImporterResultats"></param>
         /// <param name="buttonModifierCourse"></param>
         public Connexion(ref Button buttonConnexion, ref Button buttonInscription, ref Button buttonDeconnexion, ref Button buttonAjouterCourse, ref Button buttonAjouterCoureur,
-            ref Button buttonImporterCoureur, ref Button buttonImporterResultats, ref Button buttonModifierCourse)
+            ref Button buttonImporterCoureur, ref Button buttonImporterResultats, ref Button buttonModifierCourse, ref Button buttonSuppression)
         {
             InitializeComponent();
             //Stockage des références des boutons
@@ -51,6 +52,7 @@ namespace App
             this.buttonImporterCoureur = buttonImporterCoureur;
             this.buttonImporterResultats = buttonImporterResultats;
             this.buttonModifierCourse = buttonModifierCourse;
+            this.buttonSuppression = buttonSuppression;
         }
 
         /// <summary>
@@ -105,6 +107,8 @@ namespace App
                 this.buttonModifierCourse.Enabled = true;
                 this.buttonImporterResultats.Visible = true;
                 this.buttonImporterResultats.Enabled = true;
+                this.buttonSuppression.Visible = true;
+                this.buttonSuppression.Enabled = true;
                 this.Close();
             }
             else
