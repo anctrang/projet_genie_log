@@ -327,6 +327,7 @@ namespace App
                 string[] resultat = { coureur.NumLicence.ToString(), coureur.Nom, coureur.Prenom, coureur.DateDeNaissance.ToString() };
                 dataGridViewCoureurs.Rows.Add(resultat);
             }
+            MessageBox.Show("Coureurs importés !");
         }
 
         /// <summary>
@@ -370,14 +371,35 @@ namespace App
                 else
                     existant = true;
 
-                if (!existant)
+                
+                int classement = 1;
+                List<Resultat> listeResultats = new List<Resultat>();
+                foreach (Course course in courseRepository.GetAll())
                 {
-                    MessageBox.Show("Résultat(s) ajouté(s) avec succès !");
+                    classement = 1;
+                    foreach (Resultat resultat1 in resultatRepository.ListeResultatsCourse(course.Id))
+                    {
+                        listeResultats.Add(resultat1);
+                    }
+                    List<Resultat> SortedList = listeResultats.OrderBy(o => o.TempsEnSecondes).ToList();
+                    foreach (Resultat resultat1 in SortedList)
+                    {
+                        resultat.Classement = classement;
+                        
+                        resultatRepository.Save(resultat1);
+                        classement++;
+                    }
                 }
-                else
-                    MessageBox.Show("Un ou plusieurs résultats n'ont pas pu être ajoutés, vérifiez vos fichier CSV");
+                
 
             }
+            if (!existant)
+            {
+                MessageBox.Show("Résultat(s) ajouté(s) avec succès !");
+            }
+            else
+                MessageBox.Show("Un ou plusieurs résultats n'ont pas pu être ajoutés, vérifiez vos fichier CSV");
+
         }
     }
 }

@@ -137,7 +137,7 @@ namespace Domain
         /// <returns></returns>
         public virtual double CalculAllureMoyenne(double distance)
         {
-            return this.TempsEnSecondes / 60 / distance / 1000;
+            return (this.TempsEnSecondes / 60 )/ (distance / 1000);
         }
 
         /// <summary>

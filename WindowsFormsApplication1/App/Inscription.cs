@@ -82,7 +82,7 @@ namespace App
             {
                 //S'il n'existe pas, on le créé, on connecte l'utilisateur et on change l'état des boutons de la page d'accueil
                 uR.Save(utilisateur);
-                Program.identifiantEnregistre = utilisateur.Pseudo;
+                Accueil.identifiantEnregistre = utilisateur.Pseudo;
                 MessageBox.Show("Inscription réussie !");
                 buttonConnexion.Visible = false;
                 buttonConnexion.Enabled = false;
